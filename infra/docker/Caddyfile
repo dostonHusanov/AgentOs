@@ -1,0 +1,10 @@
+{$MCP_HOST} {
+    handle /mcp/* {
+        reverse_proxy 127.0.0.1:3333 {
+            flush_interval -1
+        }
+    }
+    handle {
+        respond "AgentOS private MCP endpoint. Use the full invited connection URL." 200
+    }
+}

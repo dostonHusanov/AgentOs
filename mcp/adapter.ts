@@ -419,6 +419,18 @@ export class AgentOSAdapter {
   async receipts(id: string) {
     return this.receiptsView(await this.mission(id));
   }
+  async history() {
+    const results = await Promise.allSettled(
+      this.vault.ids().map((id) => this.receipts(id)),
+    );
+    return {
+      missions: results.flatMap((result) =>
+        result.status === "fulfilled" ? [result.value] : [],
+      ),
+      unavailable: results.filter((result) => result.status === "rejected")
+        .length,
+    };
+  }
   private receiptsView(m: PublicMission) {
     return {
       missionId: m.id,

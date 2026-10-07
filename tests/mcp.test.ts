@@ -419,6 +419,19 @@ test("MCP stdio handshake, tools, safe asynchronous API adapter and durable cred
         assert.equal(value.receipts[0].escrow.state, "result_submitted");
       }
     }
+    const history = await new AgentOSAdapter(
+      base,
+      new MissionVault(join(root, ".agentos", "mcp")),
+      5,
+    ).history();
+    assert.equal(history.missions.length, 1);
+    assert.equal(
+      history.missions[0].receipts[0].transactionHash,
+      "cd".repeat(32),
+    );
+    assert.equal(history.unavailable, 0);
+    assert.ok(!JSON.stringify(history).includes(secret));
+    assert.ok(!JSON.stringify(history).includes(privateSentinel));
     await client.close();
     client = await connect();
     assert.equal(

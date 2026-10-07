@@ -1,4 +1,12 @@
-import { mkdirSync, writeFileSync, readFileSync, chmodSync } from "node:fs";
+import {
+  mkdirSync,
+  writeFileSync,
+  readFileSync,
+  chmodSync,
+  existsSync,
+  readdirSync,
+  statSync,
+} from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
 import { SafeMcpError } from "./errors";
@@ -15,6 +23,22 @@ export type MissionCredential = z.infer<typeof credentialSchema>;
 // The private vault is never returned through tools, URLs, or diagnostic logs.
 export class MissionVault {
   constructor(private directory: string) {}
+  ids(limit = 50): string[] {
+    if (!existsSync(this.directory)) return [];
+    return readdirSync(this.directory)
+      .filter(
+        (name) =>
+          name.endsWith(".json") &&
+          missionIdSchema.safeParse(name.slice(0, -5)).success,
+      )
+      .sort(
+        (a, b) =>
+          statSync(join(this.directory, b)).mtimeMs -
+          statSync(join(this.directory, a)).mtimeMs,
+      )
+      .slice(0, limit)
+      .map((name) => name.slice(0, -5));
+  }
   put(credential: MissionCredential) {
     const value = credentialSchema.parse(credential);
     mkdirSync(this.directory, { recursive: true, mode: 0o700 });

@@ -13,6 +13,7 @@ services:
       MCP_ACCESS_KEY: ${MCP_ACCESS_KEY:?Set MCP_ACCESS_KEY in .env.mcp}
       MCP_PUBLIC_ORIGIN: ${MCP_PUBLIC_ORIGIN:?Set MCP_PUBLIC_ORIGIN in .env.mcp}
       MCP_HTTP_PORT: "3333"
+      MCP_BIND_ADDRESS: 0.0.0.0
     command: [node, /app/dist/mcp/http-server.js]
     healthcheck:
       test: [CMD, node, -e, "fetch('http://127.0.0.1:3333/healthz').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
@@ -23,3 +24,16 @@ services:
     depends_on:
       app:
         condition: service_healthy
+  proxy:
+    image: caddy:2
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      MCP_HOST: ${MCP_HOST:?Set MCP_HOST in .env.mcp}
+    volumes:
+      - ./infra/docker/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+volumes:
+  caddy-data:
+  caddy-config:

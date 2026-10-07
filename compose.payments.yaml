@@ -1,0 +1,14 @@
+# Lightweight live AI + direct Cardano payments, without hosted Masumi nodes.
+services:
+  app:
+    env_file:
+      - .env.server
+    environment:
+      AI_MODE: gemini
+      AI_PROVIDER: openrouter
+      PAYMENT_MODE: cardano
+      CARDANO_NETWORK: preprod
+      APP_URL: http://127.0.0.1:3000
+      MASUMI_NODE_URL: ""
+      MASUMI_REGISTRY_URL: ""
+      MASUMI_ESCROW_ENABLED: "false"
