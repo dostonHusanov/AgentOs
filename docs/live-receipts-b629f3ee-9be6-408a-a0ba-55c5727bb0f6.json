@@ -1,0 +1,841 @@
+{
+  "id": "b629f3ee-9be6-408a-a0ba-55c5727bb0f6",
+  "goal": "Compare Kuala Lumpur, Bangkok, and Da Nang for a remote software developer living for one month. Cover cost of living, internet quality, safety, and coworking in one combined research task, then produce a final recommendation. Have the research provider discover and hire a structured_city_data specialist for an illustrative comparison, and distinguish that purchased demo dataset from current grounded web evidence.",
+  "status": "completed",
+  "budget": {
+    "initial": 5,
+    "spent": 1.5,
+    "reserved": 0,
+    "remaining": 3.5,
+    "asset": "tUSDM"
+  },
+  "policy": {
+    "maxSinglePurchase": 2,
+    "minimumReputation": 80,
+    "escrowThreshold": 0
+  },
+  "jobs": [
+    {
+      "id": "c7125172-3cc9-4c9a-a1ad-1a72ed2dd34d",
+      "missionId": "b629f3ee-9be6-408a-a0ba-55c5727bb0f6",
+      "buyerAgentId": "manager",
+      "sellerAgentId": "research",
+      "capability": "web_research",
+      "objective": "Research and compare Kuala Lumpur, Bangkok, and Da Nang for a remote software developer, focusing on cost of living, internet quality, safety, and coworking spaces. Include information from a purchased structured_city_data specialist for an illustrative comparison, clearly distinguishing this dataset from web evidence.",
+      "status": "completed",
+      "price": 1,
+      "reason": "Capability match · reputation 95/100 · 1 tUSDM · score 88.2",
+      "sellerName": "ResearchPro",
+      "reputation": 95,
+      "registrySource": "masumi",
+      "depth": 1,
+      "createdAt": "2026-10-07T04:38:07.513Z",
+      "result": {
+        "summary": "Kuala Lumpur stands out as a strong option for remote software developers due to its manageable cost of living, excellent internet infrastructure, robust coworking scene, and generally safe environment, as detailed by available web research. While specific web-sourced information for Bangkok and Da Nang was not available, illustrative data suggests Bangkok has a slightly higher cost of living but a strong coworking scene, and Da Nang is the most budget-friendly with high safety but less developed coworking infrastructure. The provided illustrative data should not be confused with current market data and serves as a controlled hackathon fixture.",
+        "findings": [
+          "Kuala Lumpur offers a cost of living for a solo digital nomad ranging from approximately $760/month for a frugal budget to $1,350-$1,700/month for a comfortable lifestyle, including central rent and dining out.",
+          "Rent for a furnished studio or one-bedroom apartment in central Kuala Lumpur areas like KLCC or Bangsar is between $490-$1,100/month, reducing to $170-$440 outside the city center.",
+          "Kuala Lumpur has fast and reliable internet, with residential fiber speeds typically between 50-200 Mbps and an average fixed internet speed of around 170 Mbps, complemented by affordable mobile data plans.",
+          "While generally safe, Kuala Lumpur experiences petty crimes such as bag-snatching, pickpocketing, and phone theft, particularly in areas like Bukit Bintang and on public transit.",
+          "Kuala Lumpur boasts a diverse coworking scene with options like WORQ (multiple locations, 24/7 access, hot desks from $10/day), Colony KLCC (premium, Petronas Towers views, day passes from $15), Common Ground (largest network, hot desks from $98-$120/month), and Sandbox (affordable, monthly membership $68).",
+          "Illustrative data, not current market data, indicates Kuala Lumpur's monthly cost of living at $1200, Bangkok's at $1300, and Da Nang's at $900.",
+          "According to illustrative data, Bangkok and Kuala Lumpur both have an internet score of 9, while Da Nang has a score of 8.",
+          "Illustrative data suggests Da Nang has the highest safety score at 9, with Kuala Lumpur and Bangkok both at 8.",
+          "The illustrative data shows Bangkok with the highest coworking score of 10, followed by Kuala Lumpur at 9, and Da Nang at 7."
+        ],
+        "sources": [
+          {
+            "title": "Kuala Lumpur, Malaysia Digital Nomad Guide: $1,040/mo",
+            "url": "https://thenomadhq.com/cities/kualalumpur"
+          },
+          {
+            "title": "Kuala Lumpur Digital Nomad Guide (2026) | Nomad Almanac",
+            "url": "https://nomadalmanac.com/countries/malaysia/cities/kuala-lumpur"
+          },
+          {
+            "title": "Best Coworking Space Kuala Lumpur",
+            "url": "https://klnomad.com/coworking-space-kuala-lumpur/"
+          }
+        ],
+        "purchasedData": {
+          "dataset": "illustrative-city-data",
+          "asOf": "2026-01-01",
+          "limitations": "Controlled hackathon fixture, not a current price or safety survey. USD monthly estimates; qualitative scores are illustrative.",
+          "cities": [
+            {
+              "city": "Kuala Lumpur",
+              "monthlyCostEstimate": 1200,
+              "internetScore": 9,
+              "safetyScore": 8,
+              "coworkingScore": 9
+            },
+            {
+              "city": "Bangkok",
+              "monthlyCostEstimate": 1300,
+              "internetScore": 9,
+              "safetyScore": 8,
+              "coworkingScore": 10
+            },
+            {
+              "city": "Da Nang",
+              "monthlyCostEstimate": 900,
+              "internetScore": 8,
+              "safetyScore": 9,
+              "coworkingScore": 7
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2af0a33d-6c94-47c4-ab38-37f7332b0cf3",
+      "missionId": "b629f3ee-9be6-408a-a0ba-55c5727bb0f6",
+      "parentJobId": "c7125172-3cc9-4c9a-a1ad-1a72ed2dd34d",
+      "buyerAgentId": "research",
+      "sellerAgentId": "data",
+      "capability": "structured_city_data",
+      "objective": "Provide structured city data for Kuala Lumpur, Bangkok, and Da Nang, focusing on cost of living, internet quality, safety, and coworking spaces.",
+      "status": "completed",
+      "price": 0.2,
+      "reason": "Capability match · reputation 92/100 · 0.2 tUSDM · score 94.2",
+      "sellerName": "DataHub",
+      "reputation": 92,
+      "registrySource": "masumi",
+      "depth": 2,
+      "createdAt": "2026-10-07T04:41:29.618Z",
+      "result": {
+        "dataset": "illustrative-city-data",
+        "asOf": "2026-01-01",
+        "limitations": "Controlled hackathon fixture, not a current price or safety survey. USD monthly estimates; qualitative scores are illustrative.",
+        "cities": [
+          {
+            "city": "Kuala Lumpur",
+            "monthlyCostEstimate": 1200,
+            "internetScore": 9,
+            "safetyScore": 8,
+            "coworkingScore": 9
+          },
+          {
+            "city": "Bangkok",
+            "monthlyCostEstimate": 1300,
+            "internetScore": 9,
+            "safetyScore": 8,
+            "coworkingScore": 10
+          },
+          {
+            "city": "Da Nang",
+            "monthlyCostEstimate": 900,
+            "internetScore": 8,
+            "safetyScore": 9,
+            "coworkingScore": 7
+          }
+        ]
+      }
+    },
+    {
+      "id": "bddd42d6-d7ca-4318-adef-730bf22a2917",
+      "missionId": "b629f3ee-9be6-408a-a0ba-55c5727bb0f6",
+      "buyerAgentId": "manager",
+      "sellerAgentId": "report",
+      "capability": "report_generation",
+      "objective": "Generate a comprehensive report comparing Kuala Lumpur, Bangkok, and Da Nang for a remote software developer based on the research findings, including a final recommendation. Clearly distinguish between web-grounded evidence and the illustrative structured_city_data.",
+      "status": "completed",
+      "price": 0.5,
+      "reason": "Capability match · reputation 97/100 · 0.5 tUSDM · score 92.2",
+      "sellerName": "Synthesis",
+      "reputation": 97,
+      "registrySource": "masumi",
+      "depth": 1,
+      "createdAt": "2026-10-07T04:44:45.476Z",
+      "result": {
+        "title": "Remote Software Developer City Comparison: Kuala Lumpur, Bangkok, and Da Nang",
+        "recommendation": "Kuala Lumpur is the recommended city for a remote software developer. It offers a compelling balance of a manageable cost of living (estimated between $760-$1700/month, web-grounded), excellent and reliable internet infrastructure (averaging 170 Mbps fixed, web-grounded), and a robust, diverse coworking scene. While it has some petty crime, its overall safety is comparable to Bangkok, and its coworking options are more developed than Da Nang, making it a well-rounded choice for productivity and lifestyle.",
+        "comparison": [
+          {
+            "option": "Kuala Lumpur",
+            "assessment": "Kuala Lumpur presents a strong profile with a manageable cost of living for digital nomads, ranging from approximately $760 to $1,700 per month depending on lifestyle (web-grounded evidence). Rent for a furnished studio in central areas is between $490-$1,100 (web-grounded). It boasts fast and reliable internet with average fixed speeds around 170 Mbps and affordable mobile data (web-grounded). The city has a diverse and robust coworking scene with various options and price points (web-grounded). Illustrative data places its monthly cost at $1200, internet score at 9, safety score at 8, and coworking score at 9. Petty crime is noted but generally manageable (web-grounded)."
+          },
+          {
+            "option": "Bangkok",
+            "assessment": "While specific web-grounded details on cost of living and internet were not provided for Bangkok, illustrative data suggests a slightly higher monthly cost of living at $1300 compared to Kuala Lumpur. Its illustrative internet score is 9, matching Kuala Lumpur, and its safety score is 8. Bangkok shines in the illustrative data with the highest coworking score of 10, indicating a potentially vibrant environment for remote workers. However, without web-grounded evidence, specific details on internet reliability, actual costs, and coworking specifics are unknown."
+          },
+          {
+            "option": "Da Nang",
+            "assessment": "Da Nang is presented as the most budget-friendly option according to illustrative data, with a monthly cost of living at $900. It also has the highest illustrative safety score at 9. However, its illustrative internet score is slightly lower at 8, and its coworking score is the lowest at 7, suggesting a less developed infrastructure for remote work compared to the other two cities. Without web-grounded information, specific details on internet quality and actual coworking options are unavailable, making its suitability less clear despite the lower cost and higher safety."
+          }
+        ],
+        "evidence": [
+          "Kuala Lumpur offers a cost of living for a solo digital nomad ranging from approximately $760/month for a frugal budget to $1,350-$1,700/month for a comfortable lifestyle, including central rent and dining out. (https://thenomadhq.com/cities/kualalumpur)",
+          "Rent for a furnished studio or one-bedroom apartment in central Kuala Lumpur areas like KLCC or Bangsar is between $490-$1,100/month, reducing to $170-$440 outside the city center. (https://thenomadhq.com/cities/kualalumpur)",
+          "Kuala Lumpur has fast and reliable internet, with residential fiber speeds typically between 50-200 Mbps and an average fixed internet speed of around 170 Mbps, complemented by affordable mobile data plans. (https://nomadalmanac.com/countries/malaysia/cities/kuala-lumpur)",
+          "While generally safe, Kuala Lumpur experiences petty crimes such as bag-snatching, pickpocketing, and phone theft, particularly in areas like Bukit Bintang and on public transit. (https://nomadalmanac.com/countries/malaysia/cities/kuala-lumpur)",
+          "Kuala Lumpur boasts a diverse coworking scene with options like WORQ (multiple locations, 24/7 access, hot desks from $10/day), Colony KLCC (premium, Petronas Towers views, day passes from $15), Common Ground (largest network, hot desks from $98-$120/month), and Sandbox (affordable, monthly membership $68). (https://klnomad.com/coworking-space-kuala-lumpur/)"
+        ],
+        "limitations": [
+          "The information for Bangkok and Da Nang regarding specific costs, internet reliability, and detailed coworking options is based solely on illustrative data, not current market data or web-grounded research.",
+          "The 'illustrative-city-data' is a controlled hackathon fixture and does not represent current real-world prices or safety surveys; all USD monthly estimates and qualitative scores are illustrative.",
+          "The web-grounded evidence primarily focuses on Kuala Lumpur, leading to a less comprehensive comparison for Bangkok and Da Nang without additional research.",
+          "The illustrative data provides scores (e.g., internet, safety, coworking) without detailed metrics or methodologies, making direct comparison of the underlying factors challenging.",
+          "Cost of living estimates are highly variable based on individual lifestyle choices and may differ from the provided ranges or illustrative figures."
+        ]
+      }
+    }
+  ],
+  "payments": [
+    {
+      "id": "95ea349e-95d8-4637-ad84-f0af91c9ba3b",
+      "missionId": "b629f3ee-9be6-408a-a0ba-55c5727bb0f6",
+      "jobId": "c7125172-3cc9-4c9a-a1ad-1a72ed2dd34d",
+      "buyerAgentId": "manager",
+      "sellerAgentId": "research",
+      "amount": 1,
+      "asset": "tUSDM",
+      "network": "preprod",
+      "mode": "cardano",
+      "status": "confirmed",
+      "createdAt": "2026-10-07T04:38:07.556Z",
+      "sellerAddress": "addr_test1qr7w82wahq0x47flasht06jx9emz86xu8sm6jfu40h9pcmv4x9ygzkhklq822duqvjz8cz048gmffg7vq64mnh4dgursclnr8n",
+      "escrow": {
+        "state": "result_submitted",
+        "nonce": "74fdcd7e4ee413f60bf9",
+        "inputHash": "b568d3753fc40d44ccd92ab980fe180716b9813ac78d4086bb37a1b77a2394ce",
+        "agentIdentifier": "67ab0c92c4ac1610895a1c965ee50aba41a8f1513b15240723b3bd0b10ad472934c95c21b4ec33047c4d1dc8e12ba797efa79bac2153677bc5000000",
+        "contractAddress": "addr_test1wzs4e6wc95hkwezlccjw9mdvq0r0rsgx6zk34avptga3ftgn37w4g",
+        "quote": {
+          "id": "cmuxma4lz000t55ovb4bpygb6",
+          "blockchainIdentifier": "1985302c620cc04c0ec0066013801c0430230d801330ccba080ac9a6e94ba901b0c63ac02031a67309804623352a35c18b952604204aa08cc689419c07a4e2d90c660d58d51a99092ccd90c90e2122f4602aa0e64a274c25e8241366f55b27f20e450c3e92cc617242f1402181c1aae262e332a0836273a1c321c08302272027f9d94009c273309021171401d1c181e332e0a64382614300d02270a0964848d1108762218048c2840a60d302b0748124a008e4c04a72e1785789808d7ba3fb327090ab9956a16c8893001362c1c0d0800a68d0ad84c0c9c1423c494321168f43a322e2e2708a5e30bca07f0813829331d026742808150d1282f0e05f780e8e0d13d0d0162428260c0a843a3046a8313a1b170624dd24e10432180d8ca2741808e6020688a4e37c40e80f238b0347e7f0d8397e0906ec77e820ec30780212cd8ae671e6fca82bc78853e8c0b92a249d1e66048be8babe412fd3a1266be440685224810c2033ddf8966613170306e5bc74cd6623130da660c440f83528242662dbcd70e0643312ea10a221e82923239e2f77b141d6662f2859848e42611abc2e16160346d08058aa23947a295ccce2580d3621538253324b3b6701ab20212959c186a33b3f026b48323ce87305b794024158a1331b2d8ed307b039d98e011819c2eed9f8009c00fa0017100019c4f98003b800bdcf901a35f7c000b0035b5e40b7800d8060056d7b20002dae0001b8008e0801e5079e00398001e342de6fb78e8281000389eb0650c0161001d93cd7980b05000000",
+          "agentIdentifier": "67ab0c92c4ac1610895a1c965ee50aba41a8f1513b15240723b3bd0b10ad472934c95c21b4ec33047c4d1dc8e12ba797efa79bac2153677bc5000000",
+          "inputHash": "b568d3753fc40d44ccd92ab980fe180716b9813ac78d4086bb37a1b77a2394ce",
+          "payByTime": "1791349687557",
+          "submitResultTime": "1791355087557",
+          "unlockTime": "1791441487557",
+          "externalDisputeUnlockTime": "1791527887557",
+          "onChainState": null,
+          "resultHash": "",
+          "sellerReturnAddress": "addr_test1qr7w82wahq0x47flasht06jx9emz86xu8sm6jfu40h9pcmv4x9ygzkhklq822duqvjz8cz048gmffg7vq64mnh4dgursclnr8n",
+          "NextAction": {
+            "requestedAction": "WaitingForExternalAction",
+            "errorType": null
+          },
+          "PaymentSource": {
+            "network": "Preprod",
+            "smartContractAddress": "addr_test1wzs4e6wc95hkwezlccjw9mdvq0r0rsgx6zk34avptga3ftgn37w4g",
+            "paymentSourceType": "Web3CardanoV2"
+          },
+          "SmartContractWallet": {
+            "walletAddress": "addr_test1qr7w82wahq0x47flasht06jx9emz86xu8sm6jfu40h9pcmv4x9ygzkhklq822duqvjz8cz048gmffg7vq64mnh4dgursclnr8n",
+            "walletVkey": "fce3a9ddb81e6af93fec2eb7ea462e7623e8dc3c37a927957dca1c6d"
+          },
+          "RequestedFunds": [
+            {
+              "unit": "e675b46e4d2242c991a8932a99db3044e80515ae14b4c4ccf6b3f4c90014df10745553444d",
+              "amount": "1000000"
+            }
+          ],
+          "CurrentTransaction": null
+        },
+        "blockchainIdentifier": "1985302c620cc04c0ec0066013801c0430230d801330ccba080ac9a6e94ba901b0c63ac02031a67309804623352a35c18b952604204aa08cc689419c07a4e2d90c660d58d51a99092ccd90c90e2122f4602aa0e64a274c25e8241366f55b27f20e450c3e92cc617242f1402181c1aae262e332a0836273a1c321c08302272027f9d94009c273309021171401d1c181e332e0a64382614300d02270a0964848d1108762218048c2840a60d302b0748124a008e4c04a72e1785789808d7ba3fb327090ab9956a16c8893001362c1c0d0800a68d0ad84c0c9c1423c494321168f43a322e2e2708a5e30bca07f0813829331d026742808150d1282f0e05f780e8e0d13d0d0162428260c0a843a3046a8313a1b170624dd24e10432180d8ca2741808e6020688a4e37c40e80f238b0347e7f0d8397e0906ec77e820ec30780212cd8ae671e6fca82bc78853e8c0b92a249d1e66048be8babe412fd3a1266be440685224810c2033ddf8966613170306e5bc74cd6623130da660c440f83528242662dbcd70e0643312ea10a221e82923239e2f77b141d6662f2859848e42611abc2e16160346d08058aa23947a295ccce2580d3621538253324b3b6701ab20212959c186a33b3f026b48323ce87305b794024158a1331b2d8ed307b039d98e011819c2eed9f8009c00fa0017100019c4f98003b800bdcf901a35f7c000b0035b5e40b7800d8060056d7b20002dae0001b8008e0801e5079e00398001e342de6fb78e8281000389eb0650c0161001d93cd7980b05000000",
+        "resultHash": "497508340b791dfe90efd38f4db50749eba92727542a3055862431e86e86ebad"
+      },
+      "txHash": "f61ad243475ba30e67dabda358737f504f5066ca4959793229cdd6ae5c86b9c0",
+      "explorerUrl": "https://preprod.cardanoscan.io/transaction/f61ad243475ba30e67dabda358737f504f5066ca4959793229cdd6ae5c86b9c0",
+      "buyerAddress": "addr_test1qpar2sptyq53967wma4rwk892w36cva72au3w9wxzfsw9gshquv8dvp4a00v9z3p53xm2ly662edld25jejm6dl6l8ss5qt5v7"
+    },
+    {
+      "id": "a246578c-1cf3-4807-9650-31258695b21a",
+      "missionId": "b629f3ee-9be6-408a-a0ba-55c5727bb0f6",
+      "jobId": "2af0a33d-6c94-47c4-ab38-37f7332b0cf3",
+      "buyerAgentId": "research",
+      "sellerAgentId": "data",
+      "amount": 0.2,
+      "asset": "tUSDM",
+      "network": "preprod",
+      "mode": "cardano",
+      "status": "confirmed",
+      "createdAt": "2026-10-07T04:41:29.676Z",
+      "sellerAddress": "addr_test1qzrzmx3krjr84rqlqfafrajphdmq8h2egp55yeuww9n5sghc8fqmvda8hxxa43vvtlm3jhlfg2f9jcxvhrxhgn2ydfpsx35lqz",
+      "escrow": {
+        "state": "refunded",
+        "nonce": "acac805e5bbc26d198a1",
+        "inputHash": "be339da6ca0d545acacc7c03b6f0119b60ca078b7f8e3f4ae49598afc8709ac6",
+        "agentIdentifier": "67ab0c92c4ac1610895a1c965ee50aba41a8f1513b15240723b3bd0b11ad472934c95c21b4ec33047c4d1dc8e12ba797efa79bac2153677bc5000000",
+        "contractAddress": "addr_test1wzs4e6wc95hkwezlccjw9mdvq0r0rsgx6zk34avptga3ftgn37w4g",
+        "quote": {
+          "id": "cmuxmegi2001955ovur3gh3uq",
+          "blockchainIdentifier": "2b0630cc01c0260a604c076011813806c1041180660062c428c04529d5cf3989c660d289010d818f08d10708b243957841c5011108707303c68113247840a382000b131058d16762981342e959d3c7298aac4c8566058c126b7055e0470edda879ec5a82a5ca302a8aa070bc2a30e06078beaa5058502010305870cca40830384ca4cc2021c06032c8205278a5a50074eaea1078acc04848b90c582810fae5102ac0fc4c91c90851dd7051329a381add6830a438e8080570dd48e401b4c02a68b360eaca48c04ae6627b3cc0382a21ae8853325a681bbe7068c0f3f3dd6028a5e330db648c3c30682616d68b918121d266341c1a650b00c1a0e0702c894a467bc5f420062e8c058150404e40cd8d4602c120d4ee9d511e050926d814506a3008040d2392a1604c1f00d649a34060b4f37e7d054672188ca0682656406f0841a050484cba1f99d052b8b03533bd3e2ec10290e08f1c5606049709eb18b94713d55242caf502d0a81305106aa33848df7604050fa488c03e12383a139703906a35920d7a0d4a87a0495a902106d6a786db518a4c0c130601b1437c7d666e878b01a9cfa4d8eb0062403297f34344f8262549cda6d18110c3691e5c4236c26c261c698d2e60b258ac45740d96c76203d81d08500831dac670bbb6e5304a940a00027003e8005c60006703d6000ee002f63d84d0e7a08002c00d6e79825e0036cc8015b9e50005b28000370011cf01dcc0e3c00730003cd04bc9f00898402000703d20de870342003b121cf15120a000",
+          "agentIdentifier": "67ab0c92c4ac1610895a1c965ee50aba41a8f1513b15240723b3bd0b11ad472934c95c21b4ec33047c4d1dc8e12ba797efa79bac2153677bc5000000",
+          "inputHash": "be339da6ca0d545acacc7c03b6f0119b60ca078b7f8e3f4ae49598afc8709ac6",
+          "payByTime": "1791349889677",
+          "submitResultTime": "1791355289677",
+          "unlockTime": "1791441689677",
+          "externalDisputeUnlockTime": "1791528089677",
+          "onChainState": null,
+          "resultHash": "",
+          "sellerReturnAddress": "addr_test1qzrzmx3krjr84rqlqfafrajphdmq8h2egp55yeuww9n5sghc8fqmvda8hxxa43vvtlm3jhlfg2f9jcxvhrxhgn2ydfpsx35lqz",
+          "NextAction": {
+            "requestedAction": "WaitingForExternalAction",
+            "errorType": null
+          },
+          "PaymentSource": {
+            "network": "Preprod",
+            "smartContractAddress": "addr_test1wzs4e6wc95hkwezlccjw9mdvq0r0rsgx6zk34avptga3ftgn37w4g",
+            "paymentSourceType": "Web3CardanoV2"
+          },
+          "SmartContractWallet": {
+            "walletAddress": "addr_test1qr7w82wahq0x47flasht06jx9emz86xu8sm6jfu40h9pcmv4x9ygzkhklq822duqvjz8cz048gmffg7vq64mnh4dgursclnr8n",
+            "walletVkey": "fce3a9ddb81e6af93fec2eb7ea462e7623e8dc3c37a927957dca1c6d"
+          },
+          "RequestedFunds": [
+            {
+              "unit": "e675b46e4d2242c991a8932a99db3044e80515ae14b4c4ccf6b3f4c90014df10745553444d",
+              "amount": "200000"
+            }
+          ],
+          "CurrentTransaction": null
+        },
+        "blockchainIdentifier": "2b0630cc01c0260a604c076011813806c1041180660062c428c04529d5cf3989c660d289010d818f08d10708b243957841c5011108707303c68113247840a382000b131058d16762981342e959d3c7298aac4c8566058c126b7055e0470edda879ec5a82a5ca302a8aa070bc2a30e06078beaa5058502010305870cca40830384ca4cc2021c06032c8205278a5a50074eaea1078acc04848b90c582810fae5102ac0fc4c91c90851dd7051329a381add6830a438e8080570dd48e401b4c02a68b360eaca48c04ae6627b3cc0382a21ae8853325a681bbe7068c0f3f3dd6028a5e330db648c3c30682616d68b918121d266341c1a650b00c1a0e0702c894a467bc5f420062e8c058150404e40cd8d4602c120d4ee9d511e050926d814506a3008040d2392a1604c1f00d649a34060b4f37e7d054672188ca0682656406f0841a050484cba1f99d052b8b03533bd3e2ec10290e08f1c5606049709eb18b94713d55242caf502d0a81305106aa33848df7604050fa488c03e12383a139703906a35920d7a0d4a87a0495a902106d6a786db518a4c0c130601b1437c7d666e878b01a9cfa4d8eb0062403297f34344f8262549cda6d18110c3691e5c4236c26c261c698d2e60b258ac45740d96c76203d81d08500831dac670bbb6e5304a940a00027003e8005c60006703d6000ee002f63d84d0e7a08002c00d6e79825e0036cc8015b9e50005b28000370011cf01dcc0e3c00730003cd04bc9f00898402000703d20de870342003b121cf15120a000",
+        "resultHash": "e303e8a819822542a40da1a28363e8096843be4b9ecd861e7e0765f88cc7dbc0",
+        "refundAuthorizationRequested": true,
+        "refundCredited": true,
+        "refundTxHash": "cbfdd67cc238176a9148072a96914b3d24ba7691ec5bb70fc61f1ba3bb1ad133"
+      },
+      "txHash": "36ee62a128d6b95e5ea9df751d84cc5cc429d95a23c4fe29212aa4f298b4c709",
+      "explorerUrl": "https://preprod.cardanoscan.io/transaction/36ee62a128d6b95e5ea9df751d84cc5cc429d95a23c4fe29212aa4f298b4c709",
+      "buyerAddress": "addr_test1qr7w82wahq0x47flasht06jx9emz86xu8sm6jfu40h9pcmv4x9ygzkhklq822duqvjz8cz048gmffg7vq64mnh4dgursclnr8n"
+    },
+    {
+      "id": "aa2ac196-721c-4000-85ab-b046c74de23e",
+      "missionId": "b629f3ee-9be6-408a-a0ba-55c5727bb0f6",
+      "jobId": "bddd42d6-d7ca-4318-adef-730bf22a2917",
+      "buyerAgentId": "manager",
+      "sellerAgentId": "report",
+      "amount": 0.5,
+      "asset": "tUSDM",
+      "network": "preprod",
+      "mode": "cardano",
+      "status": "confirmed",
+      "createdAt": "2026-10-07T04:44:45.533Z",
+      "sellerAddress": "addr_test1qp7u7t2xrpe00zskcysw5c45y536aryyqx5cglwmhvgpa2y64h7k4yeksrcp0vvkkv2uhp3tzzfvs2pcnvxsv2ssydrs5z9fqf",
+      "escrow": {
+        "state": "result_submitted",
+        "nonce": "0b223479ba67d3b421e8",
+        "inputHash": "3818a1020b2575a7694f386f8ca3cb29292dc1bacb4ef4b1d173b7a674e2260d",
+        "agentIdentifier": "67ab0c92c4ac1610895a1c965ee50aba41a8f1513b15240723b3bd0b12ad472934c95c21b4ec33047c4d1dc8e12ba797efa79bac2153677bc5000000",
+        "contractAddress": "addr_test1wzs4e6wc95hkwezlccjw9mdvq0r0rsgx6zk34avptga3ftgn37w4g",
+        "quote": {
+          "id": "cmuxminrf001l55ovqrb4e77i",
+          "blockchainIdentifier": "0983306c202c09c04c0869011819964d9a90561740ec0033c029a102339d24f89600c6fa4f304a2e401cc87c2cb13743a71a7580a4829c3e78490bd38f59bd7261ca10ed1b3c72f2c361225b313691cbc0e21cb67228915d8910be4ca893042761301ab1a38f9d8f4b0e4489024f4282884348ac0e4c0f41c24e4e8f0f804242069d06c41562860f8f848f44684e5e500741e7ce2e96c8562a1c1241c955cd81c60d0f0512944909db0d1852a20ca9d6024e920d08505b09d6e7e90208690107ef041f43870a6f4c01c3842d850c198fc5385aa601b3e7af8284f9d78e5e32428f0d0c0ac4274f059a49c2b012121688830283f050942b4122808b48e0e96c3e012da7a181809a14391201c53a02201c42091e0b87c292ee5c7c3d108d0102e17add66223e960191207ee4ef111a42a30180bae427b0af4772810c2ac84e7a89c200e0b1a4286016908c04cbc1a2704e349a4f4120d0e439434e96042fc133d28caf930ca9d47185202ee147160a02a61460f00727071e49931c85f06db40381152144b8ee58381a03d2e0380960b6081507045871b0c02b62a8a67465e9419a6c01360f47a3a79204710f1cad42d07cb02069121dbf81b06b2a880a1f6d0ce72942acee91a7620132eb4d19733156796e235997365f1d9ecfd8763a74ace71480ea63ddf8009c00fa0017120019ccfe4003b800bd2f61302de02000b0035ade48f7800da56002b5bda00016d80000dc00474208f1832f001cc000f301ef0fdc4781c08001ccf7837a10070800ed9e5bd20782800000",
+          "agentIdentifier": "67ab0c92c4ac1610895a1c965ee50aba41a8f1513b15240723b3bd0b12ad472934c95c21b4ec33047c4d1dc8e12ba797efa79bac2153677bc5000000",
+          "inputHash": "3818a1020b2575a7694f386f8ca3cb29292dc1bacb4ef4b1d173b7a674e2260d",
+          "payByTime": "1791350085537",
+          "submitResultTime": "1791355485537",
+          "unlockTime": "1791441885537",
+          "externalDisputeUnlockTime": "1791528285537",
+          "onChainState": null,
+          "resultHash": "",
+          "sellerReturnAddress": "addr_test1qp7u7t2xrpe00zskcysw5c45y536aryyqx5cglwmhvgpa2y64h7k4yeksrcp0vvkkv2uhp3tzzfvs2pcnvxsv2ssydrs5z9fqf",
+          "NextAction": {
+            "requestedAction": "WaitingForExternalAction",
+            "errorType": null
+          },
+          "PaymentSource": {
+            "network": "Preprod",
+            "smartContractAddress": "addr_test1wzs4e6wc95hkwezlccjw9mdvq0r0rsgx6zk34avptga3ftgn37w4g",
+            "paymentSourceType": "Web3CardanoV2"
+          },
+          "SmartContractWallet": {
+            "walletAddress": "addr_test1qr7w82wahq0x47flasht06jx9emz86xu8sm6jfu40h9pcmv4x9ygzkhklq822duqvjz8cz048gmffg7vq64mnh4dgursclnr8n",
+            "walletVkey": "fce3a9ddb81e6af93fec2eb7ea462e7623e8dc3c37a927957dca1c6d"
+          },
+          "RequestedFunds": [
+            {
+              "unit": "e675b46e4d2242c991a8932a99db3044e80515ae14b4c4ccf6b3f4c90014df10745553444d",
+              "amount": "500000"
+            }
+          ],
+          "CurrentTransaction": null
+        },
+        "blockchainIdentifier": "0983306c202c09c04c0869011819964d9a90561740ec0033c029a102339d24f89600c6fa4f304a2e401cc87c2cb13743a71a7580a4829c3e78490bd38f59bd7261ca10ed1b3c72f2c361225b313691cbc0e21cb67228915d8910be4ca893042761301ab1a38f9d8f4b0e4489024f4282884348ac0e4c0f41c24e4e8f0f804242069d06c41562860f8f848f44684e5e500741e7ce2e96c8562a1c1241c955cd81c60d0f0512944909db0d1852a20ca9d6024e920d08505b09d6e7e90208690107ef041f43870a6f4c01c3842d850c198fc5385aa601b3e7af8284f9d78e5e32428f0d0c0ac4274f059a49c2b012121688830283f050942b4122808b48e0e96c3e012da7a181809a14391201c53a02201c42091e0b87c292ee5c7c3d108d0102e17add66223e960191207ee4ef111a42a30180bae427b0af4772810c2ac84e7a89c200e0b1a4286016908c04cbc1a2704e349a4f4120d0e439434e96042fc133d28caf930ca9d47185202ee147160a02a61460f00727071e49931c85f06db40381152144b8ee58381a03d2e0380960b6081507045871b0c02b62a8a67465e9419a6c01360f47a3a79204710f1cad42d07cb02069121dbf81b06b2a880a1f6d0ce72942acee91a7620132eb4d19733156796e235997365f1d9ecfd8763a74ace71480ea63ddf8009c00fa0017120019ccfe4003b800bd2f61302de02000b0035ade48f7800da56002b5bda00016d80000dc00474208f1832f001cc000f301ef0fdc4781c08001ccf7837a10070800ed9e5bd20782800000",
+        "resultHash": "b430e6fe9b4f91757221b24a5fb5220ca399d374203d1983c1ff95bda3fa78c6"
+      },
+      "txHash": "11a4d118267250148e8b188aa96b14001ffe180bc12b2d9019fac0d1eab7e5c3",
+      "explorerUrl": "https://preprod.cardanoscan.io/transaction/11a4d118267250148e8b188aa96b14001ffe180bc12b2d9019fac0d1eab7e5c3",
+      "buyerAddress": "addr_test1qpar2sptyq53967wma4rwk892w36cva72au3w9wxzfsw9gshquv8dvp4a00v9z3p53xm2ly662edld25jejm6dl6l8ss5qt5v7"
+    }
+  ],
+  "events": [
+    {
+      "id": "d8df611e-a9a1-46b0-bbe2-c41745d65286",
+      "type": "mission_planning",
+      "message": "Mission planning",
+      "createdAt": "2026-10-07T04:38:04.225Z"
+    },
+    {
+      "id": "89d1bc10-2830-4aae-86a9-59fc37832440",
+      "type": "plan_created",
+      "message": "Compare Kuala Lumpur, Bangkok, and Da Nang for a remote software developer for one month, covering cost of living, internet quality, safety, and coworking, followed by a final recommendation.",
+      "createdAt": "2026-10-07T04:38:07.393Z"
+    },
+    {
+      "id": "8f619ba6-9e6a-4f33-bc16-d4c663039292",
+      "type": "mission_discovering",
+      "message": "Mission discovering",
+      "createdAt": "2026-10-07T04:38:07.395Z"
+    },
+    {
+      "id": "4f2d35c7-20bc-4582-bddc-7a108e76f288",
+      "type": "capability_required",
+      "message": "Manager needs web_research",
+      "createdAt": "2026-10-07T04:38:07.395Z"
+    },
+    {
+      "id": "46ea04c9-77f8-467e-abcb-98aae7b5e308",
+      "type": "agent_discovered",
+      "message": "2 web_research providers discovered (masumi)",
+      "createdAt": "2026-10-07T04:38:07.512Z"
+    },
+    {
+      "id": "29b0ae24-9023-4549-8696-c32123f5be90",
+      "type": "mission_selecting",
+      "message": "Mission selecting",
+      "createdAt": "2026-10-07T04:38:07.512Z"
+    },
+    {
+      "id": "1d018f80-c564-48c5-8f68-dc1c19d8949b",
+      "type": "agent_evaluated",
+      "message": "ResearchPro: Capability match · reputation 95/100 · 1 tUSDM · score 88.2",
+      "createdAt": "2026-10-07T04:38:07.513Z"
+    },
+    {
+      "id": "2da0ba53-6492-4e61-97be-75b2c00975a1",
+      "type": "agent_evaluated",
+      "message": "Scout Research: Capability match · reputation 88/100 · 0.85 tUSDM · score 86.2",
+      "createdAt": "2026-10-07T04:38:07.513Z"
+    },
+    {
+      "id": "710649a3-9b5d-4398-8e4a-db0fe757ac84",
+      "type": "agent_selected",
+      "message": "ResearchPro selected: Capability match · reputation 95/100 · 1 tUSDM · score 88.2",
+      "jobId": "c7125172-3cc9-4c9a-a1ad-1a72ed2dd34d",
+      "createdAt": "2026-10-07T04:38:07.513Z"
+    },
+    {
+      "id": "84988b9b-7c50-4af8-a781-3a5f82b58204",
+      "type": "mission_purchasing",
+      "message": "Mission purchasing",
+      "createdAt": "2026-10-07T04:38:07.514Z"
+    },
+    {
+      "id": "0213c438-5c4c-47ca-93c1-60bbf01e66ea",
+      "type": "escrow_requested",
+      "message": "Native Masumi purchase requested; waiting for confirmed funds lock",
+      "jobId": "c7125172-3cc9-4c9a-a1ad-1a72ed2dd34d",
+      "createdAt": "2026-10-07T04:38:08.570Z"
+    },
+    {
+      "id": "e894d558-0231-4238-ac17-7301b0e52124",
+      "type": "escrow_locked",
+      "message": "REAL ESCROW LOCK · 1 tUSDM · manager → research",
+      "jobId": "c7125172-3cc9-4c9a-a1ad-1a72ed2dd34d",
+      "createdAt": "2026-10-07T04:41:10.693Z"
+    },
+    {
+      "id": "d6b7d19f-7217-43d4-8887-447dd325839d",
+      "type": "job_paid",
+      "message": "ResearchPro payment verified",
+      "jobId": "c7125172-3cc9-4c9a-a1ad-1a72ed2dd34d",
+      "createdAt": "2026-10-07T04:41:11.721Z"
+    },
+    {
+      "id": "bcc6fbc8-64b3-4e93-949b-a35025346b5b",
+      "type": "mission_executing",
+      "message": "Mission executing",
+      "createdAt": "2026-10-07T04:41:11.721Z"
+    },
+    {
+      "id": "e7cd858e-32cf-42bb-b8d4-1b86b81a366e",
+      "type": "agent_started",
+      "message": "ResearchPro is executing",
+      "jobId": "c7125172-3cc9-4c9a-a1ad-1a72ed2dd34d",
+      "createdAt": "2026-10-07T04:41:11.722Z"
+    },
+    {
+      "id": "dec19f26-bad6-4db5-8806-78594543efe1",
+      "type": "web_research_completed",
+      "message": "Gemini returned 3 grounded sources",
+      "jobId": "c7125172-3cc9-4c9a-a1ad-1a72ed2dd34d",
+      "createdAt": "2026-10-07T04:41:26.662Z"
+    },
+    {
+      "id": "d91e8ebf-fd41-411b-b434-dfac651b7141",
+      "type": "sub_agent_discovered",
+      "message": "Research provider discovers structured_city_data",
+      "jobId": "c7125172-3cc9-4c9a-a1ad-1a72ed2dd34d",
+      "createdAt": "2026-10-07T04:41:28.002Z"
+    },
+    {
+      "id": "4cc8160a-2579-4c0f-aa2f-5db34d853c26",
+      "type": "capability_required",
+      "message": "research needs structured_city_data",
+      "createdAt": "2026-10-07T04:41:29.501Z"
+    },
+    {
+      "id": "d06e35a9-f248-489f-8407-7caeec2c1aab",
+      "type": "agent_discovered",
+      "message": "1 structured_city_data providers discovered (masumi)",
+      "createdAt": "2026-10-07T04:41:29.617Z"
+    },
+    {
+      "id": "c4050c5a-7069-4ae1-bb40-f35f16112231",
+      "type": "agent_evaluated",
+      "message": "DataHub: Capability match · reputation 92/100 · 0.2 tUSDM · score 94.2",
+      "createdAt": "2026-10-07T04:41:29.618Z"
+    },
+    {
+      "id": "a00986ae-adf8-4283-86a2-20c3b892b889",
+      "type": "agent_selected",
+      "message": "DataHub selected: Capability match · reputation 92/100 · 0.2 tUSDM · score 94.2",
+      "jobId": "2af0a33d-6c94-47c4-ab38-37f7332b0cf3",
+      "createdAt": "2026-10-07T04:41:29.618Z"
+    },
+    {
+      "id": "2dfc822c-567a-4d2b-ba87-40ac5ace942e",
+      "type": "sub_agent_hired",
+      "message": "research commissions DataHub",
+      "jobId": "2af0a33d-6c94-47c4-ab38-37f7332b0cf3",
+      "createdAt": "2026-10-07T04:41:29.618Z"
+    },
+    {
+      "id": "a386f7ce-9811-4c76-8687-3863adf5174e",
+      "type": "escrow_requested",
+      "message": "Native Masumi purchase requested; waiting for confirmed funds lock",
+      "jobId": "2af0a33d-6c94-47c4-ab38-37f7332b0cf3",
+      "createdAt": "2026-10-07T04:41:30.641Z"
+    },
+    {
+      "id": "d83d5b2d-3a01-4a72-91e0-c0933a60913a",
+      "type": "escrow_locked",
+      "message": "REAL ESCROW LOCK · 0.2 tUSDM · research → data",
+      "jobId": "2af0a33d-6c94-47c4-ab38-37f7332b0cf3",
+      "createdAt": "2026-10-07T04:44:32.640Z"
+    },
+    {
+      "id": "327df24d-3fb0-46b8-8cf8-c0a4222d8c34",
+      "type": "job_paid",
+      "message": "DataHub payment verified",
+      "jobId": "2af0a33d-6c94-47c4-ab38-37f7332b0cf3",
+      "createdAt": "2026-10-07T04:44:32.657Z"
+    },
+    {
+      "id": "49a999eb-c2ed-4c20-a2f2-31eda8ee7b3d",
+      "type": "agent_started",
+      "message": "DataHub is executing",
+      "jobId": "2af0a33d-6c94-47c4-ab38-37f7332b0cf3",
+      "createdAt": "2026-10-07T04:44:32.657Z"
+    },
+    {
+      "id": "ac8b66f1-d6df-4acd-9609-531c52bf7c43",
+      "type": "result_received",
+      "message": "DataHub returned a deliverable",
+      "jobId": "2af0a33d-6c94-47c4-ab38-37f7332b0cf3",
+      "createdAt": "2026-10-07T04:44:32.660Z"
+    },
+    {
+      "id": "a286c53e-eadd-42fd-ae20-64b554118660",
+      "type": "escrow_result_requested",
+      "message": "Verified deliverable hash queued for on-chain submission; release awaits the dispute window",
+      "jobId": "2af0a33d-6c94-47c4-ab38-37f7332b0cf3",
+      "createdAt": "2026-10-07T04:44:32.698Z"
+    },
+    {
+      "id": "d66b2d08-e79c-4ed9-8f93-c10598a8ca0d",
+      "type": "verification_passed",
+      "message": "DataHub: required fields and content thresholds passed",
+      "jobId": "2af0a33d-6c94-47c4-ab38-37f7332b0cf3",
+      "createdAt": "2026-10-07T04:44:32.698Z"
+    },
+    {
+      "id": "2d1090ee-c4d5-41b5-8e7a-d0712aaa9e10",
+      "type": "mission_verifying",
+      "message": "Mission verifying",
+      "createdAt": "2026-10-07T04:44:43.804Z"
+    },
+    {
+      "id": "5a1c1faf-6a35-4cb1-acc6-690bba73047d",
+      "type": "result_received",
+      "message": "ResearchPro returned a deliverable",
+      "jobId": "c7125172-3cc9-4c9a-a1ad-1a72ed2dd34d",
+      "createdAt": "2026-10-07T04:44:43.806Z"
+    },
+    {
+      "id": "6dd4146f-7805-49e8-aa59-4fa892ab74ec",
+      "type": "escrow_result_requested",
+      "message": "Verified deliverable hash queued for on-chain submission; release awaits the dispute window",
+      "jobId": "c7125172-3cc9-4c9a-a1ad-1a72ed2dd34d",
+      "createdAt": "2026-10-07T04:44:45.377Z"
+    },
+    {
+      "id": "fab9906e-fd35-4354-bc5d-73b8294117c6",
+      "type": "verification_passed",
+      "message": "ResearchPro: required fields and content thresholds passed",
+      "jobId": "c7125172-3cc9-4c9a-a1ad-1a72ed2dd34d",
+      "createdAt": "2026-10-07T04:44:45.377Z"
+    },
+    {
+      "id": "f1fa4432-27a8-4dcf-b77f-60d73701e807",
+      "type": "mission_discovering",
+      "message": "Mission discovering",
+      "createdAt": "2026-10-07T04:44:45.378Z"
+    },
+    {
+      "id": "cd09bfb5-7f0a-44e6-9496-59ca3fe68ffb",
+      "type": "capability_required",
+      "message": "Manager needs report_generation",
+      "createdAt": "2026-10-07T04:44:45.378Z"
+    },
+    {
+      "id": "171db2fe-1e4b-490d-b3e8-1957204788f9",
+      "type": "agent_discovered",
+      "message": "1 report_generation providers discovered (masumi)",
+      "createdAt": "2026-10-07T04:44:45.475Z"
+    },
+    {
+      "id": "4b4e80e2-a376-4818-a5c8-b62c2fd680a4",
+      "type": "mission_selecting",
+      "message": "Mission selecting",
+      "createdAt": "2026-10-07T04:44:45.476Z"
+    },
+    {
+      "id": "d1daca8f-32e3-4824-93c3-284f05a0435d",
+      "type": "agent_evaluated",
+      "message": "Synthesis: Capability match · reputation 97/100 · 0.5 tUSDM · score 92.2",
+      "createdAt": "2026-10-07T04:44:45.476Z"
+    },
+    {
+      "id": "2e4585dd-2f20-4935-ab20-67d0f789894f",
+      "type": "agent_selected",
+      "message": "Synthesis selected: Capability match · reputation 97/100 · 0.5 tUSDM · score 92.2",
+      "jobId": "bddd42d6-d7ca-4318-adef-730bf22a2917",
+      "createdAt": "2026-10-07T04:44:45.477Z"
+    },
+    {
+      "id": "ed841ea2-c34a-4c03-82a1-b40b36fff309",
+      "type": "mission_purchasing",
+      "message": "Mission purchasing",
+      "createdAt": "2026-10-07T04:44:45.477Z"
+    },
+    {
+      "id": "edd0f5cb-80af-4bfd-8520-370ffa96b2f5",
+      "type": "escrow_requested",
+      "message": "Native Masumi purchase requested; waiting for confirmed funds lock",
+      "jobId": "bddd42d6-d7ca-4318-adef-730bf22a2917",
+      "createdAt": "2026-10-07T04:44:46.621Z"
+    },
+    {
+      "id": "576538fb-c237-478b-b59e-772cb258fac8",
+      "type": "escrow_locked",
+      "message": "REAL ESCROW LOCK · 0.5 tUSDM · manager → report",
+      "jobId": "bddd42d6-d7ca-4318-adef-730bf22a2917",
+      "createdAt": "2026-10-07T04:48:03.640Z"
+    },
+    {
+      "id": "39840dbe-36f2-42ed-ab64-687840f76e3a",
+      "type": "job_paid",
+      "message": "Synthesis payment verified",
+      "jobId": "bddd42d6-d7ca-4318-adef-730bf22a2917",
+      "createdAt": "2026-10-07T04:48:03.664Z"
+    },
+    {
+      "id": "937aee50-516b-4779-b4be-6260ea3157b8",
+      "type": "mission_executing",
+      "message": "Mission executing",
+      "createdAt": "2026-10-07T04:48:03.665Z"
+    },
+    {
+      "id": "4223c521-3e18-4c0a-814c-e8bb92fb27d0",
+      "type": "agent_started",
+      "message": "Synthesis is executing",
+      "jobId": "bddd42d6-d7ca-4318-adef-730bf22a2917",
+      "createdAt": "2026-10-07T04:48:03.666Z"
+    },
+    {
+      "id": "6eb10ea9-42d1-454a-a536-bd78e4eb4f65",
+      "type": "mission_verifying",
+      "message": "Mission verifying",
+      "createdAt": "2026-10-07T04:48:11.148Z"
+    },
+    {
+      "id": "a133ba94-38d1-4008-bf90-dcd18c0ab97d",
+      "type": "result_received",
+      "message": "Synthesis returned a deliverable",
+      "jobId": "bddd42d6-d7ca-4318-adef-730bf22a2917",
+      "createdAt": "2026-10-07T04:48:11.150Z"
+    },
+    {
+      "id": "aaaad19d-ee6c-4e76-a966-f5f8e6c54585",
+      "type": "escrow_result_requested",
+      "message": "Verified deliverable hash queued for on-chain submission; release awaits the dispute window",
+      "jobId": "bddd42d6-d7ca-4318-adef-730bf22a2917",
+      "createdAt": "2026-10-07T04:48:13.042Z"
+    },
+    {
+      "id": "9b78b744-9330-493b-9818-91be50bf0e8a",
+      "type": "verification_passed",
+      "message": "Synthesis: required fields and content thresholds passed",
+      "jobId": "bddd42d6-d7ca-4318-adef-730bf22a2917",
+      "createdAt": "2026-10-07T04:48:13.044Z"
+    },
+    {
+      "id": "a8edc481-e22a-4864-9099-9aee21219cc4",
+      "type": "mission_synthesizing",
+      "message": "Mission synthesizing",
+      "createdAt": "2026-10-07T04:48:13.044Z"
+    },
+    {
+      "id": "d5072bd5-aced-4eae-8eeb-eb02301865e5",
+      "type": "mission_completed",
+      "message": "Mission completed",
+      "createdAt": "2026-10-07T04:48:13.045Z"
+    },
+    {
+      "id": "cb7c2c35-ded1-424f-acee-11c7807c00eb",
+      "type": "escrow_reconciled",
+      "message": "Masumi on-chain state: ResultSubmitted · escrow result_submitted",
+      "jobId": "c7125172-3cc9-4c9a-a1ad-1a72ed2dd34d",
+      "createdAt": "2026-10-07T04:48:36.155Z"
+    },
+    {
+      "id": "6a1f3a39-f805-41ae-8556-cc9d3e1f15e6",
+      "type": "escrow_reconciled",
+      "message": "Masumi on-chain state: ResultSubmitted · escrow result_submitted",
+      "jobId": "2af0a33d-6c94-47c4-ab38-37f7332b0cf3",
+      "createdAt": "2026-10-07T04:48:36.187Z"
+    },
+    {
+      "id": "01dd18fa-3f97-4b28-870d-394644392731",
+      "type": "escrow_reconciled",
+      "message": "Masumi on-chain state: FundsLocked · escrow result_submission_pending",
+      "jobId": "bddd42d6-d7ca-4318-adef-730bf22a2917",
+      "createdAt": "2026-10-07T04:48:36.210Z"
+    },
+    {
+      "id": "12c88690-8ea6-4787-bb46-8057278931b1",
+      "type": "escrow_refund_authorized",
+      "message": "Local seller authorization queued after confirmed refund request; return still awaits confirmation",
+      "jobId": "2af0a33d-6c94-47c4-ab38-37f7332b0cf3",
+      "createdAt": "2026-10-07T04:51:12.704Z"
+    },
+    {
+      "id": "9df8b428-ca22-43f5-b943-95c92a069b87",
+      "type": "escrow_reconciled",
+      "message": "Masumi on-chain state: ResultSubmitted · escrow result_submitted",
+      "jobId": "c7125172-3cc9-4c9a-a1ad-1a72ed2dd34d",
+      "createdAt": "2026-10-07T04:52:27.463Z"
+    },
+    {
+      "id": "5caa7615-498d-4cda-93cc-425e9f8b5b89",
+      "type": "escrow_reconciled",
+      "message": "Masumi on-chain state: Disputed · escrow refund_pending",
+      "jobId": "2af0a33d-6c94-47c4-ab38-37f7332b0cf3",
+      "createdAt": "2026-10-07T04:52:27.487Z"
+    },
+    {
+      "id": "3663b0c8-5fd6-4558-bb8f-0769489ff243",
+      "type": "escrow_reconciled",
+      "message": "Masumi on-chain state: ResultSubmitted · escrow result_submitted",
+      "jobId": "bddd42d6-d7ca-4318-adef-730bf22a2917",
+      "createdAt": "2026-10-07T04:52:27.509Z"
+    },
+    {
+      "id": "b143c549-3f7b-40b0-8063-d0c2d4e0b5d3",
+      "type": "escrow_reconciled",
+      "message": "Masumi on-chain state: ResultSubmitted · escrow result_submitted",
+      "jobId": "c7125172-3cc9-4c9a-a1ad-1a72ed2dd34d",
+      "createdAt": "2026-10-07T05:06:39.822Z"
+    },
+    {
+      "id": "41574956-0f3e-406a-a6cf-2cd6fd8dbddd",
+      "type": "escrow_reconciled",
+      "message": "Masumi on-chain state: RefundAuthorized · escrow refund_pending",
+      "jobId": "2af0a33d-6c94-47c4-ab38-37f7332b0cf3",
+      "createdAt": "2026-10-07T05:06:39.847Z"
+    },
+    {
+      "id": "e1d6beb0-e114-45b8-8cff-6793eb47c400",
+      "type": "escrow_reconciled",
+      "message": "Masumi on-chain state: ResultSubmitted · escrow result_submitted",
+      "jobId": "bddd42d6-d7ca-4318-adef-730bf22a2917",
+      "createdAt": "2026-10-07T05:06:39.869Z"
+    },
+    {
+      "id": "303d1bb3-6490-4ff0-b2b8-8fbcd79b4f37",
+      "type": "escrow_reconciled",
+      "message": "Masumi on-chain state: RefundWithdrawn · escrow refunded",
+      "jobId": "2af0a33d-6c94-47c4-ab38-37f7332b0cf3",
+      "createdAt": "2026-10-07T05:08:02.006Z"
+    },
+    {
+      "id": "ad7d22e8-989c-4b1c-aed8-f5ada3defe98",
+      "type": "escrow_reconciled",
+      "message": "Masumi on-chain state: RefundWithdrawn · escrow refunded",
+      "jobId": "2af0a33d-6c94-47c4-ab38-37f7332b0cf3",
+      "createdAt": "2026-10-07T05:08:03.112Z"
+    }
+  ],
+  "createdAt": "2026-10-07T04:38:03.163Z",
+  "failNextProvider": false,
+  "paymentMode": "cardano",
+  "aiMode": "gemini",
+  "plan": {
+    "summary": "Compare Kuala Lumpur, Bangkok, and Da Nang for a remote software developer for one month, covering cost of living, internet quality, safety, and coworking, followed by a final recommendation.",
+    "tasks": [
+      {
+        "id": "research_cities",
+        "capability": "web_research",
+        "objective": "Research and compare Kuala Lumpur, Bangkok, and Da Nang for a remote software developer, focusing on cost of living, internet quality, safety, and coworking spaces. Include information from a purchased structured_city_data specialist for an illustrative comparison, clearly distinguishing this dataset from web evidence.",
+        "dependsOn": []
+      },
+      {
+        "id": "generate_report",
+        "capability": "report_generation",
+        "objective": "Generate a comprehensive report comparing Kuala Lumpur, Bangkok, and Da Nang for a remote software developer based on the research findings, including a final recommendation. Clearly distinguish between web-grounded evidence and the illustrative structured_city_data.",
+        "dependsOn": [
+          "research_cities"
+        ]
+      }
+    ]
+  },
+  "result": {
+    "title": "Remote Software Developer City Comparison: Kuala Lumpur, Bangkok, and Da Nang",
+    "recommendation": "Kuala Lumpur is the recommended city for a remote software developer. It offers a compelling balance of a manageable cost of living (estimated between $760-$1700/month, web-grounded), excellent and reliable internet infrastructure (averaging 170 Mbps fixed, web-grounded), and a robust, diverse coworking scene. While it has some petty crime, its overall safety is comparable to Bangkok, and its coworking options are more developed than Da Nang, making it a well-rounded choice for productivity and lifestyle.",
+    "comparison": [
+      {
+        "option": "Kuala Lumpur",
+        "assessment": "Kuala Lumpur presents a strong profile with a manageable cost of living for digital nomads, ranging from approximately $760 to $1,700 per month depending on lifestyle (web-grounded evidence). Rent for a furnished studio in central areas is between $490-$1,100 (web-grounded). It boasts fast and reliable internet with average fixed speeds around 170 Mbps and affordable mobile data (web-grounded). The city has a diverse and robust coworking scene with various options and price points (web-grounded). Illustrative data places its monthly cost at $1200, internet score at 9, safety score at 8, and coworking score at 9. Petty crime is noted but generally manageable (web-grounded)."
+      },
+      {
+        "option": "Bangkok",
+        "assessment": "While specific web-grounded details on cost of living and internet were not provided for Bangkok, illustrative data suggests a slightly higher monthly cost of living at $1300 compared to Kuala Lumpur. Its illustrative internet score is 9, matching Kuala Lumpur, and its safety score is 8. Bangkok shines in the illustrative data with the highest coworking score of 10, indicating a potentially vibrant environment for remote workers. However, without web-grounded evidence, specific details on internet reliability, actual costs, and coworking specifics are unknown."
+      },
+      {
+        "option": "Da Nang",
+        "assessment": "Da Nang is presented as the most budget-friendly option according to illustrative data, with a monthly cost of living at $900. It also has the highest illustrative safety score at 9. However, its illustrative internet score is slightly lower at 8, and its coworking score is the lowest at 7, suggesting a less developed infrastructure for remote work compared to the other two cities. Without web-grounded information, specific details on internet quality and actual coworking options are unavailable, making its suitability less clear despite the lower cost and higher safety."
+      }
+    ],
+    "evidence": [
+      "Kuala Lumpur offers a cost of living for a solo digital nomad ranging from approximately $760/month for a frugal budget to $1,350-$1,700/month for a comfortable lifestyle, including central rent and dining out. (https://thenomadhq.com/cities/kualalumpur)",
+      "Rent for a furnished studio or one-bedroom apartment in central Kuala Lumpur areas like KLCC or Bangsar is between $490-$1,100/month, reducing to $170-$440 outside the city center. (https://thenomadhq.com/cities/kualalumpur)",
+      "Kuala Lumpur has fast and reliable internet, with residential fiber speeds typically between 50-200 Mbps and an average fixed internet speed of around 170 Mbps, complemented by affordable mobile data plans. (https://nomadalmanac.com/countries/malaysia/cities/kuala-lumpur)",
+      "While generally safe, Kuala Lumpur experiences petty crimes such as bag-snatching, pickpocketing, and phone theft, particularly in areas like Bukit Bintang and on public transit. (https://nomadalmanac.com/countries/malaysia/cities/kuala-lumpur)",
+      "Kuala Lumpur boasts a diverse coworking scene with options like WORQ (multiple locations, 24/7 access, hot desks from $10/day), Colony KLCC (premium, Petronas Towers views, day passes from $15), Common Ground (largest network, hot desks from $98-$120/month), and Sandbox (affordable, monthly membership $68). (https://klnomad.com/coworking-space-kuala-lumpur/)"
+    ],
+    "limitations": [
+      "The information for Bangkok and Da Nang regarding specific costs, internet reliability, and detailed coworking options is based solely on illustrative data, not current market data or web-grounded research.",
+      "The 'illustrative-city-data' is a controlled hackathon fixture and does not represent current real-world prices or safety surveys; all USD monthly estimates and qualitative scores are illustrative.",
+      "The web-grounded evidence primarily focuses on Kuala Lumpur, leading to a less comprehensive comparison for Bangkok and Da Nang without additional research.",
+      "The illustrative data provides scores (e.g., internet, safety, coworking) without detailed metrics or methodologies, making direct comparison of the underlying factors challenging.",
+      "Cost of living estimates are highly variable based on individual lifestyle choices and may differ from the provided ranges or illustrative figures."
+    ]
+  },
+  "completedAt": "2026-10-07T04:48:13.045Z"
+}

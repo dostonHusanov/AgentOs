@@ -19,7 +19,12 @@ export function setLocalValues(
   for (const [key, value] of Object.entries(values)) {
     if (!/^[A-Z][A-Z0-9_]*$/.test(key) || /[\r\n]/.test(value))
       throw new Error("Invalid environment setting");
-    const line = `${key}=${JSON.stringify(value)}`;
+    // dotenv preserves escaped quotes; JSON objects therefore need a single
+    // quoted value rather than JSON.stringify's double-quote escaping.
+    if (value.includes('"') && value.includes("'"))
+      throw new Error("Environment value contains unsupported mixed quotes");
+    const encoded = value.includes('"') ? `'${value}'` : JSON.stringify(value);
+    const line = `${key}=${encoded}`;
     const pattern = new RegExp(`^${key}=.*$`, "m");
     content = pattern.test(content)
       ? content.replace(pattern, () => line)

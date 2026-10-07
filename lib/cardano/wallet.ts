@@ -27,11 +27,18 @@ export function buyerSigner(id: string) {
   if (!prefix) throw new Error("Buyer wallet unavailable");
   const mnemonic = process.env[`${prefix}_MNEMONIC`];
   if (!mnemonic) throw new Error(`${prefix}_MNEMONIC required`);
-  const signer = toClientCardanoSigner({
-    mnemonic,
-    network: "cardano:preprod",
-    provider: provider(),
-  });
+  let signer;
+  try {
+    signer = toClientCardanoSigner({
+      mnemonic,
+      network: "cardano:preprod",
+      provider: provider(),
+    });
+  } catch {
+    throw new Error(
+      `${prefix}_MNEMONIC is invalid; verify all words and their order locally`,
+    );
+  }
   const expected = process.env[`${prefix}_WALLET_ADDRESS`];
   if (!expected || expected !== signer.getAddress())
     throw new Error(`${prefix} configured address does not match signer`);
@@ -48,7 +55,7 @@ export function facilitator() {
       awaitConfirmation: false,
     }),
     {
-      confirmationTimeoutMs: 45000,
+      confirmationTimeoutMs: 120000,
       settlementStore: new FileSettlementStore(),
     },
   ));

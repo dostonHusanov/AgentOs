@@ -1,0 +1,575 @@
+{
+  "id": "12430a40-b609-4726-86c5-5591fb1e1b2c",
+  "goal": "Research the best city in Southeast Asia for a remote software developer to live for one month. Compare cost of living, internet quality, safety, and coworking options. Give me a final recommendation.",
+  "status": "failed",
+  "budget": {
+    "initial": 5,
+    "spent": 2.85,
+    "reserved": 0,
+    "remaining": 2.15,
+    "asset": "tUSDM"
+  },
+  "policy": {
+    "maxSinglePurchase": 2,
+    "minimumReputation": 80,
+    "escrowThreshold": 1
+  },
+  "jobs": [
+    {
+      "id": "43eb2774-b75e-4a38-9486-2a03bf17a934",
+      "missionId": "12430a40-b609-4726-86c5-5591fb1e1b2c",
+      "buyerAgentId": "manager",
+      "sellerAgentId": "research",
+      "capability": "web_research",
+      "objective": "Identify popular cities in Southeast Asia for remote workers and digital nomads.",
+      "status": "completed",
+      "price": 1,
+      "reason": "Capability match · reputation 95/100 · 1 tUSDM · score 88.2",
+      "sellerName": "ResearchPro",
+      "reputation": 95,
+      "registrySource": "masumi",
+      "depth": 1,
+      "createdAt": "2026-10-07T04:30:22.672Z",
+      "result": {
+        "summary": "Southeast Asia is a prime destination for remote workers and digital nomads, offering a diverse range of cities and islands that cater to various lifestyles and budgets. Key attractions include affordable living, reliable internet, established co-working spaces, and thriving digital nomad communities, making it an ideal region for those seeking to combine work with travel.",
+        "findings": [
+          "Chiang Mai, Thailand, is recognized as a foundational digital nomad hub in Southeast Asia, celebrated for its affordability, high-speed internet, and a well-established community of remote professionals.",
+          "Popular cities and regions for remote workers in Southeast Asia include Da Nang (Vietnam), Bali (Indonesia, especially Canggu), Bangkok (Thailand), Siem Reap (Cambodia), Koh Lanta and Koh Phangan (Thailand), Penang (Malaysia), Lombok (Indonesia, Kuta), Yogyakarta (Indonesia), Ho Chi Minh City (Vietnam), Singapore, and Phnom Penh (Cambodia).",
+          "Many locations in Southeast Asia attract digital nomads due to factors such as affordable furnished accommodations, stable and fast Wi-Fi connectivity, readily available co-working spaces, and strong, supportive remote worker communities.",
+          "While Singapore is a more expensive option, its advanced infrastructure, cleanliness, and rapid internet speeds draw higher-earning remote workers.",
+          "The existing research provides sufficient information to identify popular cities for digital nomads in Southeast Asia, rendering additional specialist data collection unnecessary at this stage."
+        ],
+        "sources": [
+          {
+            "title": "10 Digital Nomad Hotspots of Southeast Asia",
+            "url": "https://southeastasiabackpacker.com/digital-nomad-places/"
+          },
+          {
+            "title": "Best Cities In Asia For Digital Nomads 2026: Bangkok Vs Bali, Chiang Mai Vs Da Nang, Plus A Kuala Lumpur Digital Nomad Guide - Asia Lifestyle Magazine",
+            "url": "https://www.asialifestylemagazine.com/best-cities-in-asia-2026-bangkok-bali/"
+          },
+          {
+            "title": "A Digital Nomad Guide to Southeast Asia: 8 Locations",
+            "url": "https://perceptivetravel.com/blog/2026/05/24/digital-nomad-southeast-asia/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3e671b8c-8c4d-4224-928e-67f454b31495",
+      "missionId": "12430a40-b609-4726-86c5-5591fb1e1b2c",
+      "buyerAgentId": "manager",
+      "sellerAgentId": "research",
+      "capability": "web_research",
+      "objective": "Research the cost of living for a software developer for one month in each identified city, focusing on accommodation, food, and transportation.",
+      "status": "failed",
+      "price": 1,
+      "reason": "Capability match · reputation 95/100 · 1 tUSDM · score 88.2",
+      "sellerName": "ResearchPro",
+      "reputation": 95,
+      "registrySource": "masumi",
+      "depth": 1,
+      "createdAt": "2026-10-07T04:31:10.069Z",
+      "error": "Gemini research did not return grounded web sources. Check model/search access."
+    },
+    {
+      "id": "8175bd10-67ad-4c8f-9a53-d5cc0589b760",
+      "missionId": "12430a40-b609-4726-86c5-5591fb1e1b2c",
+      "buyerAgentId": "manager",
+      "sellerAgentId": "research-backup",
+      "capability": "web_research",
+      "objective": "Research the cost of living for a software developer for one month in each identified city, focusing on accommodation, food, and transportation.",
+      "status": "failed",
+      "price": 0.85,
+      "reason": "Capability match · reputation 88/100 · 0.85 tUSDM · score 86.2",
+      "sellerName": "Scout Research",
+      "reputation": 88,
+      "registrySource": "masumi",
+      "depth": 1,
+      "createdAt": "2026-10-07T04:31:53.395Z",
+      "error": "Gemini research did not return grounded web sources. Check model/search access."
+    }
+  ],
+  "payments": [
+    {
+      "id": "6209fa31-3ee4-414b-932b-e51f4952a9f7",
+      "missionId": "12430a40-b609-4726-86c5-5591fb1e1b2c",
+      "jobId": "43eb2774-b75e-4a38-9486-2a03bf17a934",
+      "buyerAgentId": "manager",
+      "sellerAgentId": "research",
+      "amount": 1,
+      "asset": "tUSDM",
+      "network": "preprod",
+      "status": "confirmed",
+      "mode": "cardano",
+      "createdAt": "2026-10-07T04:30:23.433Z",
+      "txHash": "1332d825201c31e40d9193888deacd4503ee38bc39ed471f33076e76aeec673a",
+      "explorerUrl": "https://preprod.cardanoscan.io/transaction/1332d825201c31e40d9193888deacd4503ee38bc39ed471f33076e76aeec673a",
+      "buyerAddress": "addr_test1qpar2sptyq53967wma4rwk892w36cva72au3w9wxzfsw9gshquv8dvp4a00v9z3p53xm2ly662edld25jejm6dl6l8ss5qt5v7",
+      "sellerAddress": "addr_test1qr7w82wahq0x47flasht06jx9emz86xu8sm6jfu40h9pcmv4x9ygzkhklq822duqvjz8cz048gmffg7vq64mnh4dgursclnr8n"
+    },
+    {
+      "id": "75fbcb42-f9a8-452b-8cdd-2c52d11f4c44",
+      "missionId": "12430a40-b609-4726-86c5-5591fb1e1b2c",
+      "jobId": "3e671b8c-8c4d-4224-928e-67f454b31495",
+      "buyerAgentId": "manager",
+      "sellerAgentId": "research",
+      "amount": 1,
+      "asset": "tUSDM",
+      "network": "preprod",
+      "status": "confirmed",
+      "mode": "cardano",
+      "createdAt": "2026-10-07T04:31:10.077Z",
+      "txHash": "47ad49aaa702636cb010d95cd980d6e09432ca26dc2ee8f3e95b364ecc124084",
+      "explorerUrl": "https://preprod.cardanoscan.io/transaction/47ad49aaa702636cb010d95cd980d6e09432ca26dc2ee8f3e95b364ecc124084",
+      "buyerAddress": "addr_test1qpar2sptyq53967wma4rwk892w36cva72au3w9wxzfsw9gshquv8dvp4a00v9z3p53xm2ly662edld25jejm6dl6l8ss5qt5v7",
+      "sellerAddress": "addr_test1qr7w82wahq0x47flasht06jx9emz86xu8sm6jfu40h9pcmv4x9ygzkhklq822duqvjz8cz048gmffg7vq64mnh4dgursclnr8n"
+    },
+    {
+      "id": "d2ca3792-7a9b-4922-bcc1-3641e60435f8",
+      "missionId": "12430a40-b609-4726-86c5-5591fb1e1b2c",
+      "jobId": "8175bd10-67ad-4c8f-9a53-d5cc0589b760",
+      "buyerAgentId": "manager",
+      "sellerAgentId": "research-backup",
+      "amount": 0.85,
+      "asset": "tUSDM",
+      "network": "preprod",
+      "status": "confirmed",
+      "mode": "cardano",
+      "createdAt": "2026-10-07T04:31:53.401Z",
+      "txHash": "9999449ea4333970c2f27c0a2e5a46aa71cf4419e2b14a2a27e85ca21f477cf6",
+      "explorerUrl": "https://preprod.cardanoscan.io/transaction/9999449ea4333970c2f27c0a2e5a46aa71cf4419e2b14a2a27e85ca21f477cf6",
+      "buyerAddress": "addr_test1qpar2sptyq53967wma4rwk892w36cva72au3w9wxzfsw9gshquv8dvp4a00v9z3p53xm2ly662edld25jejm6dl6l8ss5qt5v7",
+      "sellerAddress": "addr_test1qpp556vt3tts4fk8w0t4m9dnjwhvdkketvew2mnwltk84gmdk300ypq9fx39xsafc649fa57slx5hq9xvujq3dy8p6tsz7xnqz"
+    }
+  ],
+  "events": [
+    {
+      "id": "67e71beb-b95e-441b-910e-f86cc66e9ea5",
+      "type": "mission_planning",
+      "message": "Mission planning",
+      "createdAt": "2026-10-07T04:30:18.465Z"
+    },
+    {
+      "id": "6353a9ed-4585-49e9-a175-4a9b4e56a3af",
+      "type": "plan_created",
+      "message": "Research the best city in Southeast Asia for a remote software developer to live for one month, comparing cost of living, internet quality, safety, and coworking options, and provide a final recommendation.",
+      "createdAt": "2026-10-07T04:30:22.557Z"
+    },
+    {
+      "id": "cf98279c-a0bc-4894-a785-5e9d1ce85742",
+      "type": "mission_discovering",
+      "message": "Mission discovering",
+      "createdAt": "2026-10-07T04:30:22.559Z"
+    },
+    {
+      "id": "1d98a8db-5dc7-407b-b527-d066fbb14fd5",
+      "type": "capability_required",
+      "message": "Manager needs web_research",
+      "createdAt": "2026-10-07T04:30:22.559Z"
+    },
+    {
+      "id": "0354adf5-f6f6-4d9e-82eb-36e0a2f67c18",
+      "type": "agent_discovered",
+      "message": "2 web_research providers discovered (masumi)",
+      "createdAt": "2026-10-07T04:30:22.671Z"
+    },
+    {
+      "id": "ca138925-b8fa-4052-aaf8-7f72977b3428",
+      "type": "mission_selecting",
+      "message": "Mission selecting",
+      "createdAt": "2026-10-07T04:30:22.672Z"
+    },
+    {
+      "id": "064d92dd-2758-481b-837a-0355651ed6e1",
+      "type": "agent_evaluated",
+      "message": "ResearchPro: Capability match · reputation 95/100 · 1 tUSDM · score 88.2",
+      "createdAt": "2026-10-07T04:30:22.672Z"
+    },
+    {
+      "id": "41e5537f-b66c-4c4b-9eb8-7187e9ee2bad",
+      "type": "agent_evaluated",
+      "message": "Scout Research: Capability match · reputation 88/100 · 0.85 tUSDM · score 86.2",
+      "createdAt": "2026-10-07T04:30:22.672Z"
+    },
+    {
+      "id": "e3d40ce8-38f4-417c-8841-7fc3f8e3da9c",
+      "type": "agent_selected",
+      "message": "ResearchPro selected: Capability match · reputation 95/100 · 1 tUSDM · score 88.2",
+      "jobId": "43eb2774-b75e-4a38-9486-2a03bf17a934",
+      "createdAt": "2026-10-07T04:30:22.673Z"
+    },
+    {
+      "id": "d22c140f-0c01-4816-ba54-43d25e111c6f",
+      "type": "mission_purchasing",
+      "message": "Mission purchasing",
+      "createdAt": "2026-10-07T04:30:22.673Z"
+    },
+    {
+      "id": "db6def54-652e-4104-a9a5-165b84dcbe9b",
+      "type": "payment_requested",
+      "message": "manager → ResearchPro: 1 tUSDM",
+      "jobId": "43eb2774-b75e-4a38-9486-2a03bf17a934",
+      "createdAt": "2026-10-07T04:30:22.673Z"
+    },
+    {
+      "id": "28a95346-9b49-4dd7-b005-215b6d9810f0",
+      "type": "payment_signed",
+      "message": "Signed transaction prepared; awaiting submission and confirmation",
+      "jobId": "43eb2774-b75e-4a38-9486-2a03bf17a934",
+      "createdAt": "2026-10-07T04:30:24.268Z"
+    },
+    {
+      "id": "bb4f8d36-4ea1-48d7-870e-582c816e8d06",
+      "type": "payment_submitted",
+      "message": "Cardano settlement: 1332d825201c31e40d9193888deacd4503ee38bc39ed471f33076e76aeec673a",
+      "jobId": "43eb2774-b75e-4a38-9486-2a03bf17a934",
+      "createdAt": "2026-10-07T04:30:53.843Z"
+    },
+    {
+      "id": "dc70cc82-c87a-47e0-a746-47c67e5eb63b",
+      "type": "payment_confirmed",
+      "message": "REAL PAYMENT · manager → ResearchPro · 1 tUSDM",
+      "jobId": "43eb2774-b75e-4a38-9486-2a03bf17a934",
+      "createdAt": "2026-10-07T04:30:53.906Z"
+    },
+    {
+      "id": "5c1e0898-8fc3-435d-ac7a-5c62bc9eaf09",
+      "type": "job_paid",
+      "message": "ResearchPro payment verified",
+      "jobId": "43eb2774-b75e-4a38-9486-2a03bf17a934",
+      "createdAt": "2026-10-07T04:30:53.907Z"
+    },
+    {
+      "id": "1acae6c5-4f82-470f-b902-f1aa3d47942b",
+      "type": "mission_executing",
+      "message": "Mission executing",
+      "createdAt": "2026-10-07T04:30:53.907Z"
+    },
+    {
+      "id": "7fbff82b-072c-4edf-ad7d-f8f9ca4ebca6",
+      "type": "agent_started",
+      "message": "ResearchPro is executing",
+      "jobId": "43eb2774-b75e-4a38-9486-2a03bf17a934",
+      "createdAt": "2026-10-07T04:30:53.907Z"
+    },
+    {
+      "id": "b04238b2-d593-447f-8f9e-42fc8916235b",
+      "type": "web_research_completed",
+      "message": "Gemini returned 3 grounded sources",
+      "jobId": "43eb2774-b75e-4a38-9486-2a03bf17a934",
+      "createdAt": "2026-10-07T04:31:00.672Z"
+    },
+    {
+      "id": "6ba8316e-4d0b-4ecc-896b-ad2edb244dec",
+      "type": "mission_verifying",
+      "message": "Mission verifying",
+      "createdAt": "2026-10-07T04:31:08.540Z"
+    },
+    {
+      "id": "d20e59bb-1e83-4e92-ba89-76aeba6fdd62",
+      "type": "result_received",
+      "message": "ResearchPro returned a deliverable",
+      "jobId": "43eb2774-b75e-4a38-9486-2a03bf17a934",
+      "createdAt": "2026-10-07T04:31:08.541Z"
+    },
+    {
+      "id": "086219c2-12b2-4413-bed4-a20c3a613491",
+      "type": "verification_passed",
+      "message": "ResearchPro: required fields and content thresholds passed",
+      "jobId": "43eb2774-b75e-4a38-9486-2a03bf17a934",
+      "createdAt": "2026-10-07T04:31:09.956Z"
+    },
+    {
+      "id": "29c40170-3fdb-47a3-8d98-993827f60f5a",
+      "type": "mission_discovering",
+      "message": "Mission discovering",
+      "createdAt": "2026-10-07T04:31:09.957Z"
+    },
+    {
+      "id": "9f776913-3d58-40ee-b91b-a9bcb944e50f",
+      "type": "capability_required",
+      "message": "Manager needs web_research",
+      "createdAt": "2026-10-07T04:31:09.959Z"
+    },
+    {
+      "id": "b0bf5b84-0cd0-439e-88e6-41edef5571a2",
+      "type": "agent_discovered",
+      "message": "2 web_research providers discovered (masumi)",
+      "createdAt": "2026-10-07T04:31:10.067Z"
+    },
+    {
+      "id": "d3798c4c-d51d-45c2-a862-aae98be14d66",
+      "type": "mission_selecting",
+      "message": "Mission selecting",
+      "createdAt": "2026-10-07T04:31:10.068Z"
+    },
+    {
+      "id": "b2e99d4f-56bb-4d70-ac33-d82754292dd6",
+      "type": "agent_evaluated",
+      "message": "ResearchPro: Capability match · reputation 95/100 · 1 tUSDM · score 88.2",
+      "createdAt": "2026-10-07T04:31:10.068Z"
+    },
+    {
+      "id": "5d1ded75-5903-4d89-ab71-8ab35bbfd142",
+      "type": "agent_evaluated",
+      "message": "Scout Research: Capability match · reputation 88/100 · 0.85 tUSDM · score 86.2",
+      "createdAt": "2026-10-07T04:31:10.068Z"
+    },
+    {
+      "id": "655f2831-a8f7-408e-af38-260e4f080721",
+      "type": "agent_selected",
+      "message": "ResearchPro selected: Capability match · reputation 95/100 · 1 tUSDM · score 88.2",
+      "jobId": "3e671b8c-8c4d-4224-928e-67f454b31495",
+      "createdAt": "2026-10-07T04:31:10.069Z"
+    },
+    {
+      "id": "5e92998b-6ef1-4926-8dc8-9e7195f4c0e0",
+      "type": "mission_purchasing",
+      "message": "Mission purchasing",
+      "createdAt": "2026-10-07T04:31:10.069Z"
+    },
+    {
+      "id": "ba1a599b-6aa7-497b-9d81-20af8ef312b0",
+      "type": "payment_requested",
+      "message": "manager → ResearchPro: 1 tUSDM",
+      "jobId": "3e671b8c-8c4d-4224-928e-67f454b31495",
+      "createdAt": "2026-10-07T04:31:10.070Z"
+    },
+    {
+      "id": "6037c6f5-c6b9-4a42-a1de-fc0c1564cfc0",
+      "type": "payment_signed",
+      "message": "Signed transaction prepared; awaiting submission and confirmation",
+      "jobId": "3e671b8c-8c4d-4224-928e-67f454b31495",
+      "createdAt": "2026-10-07T04:31:11.444Z"
+    },
+    {
+      "id": "8bf2311d-8358-47b1-9afd-f0c33cccf4bc",
+      "type": "payment_submitted",
+      "message": "Cardano settlement: 47ad49aaa702636cb010d95cd980d6e09432ca26dc2ee8f3e95b364ecc124084",
+      "jobId": "3e671b8c-8c4d-4224-928e-67f454b31495",
+      "createdAt": "2026-10-07T04:31:51.475Z"
+    },
+    {
+      "id": "a1733ce2-e21a-4bbb-83b3-6065a6d30d62",
+      "type": "payment_confirmed",
+      "message": "REAL PAYMENT · manager → ResearchPro · 1 tUSDM",
+      "jobId": "3e671b8c-8c4d-4224-928e-67f454b31495",
+      "createdAt": "2026-10-07T04:31:51.536Z"
+    },
+    {
+      "id": "39ce7081-ea02-42a6-85a4-d6b33b83ab67",
+      "type": "job_paid",
+      "message": "ResearchPro payment verified",
+      "jobId": "3e671b8c-8c4d-4224-928e-67f454b31495",
+      "createdAt": "2026-10-07T04:31:51.536Z"
+    },
+    {
+      "id": "03ed9e07-e7a5-47b8-8b49-7f7d82e94cf6",
+      "type": "mission_executing",
+      "message": "Mission executing",
+      "createdAt": "2026-10-07T04:31:51.537Z"
+    },
+    {
+      "id": "e79ad57a-2d5b-42e1-ae89-5d224235927a",
+      "type": "agent_started",
+      "message": "ResearchPro is executing",
+      "jobId": "3e671b8c-8c4d-4224-928e-67f454b31495",
+      "createdAt": "2026-10-07T04:31:51.537Z"
+    },
+    {
+      "id": "f42f6e9d-be6a-4ac8-88af-22b10e7404a2",
+      "type": "agent_failed",
+      "message": "ResearchPro: Gemini research did not return grounded web sources. Check model/search access. · direct payment is not refundable",
+      "jobId": "3e671b8c-8c4d-4224-928e-67f454b31495",
+      "createdAt": "2026-10-07T04:31:53.279Z"
+    },
+    {
+      "id": "06b7e3ab-3018-4460-b5a2-d1bbe5e53c9b",
+      "type": "mission_discovering",
+      "message": "Mission discovering",
+      "createdAt": "2026-10-07T04:31:53.280Z"
+    },
+    {
+      "id": "f8c1d6d9-c5cc-4f42-a140-1c4081a8e125",
+      "type": "capability_required",
+      "message": "Manager needs web_research",
+      "createdAt": "2026-10-07T04:31:53.281Z"
+    },
+    {
+      "id": "979f52a9-35b3-4b43-a5a2-37d19efef1f0",
+      "type": "agent_discovered",
+      "message": "1 web_research providers discovered (masumi)",
+      "createdAt": "2026-10-07T04:31:53.394Z"
+    },
+    {
+      "id": "a6166b19-5d4a-48ef-95bd-0fd87be3b726",
+      "type": "mission_selecting",
+      "message": "Mission selecting",
+      "createdAt": "2026-10-07T04:31:53.394Z"
+    },
+    {
+      "id": "a0746c17-9871-4761-838d-188cc99008fc",
+      "type": "agent_evaluated",
+      "message": "Scout Research: Capability match · reputation 88/100 · 0.85 tUSDM · score 86.2",
+      "createdAt": "2026-10-07T04:31:53.394Z"
+    },
+    {
+      "id": "bc0e5a18-26d7-4adb-aa41-f3b809a86e86",
+      "type": "replacement_selected",
+      "message": "Scout Research selected: Capability match · reputation 88/100 · 0.85 tUSDM · score 86.2",
+      "jobId": "8175bd10-67ad-4c8f-9a53-d5cc0589b760",
+      "createdAt": "2026-10-07T04:31:53.395Z"
+    },
+    {
+      "id": "d9a88ddf-be6c-484b-b54d-089ce300e3f7",
+      "type": "mission_purchasing",
+      "message": "Mission purchasing",
+      "createdAt": "2026-10-07T04:31:53.395Z"
+    },
+    {
+      "id": "5e1bca4f-4d0d-4dd3-9bc7-5d44238b92b2",
+      "type": "payment_requested",
+      "message": "manager → Scout Research: 0.85 tUSDM",
+      "jobId": "8175bd10-67ad-4c8f-9a53-d5cc0589b760",
+      "createdAt": "2026-10-07T04:31:53.395Z"
+    },
+    {
+      "id": "88e225d6-4b68-4a95-8e19-1041e847e873",
+      "type": "payment_signed",
+      "message": "Signed transaction prepared; awaiting submission and confirmation",
+      "jobId": "8175bd10-67ad-4c8f-9a53-d5cc0589b760",
+      "createdAt": "2026-10-07T04:31:54.130Z"
+    },
+    {
+      "id": "cbad62db-c242-4684-87d7-e04888c75adf",
+      "type": "payment_submitted",
+      "message": "Cardano settlement: 9999449ea4333970c2f27c0a2e5a46aa71cf4419e2b14a2a27e85ca21f477cf6",
+      "jobId": "8175bd10-67ad-4c8f-9a53-d5cc0589b760",
+      "createdAt": "2026-10-07T04:33:33.449Z"
+    },
+    {
+      "id": "d9456bb0-005e-4dd5-8ca9-68360d736929",
+      "type": "payment_confirmed",
+      "message": "REAL PAYMENT · manager → Scout Research · 0.85 tUSDM",
+      "jobId": "8175bd10-67ad-4c8f-9a53-d5cc0589b760",
+      "createdAt": "2026-10-07T04:33:33.514Z"
+    },
+    {
+      "id": "f30b8d39-b554-4b4e-a03f-df0496f677b7",
+      "type": "job_paid",
+      "message": "Scout Research payment verified",
+      "jobId": "8175bd10-67ad-4c8f-9a53-d5cc0589b760",
+      "createdAt": "2026-10-07T04:33:33.515Z"
+    },
+    {
+      "id": "87dc3d88-ad63-4533-af81-3799316d7085",
+      "type": "mission_executing",
+      "message": "Mission executing",
+      "createdAt": "2026-10-07T04:33:33.515Z"
+    },
+    {
+      "id": "fb416989-2ba2-4928-bd11-80789274fde3",
+      "type": "agent_started",
+      "message": "Scout Research is executing",
+      "jobId": "8175bd10-67ad-4c8f-9a53-d5cc0589b760",
+      "createdAt": "2026-10-07T04:33:33.515Z"
+    },
+    {
+      "id": "d44eb155-e181-4d94-a9bd-7b481f9b2bf9",
+      "type": "agent_failed",
+      "message": "Scout Research: Gemini research did not return grounded web sources. Check model/search access. · direct payment is not refundable",
+      "jobId": "8175bd10-67ad-4c8f-9a53-d5cc0589b760",
+      "createdAt": "2026-10-07T04:33:34.563Z"
+    },
+    {
+      "id": "2697507b-27f4-4fb1-9e81-c6b23b51fc53",
+      "type": "mission_discovering",
+      "message": "Mission discovering",
+      "createdAt": "2026-10-07T04:33:34.564Z"
+    },
+    {
+      "id": "ccd51be8-0d46-46a1-8408-c34ffad63c0e",
+      "type": "capability_required",
+      "message": "Manager needs web_research",
+      "createdAt": "2026-10-07T04:33:34.565Z"
+    },
+    {
+      "id": "b25062c5-611b-4d79-b130-c31518558245",
+      "type": "agent_discovered",
+      "message": "0 web_research providers discovered (local)",
+      "createdAt": "2026-10-07T04:33:34.671Z"
+    },
+    {
+      "id": "9bb81f3c-6e37-4155-9cfb-88c0dcfea158",
+      "type": "mission_selecting",
+      "message": "Mission selecting",
+      "createdAt": "2026-10-07T04:33:34.672Z"
+    },
+    {
+      "id": "451db002-8d7c-4167-8acc-7a379aa3dc64",
+      "type": "mission_failed",
+      "message": "Gemini research did not return grounded web sources. Check model/search access.",
+      "createdAt": "2026-10-07T04:33:34.672Z"
+    }
+  ],
+  "createdAt": "2026-10-07T04:30:17.734Z",
+  "failNextProvider": false,
+  "paymentMode": "cardano",
+  "aiMode": "gemini",
+  "plan": {
+    "summary": "Research the best city in Southeast Asia for a remote software developer to live for one month, comparing cost of living, internet quality, safety, and coworking options, and provide a final recommendation.",
+    "tasks": [
+      {
+        "id": "1",
+        "capability": "web_research",
+        "objective": "Identify popular cities in Southeast Asia for remote workers and digital nomads.",
+        "dependsOn": []
+      },
+      {
+        "id": "2",
+        "capability": "web_research",
+        "objective": "Research the cost of living for a software developer for one month in each identified city, focusing on accommodation, food, and transportation.",
+        "dependsOn": [
+          "1"
+        ]
+      },
+      {
+        "id": "3",
+        "capability": "web_research",
+        "objective": "Research internet quality (speed, reliability, availability) in each identified city.",
+        "dependsOn": [
+          "1"
+        ]
+      },
+      {
+        "id": "4",
+        "capability": "web_research",
+        "objective": "Research safety aspects (crime rates, general security for foreigners) in each identified city.",
+        "dependsOn": [
+          "1"
+        ]
+      },
+      {
+        "id": "5",
+        "capability": "web_research",
+        "objective": "Research available coworking spaces and their amenities/pricing in each identified city.",
+        "dependsOn": [
+          "1"
+        ]
+      },
+      {
+        "id": "6",
+        "capability": "report_generation",
+        "objective": "Synthesize research on cost of living, internet quality, safety, and coworking options for each city. Compare and recommend the best city for a remote software developer.",
+        "dependsOn": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      }
+    ]
+  },
+  "error": "Gemini research did not return grounded web sources. Check model/search access."
+}

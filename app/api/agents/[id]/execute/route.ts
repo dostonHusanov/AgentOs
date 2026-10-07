@@ -86,7 +86,12 @@ export async function POST(
           j.capability === "structured_city_data"
             ? cityData
             : j.capability === "web_research"
-              ? await research(m, j, (cap, obj) => hire(m, cap, obj, j))
+              ? await research(
+                  m,
+                  j,
+                  (cap, obj) => hire(m, cap, obj, j),
+                  body.context,
+                )
               : j.capability === "report_generation"
                 ? await report(m, j, body.context)
                 : undefined;

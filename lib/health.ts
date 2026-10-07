@@ -7,7 +7,9 @@ import {
   aiProvider,
 } from "@/lib/ai/client";
 import { buyerSigner } from "@/lib/cardano/wallet";
-import { USDM_PREPROD_ASSET } from "@x402/cardano";
+import { escrowEnabled, checkBuyerScope } from "@/lib/masumi/escrow";
+import { nodeRequest } from "@/lib/masumi/client";
+import { USDM_PREPROD_ASSET, addressCredentials } from "@x402/cardano";
 export interface HealthCheck {
   component: string;
   status: "ready" | "blocked" | "development";
@@ -67,8 +69,11 @@ export async function checkHealth(connect = false) {
     const agents = await discoverAgents();
     checks.push({
       component: "Registry",
-      status: process.env.MASUMI_REGISTRY_URL ? "ready" : "development",
-      detail: `${agents.length} providers · ${process.env.MASUMI_REGISTRY_URL ? "configured normalized Masumi adapter" : "local registry, no Masumi claim"}`,
+      status:
+        process.env.MASUMI_NODE_URL || process.env.MASUMI_REGISTRY_URL
+          ? "ready"
+          : "development",
+      detail: `${agents.length} providers · ${process.env.MASUMI_NODE_URL ? "native Masumi V2 identities; locally managed providers" : process.env.MASUMI_REGISTRY_URL ? "configured normalized Masumi adapter" : "local registry, no Masumi claim"}`,
     });
   } catch {
     checks.push({
@@ -77,12 +82,38 @@ export async function checkHealth(connect = false) {
       detail: "Configured registry unavailable or incompatible metadata.",
     });
   }
-  checks.push({
-    component: "Escrow",
-    status: "development",
-    detail:
-      "Unavailable. Purchases above policy escrow threshold are rejected.",
-  });
+  if (escrowEnabled()) {
+    try {
+      if (cfg.paymentMode !== "cardano") throw new Error();
+      const providers = await discoverAgents();
+      if (!providers.length || providers.some((a) => !a.masumi))
+        throw new Error();
+      if (connect) {
+        await nodeRequest("/health");
+        for (const id of ["manager", "research", "research-backup"])
+          await checkBuyerScope(id);
+      }
+      checks.push({
+        component: "Escrow",
+        status: "ready",
+        detail:
+          "Native Masumi V2 escrow enabled; node wallet scopes checked when connected. Lock, result submission and refund APIs wired; a live receipt is required to verify settlement.",
+      });
+    } catch {
+      checks.push({
+        component: "Escrow",
+        status: "blocked",
+        detail:
+          "Native escrow requires Cardano mode, confirmed agent registrations, a reachable Masumi node, and buyer API keys scoped to their individual wallets.",
+      });
+    }
+  } else
+    checks.push({
+      component: "Escrow",
+      status: "development",
+      detail:
+        "Native Masumi adapter installed but disabled. Purchases above the escrow threshold remain rejected.",
+    });
   if (cfg.paymentMode === "cardano") {
     for (const id of ["manager", "research", "research-backup"]) {
       try {
@@ -134,14 +165,24 @@ export async function checkHealth(connect = false) {
     const sellers = localAgents().filter((a) =>
       ["research", "research-backup", "data", "report"].includes(a.id),
     );
-    for (const a of sellers)
+    for (const a of sellers) {
+      let valid = false;
+      try {
+        if (a.walletAddress?.startsWith("addr_test1")) {
+          addressCredentials(a.walletAddress);
+          valid = true;
+        }
+      } catch {
+        // Do not include malformed configuration values in health responses.
+      }
       checks.push({
         component: `${a.name} recipient`,
-        status: a.walletAddress?.startsWith("addr_test1") ? "ready" : "blocked",
-        detail: a.walletAddress?.startsWith("addr_test1")
+        status: valid ? "ready" : "blocked",
+        detail: valid
           ? "Preprod recipient configured."
-          : "Missing Preprod recipient address.",
+          : "Missing or invalid Preprod recipient address.",
       });
+    }
   }
   if (connect) {
     try {

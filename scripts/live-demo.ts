@@ -5,6 +5,11 @@ import { join } from "node:path";
 import type { PublicMission } from "../types/mission";
 loadEnvConfig(process.cwd());
 async function main() {
+  const escrowDemo = process.argv.includes("--escrow");
+  if (escrowDemo && process.env.MASUMI_ESCROW_ENABLED !== "true")
+    throw new Error(
+      "Enable and verify native Masumi escrow before running the escrow demo",
+    );
   const { checkHealth } = await import("../lib/health");
   const readiness = await checkHealth(true);
   if (readiness.status !== "READY")
@@ -26,12 +31,12 @@ async function main() {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      goal: "Research the best city in Southeast Asia for a remote software developer to live for one month. Compare cost of living, internet quality, safety, and coworking options. Give me a final recommendation.",
+      goal: "Compare Kuala Lumpur, Bangkok, and Da Nang for a remote software developer living for one month. Cover cost of living, internet quality, safety, and coworking in one combined research task, then produce a final recommendation. Have the research provider discover and hire a structured_city_data specialist for an illustrative comparison, and distinguish that purchased demo dataset from current grounded web evidence.",
       budget: 5,
       policy: {
         maxSinglePurchase: 2,
         minimumReputation: 80,
-        escrowThreshold: 1,
+        escrowThreshold: escrowDemo ? 0 : 1,
       },
     }),
   });
@@ -88,8 +93,19 @@ async function main() {
         current.jobs.some((j) => j.parentJobId && j.status === "completed"),
         "No nested hire occurred; definition of done remains unmet",
       );
+      if (escrowDemo)
+        assert.ok(
+          confirmed.length >= 3 &&
+            confirmed.every(
+              (p) =>
+                p.escrow?.state === "result_submission_pending" ||
+                p.escrow?.state === "result_submitted" ||
+                p.escrow?.state === "released",
+            ),
+          "Missing escrow-backed deliveries",
+        );
       console.log(
-        `VERIFIED: completed · ${confirmed.length} real receipts · nested hire · spent ${current.budget.spent} tUSDM. ${artifact}`,
+        `VERIFIED: completed · ${confirmed.length} real ${escrowDemo ? "escrow locks (release requires reconciliation)" : "direct payment receipts"} · nested hire · spent ${current.budget.spent} tUSDM. ${artifact}`,
       );
       return;
     }

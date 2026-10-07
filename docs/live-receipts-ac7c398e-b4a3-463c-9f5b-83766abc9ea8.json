@@ -1,0 +1,644 @@
+{
+  "id": "ac7c398e-b4a3-463c-9f5b-83766abc9ea8",
+  "goal": "Compare Kuala Lumpur, Bangkok, and Da Nang for a remote software developer living for one month. Cover cost of living, internet quality, safety, and coworking in one combined research task, then produce a final recommendation. Have the research provider discover and hire a structured_city_data specialist for an illustrative comparison, and distinguish that purchased demo dataset from current grounded web evidence.",
+  "status": "completed",
+  "budget": {
+    "initial": 5,
+    "spent": 1.7,
+    "reserved": 0,
+    "remaining": 3.3,
+    "asset": "tUSDM"
+  },
+  "policy": {
+    "maxSinglePurchase": 2,
+    "minimumReputation": 80,
+    "escrowThreshold": 1
+  },
+  "jobs": [
+    {
+      "id": "db92b403-a2ee-46d9-9130-2e51c2d6847d",
+      "missionId": "ac7c398e-b4a3-463c-9f5b-83766abc9ea8",
+      "buyerAgentId": "manager",
+      "sellerAgentId": "research",
+      "capability": "web_research",
+      "objective": "Compare Kuala Lumpur, Bangkok, and Da Nang for a remote software developer living for one month, covering cost of living, internet quality, safety, and coworking. Discover and hire a structured_city_data specialist for an illustrative comparison, distinguishing this purchased demo dataset from current grounded web evidence.",
+      "status": "completed",
+      "price": 1,
+      "reason": "Capability match · reputation 95/100 · 1 tUSDM · score 88.2",
+      "sellerName": "ResearchPro",
+      "reputation": 95,
+      "registrySource": "masumi",
+      "depth": 1,
+      "createdAt": "2026-10-07T04:35:11.097Z",
+      "result": {
+        "summary": "For a remote software developer planning a one-month stay, Da Nang is the most budget-friendly option with good internet, but has higher VPN latency and lower English proficiency. Bangkok offers extensive coworking spaces and fast internet but is the most expensive. Kuala Lumpur provides good infrastructure at a moderate cost, with internet speeds slightly lower than Bangkok and Da Nang.",
+        "findings": [
+          "Da Nang is the most affordable city, with an estimated all-in monthly cost of $720, compared to $950 for Kuala Lumpur and $1,200 for Bangkok.",
+          "Bangkok has the highest median internet downlink speed at 247 Mbps and the lowest VPN latency (44 ms), while Da Nang has a median downlink of 210 Mbps but higher VPN latency (162 ms), and Kuala Lumpur has a median downlink of 165 Mbps and the highest VPN latency (178 ms).",
+          "Bangkok offers the most coworking spaces (28) with a peak monthly price of $400, Kuala Lumpur has 15 spaces with a peak price of $500, and Da Nang has 8 spaces with a peak price of $160.",
+          "An illustrative, purchased dataset suggests Da Nang is the most affordable ($900/month) and safest (score of 9) option, while Bangkok is the most expensive ($1300/month) but has the best coworking score (10).",
+          "The purchased dataset is a demo from a \"Structured City Data Specialist\" and is not reflective of current market conditions, serving as an illustrative comparison for a hackathon fixture rather than a real-time price or safety survey.",
+          "Specific safety comparisons between the cities were not available in the web research, with general advice suggesting consulting local communities for area-specific insights."
+        ],
+        "sources": [
+          {
+            "title": "Which Southeast Asia City Is Best For Nomads in 2026? (Da Nang vs. Bangkok vs Kuala Lumpur) - La Vie Zine",
+            "url": "https://www.laviezine.com/1546301/which-southeast-asia-city-is-best-for-nomads-in-2026-da-nang-vs-bangkok-vs-kuala-lumpur/"
+          },
+          {
+            "title": "Best for Digital Nomads Asia in 2026: Tested & Reviewed — johal.in",
+            "url": "https://johal.in/best-digital-nomads-asia-2026-tested-reviewed"
+          },
+          {
+            "title": "The Remote Developer's Guide to Southeast Asia in 2026: Internet Speeds, Co-Living Costs, Visa Rules, and the Cities That Actually Work - DEV Community",
+            "url": "https://dev.to/mightyblue/the-remote-developers-guide-to-southeast-asia-in-2026-internet-speeds-co-living-costs-visa-44g9"
+          }
+        ],
+        "purchasedData": {
+          "dataset": "illustrative-city-data",
+          "asOf": "2026-01-01",
+          "limitations": "Controlled hackathon fixture, not a current price or safety survey. USD monthly estimates; qualitative scores are illustrative.",
+          "cities": [
+            {
+              "city": "Kuala Lumpur",
+              "monthlyCostEstimate": 1200,
+              "internetScore": 9,
+              "safetyScore": 8,
+              "coworkingScore": 9
+            },
+            {
+              "city": "Bangkok",
+              "monthlyCostEstimate": 1300,
+              "internetScore": 9,
+              "safetyScore": 8,
+              "coworkingScore": 10
+            },
+            {
+              "city": "Da Nang",
+              "monthlyCostEstimate": 900,
+              "internetScore": 8,
+              "safetyScore": 9,
+              "coworkingScore": 7
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "463cadc5-36ba-45b4-ac37-5b4147f13c77",
+      "missionId": "ac7c398e-b4a3-463c-9f5b-83766abc9ea8",
+      "parentJobId": "db92b403-a2ee-46d9-9130-2e51c2d6847d",
+      "buyerAgentId": "research",
+      "sellerAgentId": "data",
+      "capability": "structured_city_data",
+      "objective": "Illustrative comparison of Kuala Lumpur, Bangkok, and Da Nang for a remote software developer living for one month, covering cost of living, internet quality, safety, and coworking. Output must distinguish this demo dataset from current grounded web evidence.",
+      "status": "completed",
+      "price": 0.2,
+      "reason": "Capability match · reputation 92/100 · 0.2 tUSDM · score 94.2",
+      "sellerName": "DataHub",
+      "reputation": 92,
+      "registrySource": "masumi",
+      "depth": 2,
+      "createdAt": "2026-10-07T04:35:50.232Z",
+      "result": {
+        "dataset": "illustrative-city-data",
+        "asOf": "2026-01-01",
+        "limitations": "Controlled hackathon fixture, not a current price or safety survey. USD monthly estimates; qualitative scores are illustrative.",
+        "cities": [
+          {
+            "city": "Kuala Lumpur",
+            "monthlyCostEstimate": 1200,
+            "internetScore": 9,
+            "safetyScore": 8,
+            "coworkingScore": 9
+          },
+          {
+            "city": "Bangkok",
+            "monthlyCostEstimate": 1300,
+            "internetScore": 9,
+            "safetyScore": 8,
+            "coworkingScore": 10
+          },
+          {
+            "city": "Da Nang",
+            "monthlyCostEstimate": 900,
+            "internetScore": 8,
+            "safetyScore": 9,
+            "coworkingScore": 7
+          }
+        ]
+      }
+    },
+    {
+      "id": "6de449f5-1e28-451f-bca8-7fdb20c68076",
+      "missionId": "ac7c398e-b4a3-463c-9f5b-83766abc9ea8",
+      "buyerAgentId": "manager",
+      "sellerAgentId": "report",
+      "capability": "report_generation",
+      "objective": "Produce a final recommendation for a remote software developer based on the comparison of Kuala Lumpur, Bangkok, and Da Nang, utilizing the research findings and clearly referencing the distinction between web evidence and the purchased structured city data.",
+      "status": "completed",
+      "price": 0.5,
+      "reason": "Capability match · reputation 97/100 · 0.5 tUSDM · score 92.2",
+      "sellerName": "Synthesis",
+      "reputation": 97,
+      "registrySource": "masumi",
+      "depth": 1,
+      "createdAt": "2026-10-07T04:36:16.321Z",
+      "result": {
+        "title": "Remote Software Developer City Recommendation: Kuala Lumpur, Bangkok, or Da Nang",
+        "recommendation": "For a remote software developer prioritizing a balance of cost-effectiveness, reasonable internet speed, and a good environment for a one-month stay, Da Nang is the recommended option. While Bangkok offers superior internet and more coworking spaces, its higher cost makes it less ideal for a budget-conscious developer. Kuala Lumpur presents a moderate option, but Da Nang's significantly lower cost, combined with adequate infrastructure, makes it the strongest recommendation.",
+        "comparison": [
+          {
+            "option": "Da Nang",
+            "assessment": "Da Nang stands out as the most budget-friendly option, with estimated all-in monthly costs around $720 based on web research. It offers good internet speeds (median downlink of 210 Mbps), though with higher VPN latency (162 ms). While it has fewer coworking spaces (8) and lower English proficiency compared to the other cities, its affordability is a significant advantage for a one-month stay. The illustrative purchased data also indicates it's the most affordable ($900/month) and safest (score of 9) option."
+          },
+          {
+            "option": "Bangkok",
+            "assessment": "Bangkok offers the best internet infrastructure with the highest median downlink speed (247 Mbps) and lowest VPN latency (44 ms). It also boasts the most coworking spaces (28). However, it is the most expensive city, with estimated all-in monthly costs around $1,200 according to web research, making it less suitable for a budget-conscious developer. The illustrative purchased data similarly shows it as the most expensive ($1300/month) but with the best coworking score (10)."
+          },
+          {
+            "option": "Kuala Lumpur",
+            "assessment": "Kuala Lumpur provides a middle-ground option with good infrastructure at a moderate cost. Web research estimates all-in monthly costs at $950. Internet speeds are slightly lower than Da Nang and Bangkok (median downlink of 165 Mbps) and it has the highest VPN latency (178 ms). It offers 15 coworking spaces. The illustrative purchased data suggests a higher monthly cost of $1200, making it less attractive compared to Da Nang for cost-efficiency."
+          }
+        ],
+        "evidence": [
+          "Web research consistently identifies Da Nang as the most affordable city for digital nomads, with an estimated all-in monthly cost of $720, compared to $950 for Kuala Lumpur and $1,200 for Bangkok (La Vie Zine, johal.in, DEV Community).",
+          "Internet speeds vary, with Bangkok having the highest median downlink speed (247 Mbps) and lowest VPN latency (44 ms). Da Nang has a median downlink of 210 Mbps but higher VPN latency (162 ms), while Kuala Lumpur has a median downlink of 165 Mbps and the highest VPN latency (178 ms) (DEV Community).",
+          "Coworking spaces are most abundant in Bangkok (28), followed by Kuala Lumpur (15), and then Da Nang (8) (La Vie Zine, johal.in).",
+          "The purchased structured city data, while illustrative, aligns with the web research regarding Da Nang's affordability ($900/month compared to Bangkok's $1300/month and Kuala Lumpur's $1200/month). It also highlights Da Nang's favorable safety score (9) and Bangkok's excellent coworking score (10).",
+          "General advice from web sources suggests consulting local communities for specific safety insights, as comprehensive safety comparisons were not readily available in the web research."
+        ],
+        "limitations": [
+          "The purchased structured city data is a demo from a 'Structured City Data Specialist' and is explicitly stated to be a 'controlled hackathon fixture' not reflective of current market conditions or a real-time price or safety survey. Therefore, its values should be considered illustrative and not definitive for current decision-making.",
+          "Specific safety comparisons between the cities were generally unavailable in the web research, with general advice suggesting community consultation.",
+          "The 'all-in monthly cost' estimates from web research are subject to individual lifestyle and preferences, and may vary.",
+          "English proficiency, while mentioned in research summaries, is not quantified, making direct comparison challenging."
+        ]
+      }
+    }
+  ],
+  "payments": [
+    {
+      "id": "a0c8a5c3-4c51-483e-a6ad-1a75ba0670e5",
+      "missionId": "ac7c398e-b4a3-463c-9f5b-83766abc9ea8",
+      "jobId": "db92b403-a2ee-46d9-9130-2e51c2d6847d",
+      "buyerAgentId": "manager",
+      "sellerAgentId": "research",
+      "amount": 1,
+      "asset": "tUSDM",
+      "network": "preprod",
+      "status": "confirmed",
+      "mode": "cardano",
+      "createdAt": "2026-10-07T04:35:11.269Z",
+      "txHash": "c59e5a98c72e370938dfa1d3b5867cbf031fdcef7a9371fb499ddfce71f52d25",
+      "explorerUrl": "https://preprod.cardanoscan.io/transaction/c59e5a98c72e370938dfa1d3b5867cbf031fdcef7a9371fb499ddfce71f52d25",
+      "buyerAddress": "addr_test1qpar2sptyq53967wma4rwk892w36cva72au3w9wxzfsw9gshquv8dvp4a00v9z3p53xm2ly662edld25jejm6dl6l8ss5qt5v7",
+      "sellerAddress": "addr_test1qr7w82wahq0x47flasht06jx9emz86xu8sm6jfu40h9pcmv4x9ygzkhklq822duqvjz8cz048gmffg7vq64mnh4dgursclnr8n"
+    },
+    {
+      "id": "39f7efd3-88eb-4325-8cce-e2d6a28e768f",
+      "missionId": "ac7c398e-b4a3-463c-9f5b-83766abc9ea8",
+      "jobId": "463cadc5-36ba-45b4-ac37-5b4147f13c77",
+      "buyerAgentId": "research",
+      "sellerAgentId": "data",
+      "amount": 0.2,
+      "asset": "tUSDM",
+      "network": "preprod",
+      "status": "confirmed",
+      "mode": "cardano",
+      "createdAt": "2026-10-07T04:35:50.240Z",
+      "txHash": "276f712bd826eace83f3f347aa10561f24971894c47712d54e725238b0cca598",
+      "explorerUrl": "https://preprod.cardanoscan.io/transaction/276f712bd826eace83f3f347aa10561f24971894c47712d54e725238b0cca598",
+      "buyerAddress": "addr_test1qr7w82wahq0x47flasht06jx9emz86xu8sm6jfu40h9pcmv4x9ygzkhklq822duqvjz8cz048gmffg7vq64mnh4dgursclnr8n",
+      "sellerAddress": "addr_test1qzrzmx3krjr84rqlqfafrajphdmq8h2egp55yeuww9n5sghc8fqmvda8hxxa43vvtlm3jhlfg2f9jcxvhrxhgn2ydfpsx35lqz"
+    },
+    {
+      "id": "9c3af6dd-8319-43e3-a080-9102dab27b14",
+      "missionId": "ac7c398e-b4a3-463c-9f5b-83766abc9ea8",
+      "jobId": "6de449f5-1e28-451f-bca8-7fdb20c68076",
+      "buyerAgentId": "manager",
+      "sellerAgentId": "report",
+      "amount": 0.5,
+      "asset": "tUSDM",
+      "network": "preprod",
+      "status": "confirmed",
+      "mode": "cardano",
+      "createdAt": "2026-10-07T04:36:16.327Z",
+      "txHash": "de8f2735f4c7c1a4cbabfb4b472afc120d574e4dc5cf447f574f8cfab8e613f0",
+      "explorerUrl": "https://preprod.cardanoscan.io/transaction/de8f2735f4c7c1a4cbabfb4b472afc120d574e4dc5cf447f574f8cfab8e613f0",
+      "buyerAddress": "addr_test1qpar2sptyq53967wma4rwk892w36cva72au3w9wxzfsw9gshquv8dvp4a00v9z3p53xm2ly662edld25jejm6dl6l8ss5qt5v7",
+      "sellerAddress": "addr_test1qp7u7t2xrpe00zskcysw5c45y536aryyqx5cglwmhvgpa2y64h7k4yeksrcp0vvkkv2uhp3tzzfvs2pcnvxsv2ssydrs5z9fqf"
+    }
+  ],
+  "events": [
+    {
+      "id": "d0e2c228-c428-4639-8686-5d120f825296",
+      "type": "mission_planning",
+      "message": "Mission planning",
+      "createdAt": "2026-10-07T04:35:08.786Z"
+    },
+    {
+      "id": "85e1f342-0d84-4f46-98ba-8a6948198425",
+      "type": "plan_created",
+      "message": "One web_research task will cover all comparison criteria for the three cities and will include the purchase of a structured_city_data specialist demo. A subsequent report_generation task will produce the final recommendation. This plan prioritizes cost-effectiveness by combining research and delegating data acquisition.",
+      "createdAt": "2026-10-07T04:35:11.011Z"
+    },
+    {
+      "id": "ac91f5b3-fc53-4b82-a636-d81b7d916a2d",
+      "type": "mission_discovering",
+      "message": "Mission discovering",
+      "createdAt": "2026-10-07T04:35:11.012Z"
+    },
+    {
+      "id": "4b01ea12-1267-4278-af7c-e35237f69595",
+      "type": "capability_required",
+      "message": "Manager needs web_research",
+      "createdAt": "2026-10-07T04:35:11.012Z"
+    },
+    {
+      "id": "a0e93615-5828-44e5-861f-fd179f2cd1bc",
+      "type": "agent_discovered",
+      "message": "2 web_research providers discovered (masumi)",
+      "createdAt": "2026-10-07T04:35:11.096Z"
+    },
+    {
+      "id": "1eab8f13-a99e-4b9a-808b-e3dbc7590a5f",
+      "type": "mission_selecting",
+      "message": "Mission selecting",
+      "createdAt": "2026-10-07T04:35:11.096Z"
+    },
+    {
+      "id": "13dad612-4c57-46fd-ae5e-a3b78c9eef47",
+      "type": "agent_evaluated",
+      "message": "ResearchPro: Capability match · reputation 95/100 · 1 tUSDM · score 88.2",
+      "createdAt": "2026-10-07T04:35:11.096Z"
+    },
+    {
+      "id": "f98ba62c-e5ad-457e-a33e-044dc1ed36d4",
+      "type": "agent_evaluated",
+      "message": "Scout Research: Capability match · reputation 88/100 · 0.85 tUSDM · score 86.2",
+      "createdAt": "2026-10-07T04:35:11.096Z"
+    },
+    {
+      "id": "c59111af-9b6b-4a40-9a2e-7dba23bba0df",
+      "type": "agent_selected",
+      "message": "ResearchPro selected: Capability match · reputation 95/100 · 1 tUSDM · score 88.2",
+      "jobId": "db92b403-a2ee-46d9-9130-2e51c2d6847d",
+      "createdAt": "2026-10-07T04:35:11.097Z"
+    },
+    {
+      "id": "51aff648-dd9a-4513-b176-4655d15398e5",
+      "type": "mission_purchasing",
+      "message": "Mission purchasing",
+      "createdAt": "2026-10-07T04:35:11.097Z"
+    },
+    {
+      "id": "154e3a9b-b61f-4ddf-b5ca-e632fcf19631",
+      "type": "payment_requested",
+      "message": "manager → ResearchPro: 1 tUSDM",
+      "jobId": "db92b403-a2ee-46d9-9130-2e51c2d6847d",
+      "createdAt": "2026-10-07T04:35:11.098Z"
+    },
+    {
+      "id": "043c71f2-4fec-4d69-9b48-8aea2e5fae22",
+      "type": "payment_signed",
+      "message": "Signed transaction prepared; awaiting submission and confirmation",
+      "jobId": "db92b403-a2ee-46d9-9130-2e51c2d6847d",
+      "createdAt": "2026-10-07T04:35:12.703Z"
+    },
+    {
+      "id": "bfafe53b-89cb-4c36-b858-233e7ca17c6a",
+      "type": "payment_submitted",
+      "message": "Cardano settlement: c59e5a98c72e370938dfa1d3b5867cbf031fdcef7a9371fb499ddfce71f52d25",
+      "jobId": "db92b403-a2ee-46d9-9130-2e51c2d6847d",
+      "createdAt": "2026-10-07T04:35:35.733Z"
+    },
+    {
+      "id": "3a4644c5-8c3e-42d1-9879-edffc92311e7",
+      "type": "payment_confirmed",
+      "message": "REAL PAYMENT · manager → ResearchPro · 1 tUSDM",
+      "jobId": "db92b403-a2ee-46d9-9130-2e51c2d6847d",
+      "createdAt": "2026-10-07T04:35:35.792Z"
+    },
+    {
+      "id": "04b1df77-6fb0-4d60-96b9-2dfb4d56e883",
+      "type": "job_paid",
+      "message": "ResearchPro payment verified",
+      "jobId": "db92b403-a2ee-46d9-9130-2e51c2d6847d",
+      "createdAt": "2026-10-07T04:35:35.793Z"
+    },
+    {
+      "id": "16c05a97-5d60-4125-850a-5ed059daf063",
+      "type": "mission_executing",
+      "message": "Mission executing",
+      "createdAt": "2026-10-07T04:35:35.793Z"
+    },
+    {
+      "id": "9bdb8722-02a2-4ea7-9894-148d66c149f2",
+      "type": "agent_started",
+      "message": "ResearchPro is executing",
+      "jobId": "db92b403-a2ee-46d9-9130-2e51c2d6847d",
+      "createdAt": "2026-10-07T04:35:35.793Z"
+    },
+    {
+      "id": "82215c4f-688b-45c5-a520-58557329eed0",
+      "type": "web_research_completed",
+      "message": "Gemini returned 3 grounded sources",
+      "jobId": "db92b403-a2ee-46d9-9130-2e51c2d6847d",
+      "createdAt": "2026-10-07T04:35:48.013Z"
+    },
+    {
+      "id": "3c9c50e0-58f7-4efe-81e3-e4e283d9d8f1",
+      "type": "sub_agent_discovered",
+      "message": "Research provider discovers structured_city_data",
+      "jobId": "db92b403-a2ee-46d9-9130-2e51c2d6847d",
+      "createdAt": "2026-10-07T04:35:49.012Z"
+    },
+    {
+      "id": "85213d97-261a-44c3-b0e4-41ee285f2380",
+      "type": "capability_required",
+      "message": "research needs structured_city_data",
+      "createdAt": "2026-10-07T04:35:50.128Z"
+    },
+    {
+      "id": "9a686659-fb94-44e2-997e-f09e8ec83059",
+      "type": "agent_discovered",
+      "message": "1 structured_city_data providers discovered (masumi)",
+      "createdAt": "2026-10-07T04:35:50.232Z"
+    },
+    {
+      "id": "d3a915fd-a321-41ba-95d3-c40e2ec36cfa",
+      "type": "agent_evaluated",
+      "message": "DataHub: Capability match · reputation 92/100 · 0.2 tUSDM · score 94.2",
+      "createdAt": "2026-10-07T04:35:50.232Z"
+    },
+    {
+      "id": "0b9a55e0-500f-47e7-9937-caca0a860b29",
+      "type": "agent_selected",
+      "message": "DataHub selected: Capability match · reputation 92/100 · 0.2 tUSDM · score 94.2",
+      "jobId": "463cadc5-36ba-45b4-ac37-5b4147f13c77",
+      "createdAt": "2026-10-07T04:35:50.233Z"
+    },
+    {
+      "id": "161f5f9c-d363-4c07-8ad3-38656a51d0e2",
+      "type": "sub_agent_hired",
+      "message": "research commissions DataHub",
+      "jobId": "463cadc5-36ba-45b4-ac37-5b4147f13c77",
+      "createdAt": "2026-10-07T04:35:50.233Z"
+    },
+    {
+      "id": "d26a6878-6ea0-46cb-9ad2-ac5a2b31b0ae",
+      "type": "payment_requested",
+      "message": "research → DataHub: 0.2 tUSDM",
+      "jobId": "463cadc5-36ba-45b4-ac37-5b4147f13c77",
+      "createdAt": "2026-10-07T04:35:50.233Z"
+    },
+    {
+      "id": "e0f0019c-ceb7-4ae9-b3d0-cef7c974010a",
+      "type": "payment_signed",
+      "message": "Signed transaction prepared; awaiting submission and confirmation",
+      "jobId": "463cadc5-36ba-45b4-ac37-5b4147f13c77",
+      "createdAt": "2026-10-07T04:35:51.095Z"
+    },
+    {
+      "id": "da2590c1-c774-45d5-a05b-8490a5c1212f",
+      "type": "payment_submitted",
+      "message": "Cardano settlement: 276f712bd826eace83f3f347aa10561f24971894c47712d54e725238b0cca598",
+      "jobId": "463cadc5-36ba-45b4-ac37-5b4147f13c77",
+      "createdAt": "2026-10-07T04:36:03.724Z"
+    },
+    {
+      "id": "1475104e-1f79-4d14-bb5b-df0b828830c9",
+      "type": "payment_confirmed",
+      "message": "REAL PAYMENT · research → DataHub · 0.2 tUSDM",
+      "jobId": "463cadc5-36ba-45b4-ac37-5b4147f13c77",
+      "createdAt": "2026-10-07T04:36:03.772Z"
+    },
+    {
+      "id": "eaadf338-0f6a-43a2-ab01-002ad28aa49b",
+      "type": "job_paid",
+      "message": "DataHub payment verified",
+      "jobId": "463cadc5-36ba-45b4-ac37-5b4147f13c77",
+      "createdAt": "2026-10-07T04:36:03.773Z"
+    },
+    {
+      "id": "4cb23f84-7ef1-4e2c-b2b4-41ce76ab98b4",
+      "type": "agent_started",
+      "message": "DataHub is executing",
+      "jobId": "463cadc5-36ba-45b4-ac37-5b4147f13c77",
+      "createdAt": "2026-10-07T04:36:03.773Z"
+    },
+    {
+      "id": "b92293e4-de59-4e48-8b64-56d3fd71e56d",
+      "type": "result_received",
+      "message": "DataHub returned a deliverable",
+      "jobId": "463cadc5-36ba-45b4-ac37-5b4147f13c77",
+      "createdAt": "2026-10-07T04:36:03.777Z"
+    },
+    {
+      "id": "a26852ae-3dbb-47a9-8508-b3e55e0cfc76",
+      "type": "verification_passed",
+      "message": "DataHub: required fields and content thresholds passed",
+      "jobId": "463cadc5-36ba-45b4-ac37-5b4147f13c77",
+      "createdAt": "2026-10-07T04:36:03.778Z"
+    },
+    {
+      "id": "788b5195-f4ac-4e7e-ae1c-cfe47a9faa56",
+      "type": "mission_verifying",
+      "message": "Mission verifying",
+      "createdAt": "2026-10-07T04:36:14.416Z"
+    },
+    {
+      "id": "29dd2d25-d1c9-45e1-949f-e5d6681c83fe",
+      "type": "result_received",
+      "message": "ResearchPro returned a deliverable",
+      "jobId": "db92b403-a2ee-46d9-9130-2e51c2d6847d",
+      "createdAt": "2026-10-07T04:36:14.417Z"
+    },
+    {
+      "id": "910b6ede-fda5-4530-8c5d-dc336c751bb9",
+      "type": "verification_passed",
+      "message": "ResearchPro: required fields and content thresholds passed",
+      "jobId": "db92b403-a2ee-46d9-9130-2e51c2d6847d",
+      "createdAt": "2026-10-07T04:36:16.200Z"
+    },
+    {
+      "id": "f171bbc7-6d6b-4db3-9fc4-fe94697524e7",
+      "type": "mission_discovering",
+      "message": "Mission discovering",
+      "createdAt": "2026-10-07T04:36:16.202Z"
+    },
+    {
+      "id": "615b5be9-b557-4fff-847c-1092a0220480",
+      "type": "capability_required",
+      "message": "Manager needs report_generation",
+      "createdAt": "2026-10-07T04:36:16.203Z"
+    },
+    {
+      "id": "ce277062-d7e0-46cf-8cae-7bfe49aa6c0c",
+      "type": "agent_discovered",
+      "message": "1 report_generation providers discovered (masumi)",
+      "createdAt": "2026-10-07T04:36:16.320Z"
+    },
+    {
+      "id": "81808e66-9e61-4bef-b501-d68e3072e932",
+      "type": "mission_selecting",
+      "message": "Mission selecting",
+      "createdAt": "2026-10-07T04:36:16.321Z"
+    },
+    {
+      "id": "8afe114b-27fd-4255-9895-438374d01610",
+      "type": "agent_evaluated",
+      "message": "Synthesis: Capability match · reputation 97/100 · 0.5 tUSDM · score 92.2",
+      "createdAt": "2026-10-07T04:36:16.321Z"
+    },
+    {
+      "id": "99a2d612-bc3e-4260-8c89-88eac9d11520",
+      "type": "agent_selected",
+      "message": "Synthesis selected: Capability match · reputation 97/100 · 0.5 tUSDM · score 92.2",
+      "jobId": "6de449f5-1e28-451f-bca8-7fdb20c68076",
+      "createdAt": "2026-10-07T04:36:16.321Z"
+    },
+    {
+      "id": "be3909de-9497-4988-bced-4cbd9094f32c",
+      "type": "mission_purchasing",
+      "message": "Mission purchasing",
+      "createdAt": "2026-10-07T04:36:16.322Z"
+    },
+    {
+      "id": "fc4dc183-f2ec-4cce-a998-bf39d50f0f0f",
+      "type": "payment_requested",
+      "message": "manager → Synthesis: 0.5 tUSDM",
+      "jobId": "6de449f5-1e28-451f-bca8-7fdb20c68076",
+      "createdAt": "2026-10-07T04:36:16.322Z"
+    },
+    {
+      "id": "9f1767bd-8d61-442f-aa3c-9bc8683f5cc5",
+      "type": "payment_signed",
+      "message": "Signed transaction prepared; awaiting submission and confirmation",
+      "jobId": "6de449f5-1e28-451f-bca8-7fdb20c68076",
+      "createdAt": "2026-10-07T04:36:17.142Z"
+    },
+    {
+      "id": "da675f04-cb82-413b-99f0-cd3e20f84fd6",
+      "type": "payment_submitted",
+      "message": "Cardano settlement: de8f2735f4c7c1a4cbabfb4b472afc120d574e4dc5cf447f574f8cfab8e613f0",
+      "jobId": "6de449f5-1e28-451f-bca8-7fdb20c68076",
+      "createdAt": "2026-10-07T04:36:51.639Z"
+    },
+    {
+      "id": "990d7399-326f-4eca-9cac-330bec973e40",
+      "type": "payment_confirmed",
+      "message": "REAL PAYMENT · manager → Synthesis · 0.5 tUSDM",
+      "jobId": "6de449f5-1e28-451f-bca8-7fdb20c68076",
+      "createdAt": "2026-10-07T04:36:51.689Z"
+    },
+    {
+      "id": "25f0f358-3ab2-4411-9763-421ef89a9e0f",
+      "type": "job_paid",
+      "message": "Synthesis payment verified",
+      "jobId": "6de449f5-1e28-451f-bca8-7fdb20c68076",
+      "createdAt": "2026-10-07T04:36:51.690Z"
+    },
+    {
+      "id": "652180a6-0a8d-42d1-85c1-fc754817d445",
+      "type": "mission_executing",
+      "message": "Mission executing",
+      "createdAt": "2026-10-07T04:36:51.690Z"
+    },
+    {
+      "id": "27d5b542-f594-403d-ad49-beddca48dfc8",
+      "type": "agent_started",
+      "message": "Synthesis is executing",
+      "jobId": "6de449f5-1e28-451f-bca8-7fdb20c68076",
+      "createdAt": "2026-10-07T04:36:51.691Z"
+    },
+    {
+      "id": "cbf6eb91-15db-4cc7-9835-d24dbb470d68",
+      "type": "mission_verifying",
+      "message": "Mission verifying",
+      "createdAt": "2026-10-07T04:36:58.604Z"
+    },
+    {
+      "id": "047d0802-bd80-4a7f-8111-d2e1207670ca",
+      "type": "result_received",
+      "message": "Synthesis returned a deliverable",
+      "jobId": "6de449f5-1e28-451f-bca8-7fdb20c68076",
+      "createdAt": "2026-10-07T04:36:58.605Z"
+    },
+    {
+      "id": "a4d33875-f6eb-4070-bcad-9da8e00eba19",
+      "type": "verification_passed",
+      "message": "Synthesis: required fields and content thresholds passed",
+      "jobId": "6de449f5-1e28-451f-bca8-7fdb20c68076",
+      "createdAt": "2026-10-07T04:36:59.912Z"
+    },
+    {
+      "id": "a3ac7ca7-bd85-4244-a9ef-aa06c5a006a6",
+      "type": "mission_synthesizing",
+      "message": "Mission synthesizing",
+      "createdAt": "2026-10-07T04:36:59.914Z"
+    },
+    {
+      "id": "50dc0e1d-f1be-4816-ab20-ed13c36da737",
+      "type": "mission_completed",
+      "message": "Mission completed",
+      "createdAt": "2026-10-07T04:36:59.915Z"
+    }
+  ],
+  "createdAt": "2026-10-07T04:35:08.600Z",
+  "failNextProvider": false,
+  "paymentMode": "cardano",
+  "aiMode": "gemini",
+  "plan": {
+    "summary": "One web_research task will cover all comparison criteria for the three cities and will include the purchase of a structured_city_data specialist demo. A subsequent report_generation task will produce the final recommendation. This plan prioritizes cost-effectiveness by combining research and delegating data acquisition.",
+    "tasks": [
+      {
+        "id": "research_comparison",
+        "capability": "web_research",
+        "objective": "Compare Kuala Lumpur, Bangkok, and Da Nang for a remote software developer living for one month, covering cost of living, internet quality, safety, and coworking. Discover and hire a structured_city_data specialist for an illustrative comparison, distinguishing this purchased demo dataset from current grounded web evidence.",
+        "dependsOn": []
+      },
+      {
+        "id": "generate_report",
+        "capability": "report_generation",
+        "objective": "Produce a final recommendation for a remote software developer based on the comparison of Kuala Lumpur, Bangkok, and Da Nang, utilizing the research findings and clearly referencing the distinction between web evidence and the purchased structured city data.",
+        "dependsOn": [
+          "research_comparison"
+        ]
+      }
+    ]
+  },
+  "result": {
+    "title": "Remote Software Developer City Recommendation: Kuala Lumpur, Bangkok, or Da Nang",
+    "recommendation": "For a remote software developer prioritizing a balance of cost-effectiveness, reasonable internet speed, and a good environment for a one-month stay, Da Nang is the recommended option. While Bangkok offers superior internet and more coworking spaces, its higher cost makes it less ideal for a budget-conscious developer. Kuala Lumpur presents a moderate option, but Da Nang's significantly lower cost, combined with adequate infrastructure, makes it the strongest recommendation.",
+    "comparison": [
+      {
+        "option": "Da Nang",
+        "assessment": "Da Nang stands out as the most budget-friendly option, with estimated all-in monthly costs around $720 based on web research. It offers good internet speeds (median downlink of 210 Mbps), though with higher VPN latency (162 ms). While it has fewer coworking spaces (8) and lower English proficiency compared to the other cities, its affordability is a significant advantage for a one-month stay. The illustrative purchased data also indicates it's the most affordable ($900/month) and safest (score of 9) option."
+      },
+      {
+        "option": "Bangkok",
+        "assessment": "Bangkok offers the best internet infrastructure with the highest median downlink speed (247 Mbps) and lowest VPN latency (44 ms). It also boasts the most coworking spaces (28). However, it is the most expensive city, with estimated all-in monthly costs around $1,200 according to web research, making it less suitable for a budget-conscious developer. The illustrative purchased data similarly shows it as the most expensive ($1300/month) but with the best coworking score (10)."
+      },
+      {
+        "option": "Kuala Lumpur",
+        "assessment": "Kuala Lumpur provides a middle-ground option with good infrastructure at a moderate cost. Web research estimates all-in monthly costs at $950. Internet speeds are slightly lower than Da Nang and Bangkok (median downlink of 165 Mbps) and it has the highest VPN latency (178 ms). It offers 15 coworking spaces. The illustrative purchased data suggests a higher monthly cost of $1200, making it less attractive compared to Da Nang for cost-efficiency."
+      }
+    ],
+    "evidence": [
+      "Web research consistently identifies Da Nang as the most affordable city for digital nomads, with an estimated all-in monthly cost of $720, compared to $950 for Kuala Lumpur and $1,200 for Bangkok (La Vie Zine, johal.in, DEV Community).",
+      "Internet speeds vary, with Bangkok having the highest median downlink speed (247 Mbps) and lowest VPN latency (44 ms). Da Nang has a median downlink of 210 Mbps but higher VPN latency (162 ms), while Kuala Lumpur has a median downlink of 165 Mbps and the highest VPN latency (178 ms) (DEV Community).",
+      "Coworking spaces are most abundant in Bangkok (28), followed by Kuala Lumpur (15), and then Da Nang (8) (La Vie Zine, johal.in).",
+      "The purchased structured city data, while illustrative, aligns with the web research regarding Da Nang's affordability ($900/month compared to Bangkok's $1300/month and Kuala Lumpur's $1200/month). It also highlights Da Nang's favorable safety score (9) and Bangkok's excellent coworking score (10).",
+      "General advice from web sources suggests consulting local communities for specific safety insights, as comprehensive safety comparisons were not readily available in the web research."
+    ],
+    "limitations": [
+      "The purchased structured city data is a demo from a 'Structured City Data Specialist' and is explicitly stated to be a 'controlled hackathon fixture' not reflective of current market conditions or a real-time price or safety survey. Therefore, its values should be considered illustrative and not definitive for current decision-making.",
+      "Specific safety comparisons between the cities were generally unavailable in the web research, with general advice suggesting community consultation.",
+      "The 'all-in monthly cost' estimates from web research are subject to individual lifestyle and preferences, and may vary.",
+      "English proficiency, while mentioned in research summaries, is not quantified, making direct comparison challenging."
+    ]
+  },
+  "completedAt": "2026-10-07T04:36:59.916Z"
+}

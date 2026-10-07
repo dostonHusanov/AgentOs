@@ -4,15 +4,15 @@ Local dependencies, environment file, mission engine, dashboard, and setup scrip
 
 Fill only these external values:
 
-| Field | What you supply |
-| --- | --- |
-| `GEMINI_API_KEY` | Gemini API key |
-| `BLOCKFROST_PROJECT_ID` | Cardano **Preprod** project ID |
-| `MANAGER_MNEMONIC` | Dedicated test buyer wallet recovery phrase, quoted |
-| `RESEARCH_MNEMONIC` | Separate test research wallet recovery phrase, quoted |
-| `RESEARCH_BACKUP_MNEMONIC` | Separate test backup wallet recovery phrase, quoted |
-| `DATA_WALLET_ADDRESS` | Preprod Data seller recipient |
-| `REPORT_WALLET_ADDRESS` | Preprod Report seller recipient |
+| Field                      | What you supply                                       |
+| -------------------------- | ----------------------------------------------------- |
+| `GEMINI_API_KEY`           | Gemini API key                                        |
+| `BLOCKFROST_PROJECT_ID`    | Cardano **Preprod** project ID                        |
+| `MANAGER_MNEMONIC`         | Dedicated test buyer wallet recovery phrase, quoted   |
+| `RESEARCH_MNEMONIC`        | Separate test research wallet recovery phrase, quoted |
+| `RESEARCH_BACKUP_MNEMONIC` | Separate test backup wallet recovery phrase, quoted   |
+| `DATA_WALLET_ADDRESS`      | Preprod Data seller recipient                         |
+| `REPORT_WALLET_ADDRESS`    | Preprod Report seller recipient                       |
 
 Leave buyer address fields blank initially: `wallet:sync` derives and fills them. It rejects an existing address that differs from its configured recovery phrase. It never prints recovery phrases, signs transactions, or moves funds.
 
@@ -55,7 +55,7 @@ npm run demo:live
 
 The application now uses Gemini. Get your API key from https://aistudio.google.com/apikey and add it as `GEMINI_API_KEY`. OpenAI credentials are no longer required. `AI_MODE=gemini` enables live AI independently of Cardano payment mode; use simulated payments to check Gemini before funding wallets.
 
-Native Masumi registry mapping, remote agent execution, escrow release/refund, and browser visual QA remain separate unfinished work. Leave `MASUMI_REGISTRY_URL` blank for the explicitly labeled local registry. Adding a Masumi URL cannot enable unimplemented escrow.
+Native Masumi nodes, four Preprod registrations, direct payments, and completed escrow-backed nested deliveries are live verified. See [live evidence](LIVE_VERIFICATION.md). Seller release remains subject to the dispute window. Follow [MASUMI.md](MASUMI.md). Remote agent execution and browser visual QA remain unfinished. Leave both registry URLs blank to retain local discovery; escrow is enabled only after native identities and buyer wallet scopes pass checks.
 
 ## OpenRouter
 

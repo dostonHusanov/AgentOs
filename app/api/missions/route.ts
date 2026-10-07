@@ -21,7 +21,7 @@ const schema = z.object({
     .object({
       maxSinglePurchase: z.number().positive().max(1000),
       minimumReputation: z.number().min(0).max(100),
-      escrowThreshold: z.number().positive().max(1000),
+      escrowThreshold: z.number().nonnegative().max(1000),
       allowedCapabilities: z.array(z.string()).optional(),
       blockedCapabilities: z.array(z.string()).optional(),
     })

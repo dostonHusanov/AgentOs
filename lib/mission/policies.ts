@@ -1,5 +1,6 @@
 import type { Mission } from "@/types/mission";
 import type { AgentDefinition } from "@/types/agent";
+import { canEscrow } from "@/lib/masumi/escrow";
 export const units = (amount: number) => Math.round(amount * 1_000_000);
 export function validatePurchase(
   m: Mission,
@@ -28,7 +29,10 @@ export function validatePurchase(
       !m.policy.allowedCapabilities.includes(capability))
   )
     throw new Error("Capability blocked by policy");
-  if (a.pricing.amount > m.policy.escrowThreshold)
+  if (
+    a.pricing.amount > m.policy.escrowThreshold &&
+    (m.paymentMode !== "cardano" || !canEscrow(a))
+  )
     throw new Error("Escrow required by policy; escrow is not configured");
 }
 export function reserve(m: Mission, amount: number) {

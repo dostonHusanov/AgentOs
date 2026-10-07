@@ -18,7 +18,13 @@
     "setup": "node --import tsx scripts/setup.ts",
     "setup:live": "node --import tsx scripts/setup.ts --live",
     "wallet:sync": "node --import tsx scripts/sync-wallet-addresses.ts",
-    "ai:check": "node --import tsx scripts/ai-check.ts"
+    "ai:check": "node --import tsx scripts/ai-check.ts",
+    "masumi:prepare": "node --import tsx scripts/masumi-prepare.ts",
+    "masumi:start": "node --import tsx scripts/masumi-prepare.ts --start",
+    "masumi:check": "node --import tsx scripts/masumi-check.ts",
+    "escrow:reconcile": "node --import tsx scripts/escrow-reconcile.ts",
+    "masumi:bootstrap": "node --import tsx scripts/masumi-bootstrap.ts",
+    "masumi:enable": "node --import tsx scripts/masumi-enable.ts"
   },
   "dependencies": {
     "@google/genai": "^2.27.0",

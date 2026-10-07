@@ -13,17 +13,24 @@ async function main() {
       continue;
     }
     // getAddress derives locally. No provider call or payment occurs here.
-    const signer = toClientCardanoSigner({
-      mnemonic,
-      network: "cardano:preprod",
-      provider: {
-        blockfrost: {
-          baseUrl: "https://cardano-preprod.blockfrost.io/api/v0",
-          projectId:
-            process.env.BLOCKFROST_PROJECT_ID || "local-address-derivation",
+    let signer;
+    try {
+      signer = toClientCardanoSigner({
+        mnemonic,
+        network: "cardano:preprod",
+        provider: {
+          blockfrost: {
+            baseUrl: "https://cardano-preprod.blockfrost.io/api/v0",
+            projectId:
+              process.env.BLOCKFROST_PROJECT_ID || "local-address-derivation",
+          },
         },
-      },
-    });
+      });
+    } catch {
+      throw new Error(
+        `${prefix}_MNEMONIC is invalid. Check all words and their order locally; no phrase details were printed.`,
+      );
+    }
     const key = `${prefix}_WALLET_ADDRESS`,
       derived = signer.getAddress(),
       existing = process.env[key]?.trim();

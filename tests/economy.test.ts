@@ -10,6 +10,7 @@ import { evaluate } from "../lib/agents/evaluator";
 import { localAgents } from "../lib/agents/discovery";
 import { validateRequirements, requirements } from "../lib/cardano/x402";
 import { verifyResult } from "../lib/agents/verifier";
+import { validatePlanBudget } from "../lib/mission/planner";
 import type { Mission, Job } from "../types/mission";
 function mission(): Mission {
   return {
@@ -57,6 +58,30 @@ test("provider ranking selects by policy and capabilities", () => {
   );
   assert.equal(ranking.find((a) => !a.rejection)?.agent.id, "research");
   assert.ok(ranking.find((a) => a.agent.id === "research-premium")?.rejection);
+});
+test("planning budgets for selected providers and implicit final synthesis before purchasing", () => {
+  const m = mission();
+  const plan = {
+    summary: "Research then synthesize",
+    tasks: Array.from({ length: 5 }, (_, i) => ({
+      id: String(i),
+      capability: "web_research",
+      objective: "Compare cities",
+      dependsOn: [],
+    })),
+  };
+  // The cheapest research provider would fit, but the actual ranking selects
+  // a different provider. The implicit final report also needs a budget.
+  assert.throws(() => validatePlanBudget(m, plan, localAgents()), /5.5 tUSDM/);
+  assert.doesNotThrow(() =>
+    validatePlanBudget(
+      m,
+      { ...plan, tasks: plan.tasks.slice(0, 1) },
+      localAgents(),
+    ),
+  );
+  assert.deepEqual(m.payments, []);
+  assert.equal(m.budget.reserved, 0);
 });
 test("reputation, cycles, depth, and escrow fail closed", () => {
   const m = mission(),

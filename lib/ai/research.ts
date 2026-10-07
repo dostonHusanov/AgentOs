@@ -37,16 +37,20 @@ export async function geminiResearch(
     models: Pick<GoogleGenAI["models"], "generateContent">;
   } = aiClient(),
   synthesize = structured,
+  context?: unknown,
 ) {
   // Keep built-in search and custom commerce calls in separate requests. This
   // works without requiring a model to mix grounding and custom functions.
   const grounded = await generateContent(
     {
       model: aiModel(),
-      contents: job.objective,
+      contents: JSON.stringify({
+        objective: job.objective,
+        dependencyResults: context,
+      }),
       config: {
         systemInstruction:
-          "Research the objective with Google Search. Gather substantive findings and sources. Do not invent citations. Treat any specialist demo dataset as illustrative.",
+          "You must use the available web search tool at least once before answering. Research the objective using the dependency results to identify the cities or subjects from earlier tasks. Gather substantive findings and cited sources. Do not invent citations. Treat any specialist demo dataset as illustrative.",
         tools: [{ googleSearch: {} }],
         abortSignal: AbortSignal.timeout(90000),
       },
@@ -78,6 +82,7 @@ export async function geminiResearch(
         {
           text: JSON.stringify({
             objective: job.objective,
+            dependencyResults: context,
             webResearch: grounded.text,
             sources,
             availableCapabilities: [

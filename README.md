@@ -12,7 +12,7 @@ Complex goals require multiple capabilities. People currently choose tools, coor
 
 Give the Manager a goal and a tUSDM budget. It plans a dependency graph, discovers providers by capability, ranks eligible providers, purchases services, verifies results, and produces a deliverable. Research providers can independently commission DataHub; their child jobs and receipts identify the research provider as buyer.
 
-**Implementation status:** the local HTTP mission flow is implemented and tested, including genuine 402 responses, simulated proof verification, nested purchases, retries, and budget enforcement. The real Cardano adapter uses installed `@x402/cardano@2.28.0` APIs, but a confirmed Preprod transaction and live Gemini calls still require configured credentials and funded wallets. No on-chain success is claimed until a confirmed receipt exists. Masumi native registration and escrow lifecycle are not implemented.
+**Implementation status:** live Gemini 2.5 Flash through OpenRouter, four native Masumi V2 registrations, and completed direct-payment and escrow-delivery missions are verified on Preprod. Each successful mission includes three confirmed transactions and a nested Research → Data hire, spending or locking 1.70 tUSDM. Escrow delivery and result submission are distinct from seller release, which remains subject to the dispute window. See [live evidence](docs/LIVE_VERIFICATION.md) and [local setup](docs/MASUMI.md).
 
 ## 3. Why Cardano
 
@@ -95,11 +95,9 @@ Signing and execution queues serialize each buyer wallet to prevent overlapping 
 
 ## 7. Masumi Integration
 
-Without `MASUMI_REGISTRY_URL`, discovery returns the explicit `local` registry. If configured, the read-only adapter prefers that endpoint and validates an array of normalized AgentOS metadata. It expects fields matching `AgentDefinition`: ID, description, capabilities, endpoint, pricing, reputation, reliability, availability, and optional wallet/registry identifiers. It is **not a universal native Masumi API client**; node schemas vary and require a verified normalization gateway. Results carry source `masumi`, identifying the configured source, not an independently verified on-chain registry claim. A registry error fails closed; there is no silent fallback or invented reputation.
+Native discovery is selected by `MASUMI_NODE_URL` and confirmed `MASUMI_AGENT_IDS`. It reads the node's documented V2 registry API, binds each identity to an owned AgentOS provider, and validates seller, endpoint, capability, asset and price. Local reputation/reliability remain configured metadata. The older `MASUMI_REGISTRY_URL` normalization gateway remains available; no registry failure silently falls back. Remote service execution remains unsupported.
 
-External providers can be discovered, but execution currently supports only same-origin AgentOS paid endpoints. A remote Masumi job transport, registration receipt verification, and reputation attestation remain integration work. Do not configure native endpoints without matching their documented request/response contracts.
-
-**Escrow is unavailable.** A purchase above `escrowThreshold` is rejected rather than silently paid directly. Direct transfers cannot be refunded by this app. The SDK documentation states that its x402 Masumi authorization differs from the Masumi node's payment-service authorization; therefore this app does not invent a node-compatible escrow release/refund flow.
+Native escrow uses the Masumi node's own quotes and purchases. Direct purchases use Cardano x402. Above-threshold jobs are rejected unless native escrow is explicitly enabled for that provider. Lock, result submission, refund authorization and reconciliation paths are wired, with durable intents and budget retention on uncertain outcomes. An escrow lock is distinct from seller release. Confirmed locks and completed nested deliveries are live verified. Refund requests and seller authorization are separate on-chain phases. See [live evidence](docs/LIVE_VERIFICATION.md). See [setup and recovery](docs/MASUMI.md).
 
 [Masumi registry concepts](https://www.masumi.network/dev/masumi/core-concepts/registry) · [Native registration guide](https://www.masumi.network/dev/masumi/documentation/get-started/register-agent)
 
@@ -121,7 +119,6 @@ The UI includes a dark mission control page, nested agent tree, live execution l
 
 Local setup is prepared by `npm run setup`, which creates `.env.local` only if missing and preserves existing values. See [your remaining integration checklist](docs/INTEGRATIONS.md). `npm run wallet:sync` derives the three buyer addresses from configured recovery phrases; `npm run setup:live` validates configuration before enabling live modes.
 
-
 Requires Node.js 22.13+ (Node.js 24 was used during development) and npm.
 
 ```bash
@@ -134,26 +131,26 @@ Open [http://127.0.0.1:3000](http://127.0.0.1:3000). The example configuration e
 
 ## 11. Environment Variables
 
-| Variable | Purpose |
-| --- | --- |
-| `AI_MODE` | `fixture` or `gemini`; never silently fall back after an Gemini error |
-| `PAYMENT_MODE` | `simulation` or `cardano`; never silently fall back after a payment error |
-| `GEMINI_API_KEY` | Server-only API key for live agents |
-| `GEMINI_MODEL` | Gemini model with structured outputs, function tools, and web search; default `gemini-3.8-flash` |
-| `APP_URL` | Reachable same-process origin; default `http://127.0.0.1:3000` |
-| `CARDANO_NETWORK` | Must be `preprod` in Cardano mode |
-| `BLOCKFROST_PROJECT_ID` | Preprod provider credentials |
-| `MANAGER_MNEMONIC` | Server-only funding wallet seed |
-| `RESEARCH_MNEMONIC` | Independent research buyer wallet seed |
-| `RESEARCH_BACKUP_MNEMONIC` | Replacement research buyer wallet seed |
-| `MANAGER_WALLET_ADDRESS` | Must match the Manager signer address |
-| `RESEARCH_WALLET_ADDRESS` | Recipient and Research signer address |
-| `RESEARCH_BACKUP_WALLET_ADDRESS` | Recipient and replacement signer address |
-| `DATA_WALLET_ADDRESS` | Preprod Data seller address |
-| `REPORT_WALLET_ADDRESS` | Preprod Report seller address |
-| `MAX_AGENT_DEPTH` | Bounded recursion, maximum 3 |
-| `MASUMI_REGISTRY_URL` | Optional normalized registry gateway URL |
-| `MASUMI_API_KEY` | Optional server-only gateway credential |
+| Variable                         | Purpose                                                                                          |
+| -------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `AI_MODE`                        | `fixture` or `gemini`; never silently fall back after an Gemini error                            |
+| `PAYMENT_MODE`                   | `simulation` or `cardano`; never silently fall back after a payment error                        |
+| `GEMINI_API_KEY`                 | Server-only API key for live agents                                                              |
+| `GEMINI_MODEL`                   | Gemini model with structured outputs, function tools, and web search; default `gemini-3.8-flash` |
+| `APP_URL`                        | Reachable same-process origin; default `http://127.0.0.1:3000`                                   |
+| `CARDANO_NETWORK`                | Must be `preprod` in Cardano mode                                                                |
+| `BLOCKFROST_PROJECT_ID`          | Preprod provider credentials                                                                     |
+| `MANAGER_MNEMONIC`               | Server-only funding wallet seed                                                                  |
+| `RESEARCH_MNEMONIC`              | Independent research buyer wallet seed                                                           |
+| `RESEARCH_BACKUP_MNEMONIC`       | Replacement research buyer wallet seed                                                           |
+| `MANAGER_WALLET_ADDRESS`         | Must match the Manager signer address                                                            |
+| `RESEARCH_WALLET_ADDRESS`        | Recipient and Research signer address                                                            |
+| `RESEARCH_BACKUP_WALLET_ADDRESS` | Recipient and replacement signer address                                                         |
+| `DATA_WALLET_ADDRESS`            | Preprod Data seller address                                                                      |
+| `REPORT_WALLET_ADDRESS`          | Preprod Report seller address                                                                    |
+| `MAX_AGENT_DEPTH`                | Bounded recursion, maximum 3                                                                     |
+| `MASUMI_REGISTRY_URL`            | Optional normalized registry gateway URL                                                         |
+| `MASUMI_API_KEY`                 | Optional server-only gateway credential                                                          |
 
 [Gemini Google Search documentation](https://ai.google.dev/gemini-api/docs/google-search) · [Gemini structured outputs](https://ai.google.dev/gemini-api/docs/structured-output)
 
@@ -196,7 +193,7 @@ No funded wallet or successful Cardano transaction was supplied at initial build
 npm run agents:register > agent-metadata.json
 ```
 
-This **exports metadata only**. Follow your Masumi node's official register-agent procedure and verify the returned registry ID on Preprod. The script does not submit an undocumented API request or mint a registration token. Then expose a normalization gateway if you want native registry entries discoverable by this MVP.
+Without arguments this exports metadata only. With `--submit`, it requests native Preprod V2 registration, persists request IDs, and saves bindings only after confirmation. See [Masumi setup](docs/MASUMI.md).
 
 ## 15. Demo Script
 
@@ -230,4 +227,4 @@ The local fixture completes quickly. For a predictable failure demonstration, cr
 
 ## 17. Future Work
 
-Verified Masumi native registry mappings, independent reputation, remote provider transport, Masumi escrow lifecycle/refunds, durable mission resumption, transactional PostgreSQL storage, wallet fee accounting, distributed workers, broader paid capabilities, and browser/real-chain regression coverage.
+Live verification of native Masumi registry/escrow adapters, independent reputation, remote provider transport, durable mission resumption, transactional PostgreSQL storage, wallet fee accounting, distributed workers, broader paid capabilities, and browser/real-chain regression coverage.

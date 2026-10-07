@@ -2,7 +2,12 @@ import type { Mission, Job } from "@/types/mission";
 import { geminiResearch } from "@/lib/ai/research";
 import { event } from "@/lib/mission/store";
 export type Hire = (capability: string, objective: string) => Promise<unknown>;
-export async function research(m: Mission, job: Job, hire: Hire) {
+export async function research(
+  m: Mission,
+  job: Job,
+  hire: Hire,
+  context?: unknown,
+) {
   if (m.aiMode === "fixture") {
     event(
       m,
@@ -23,5 +28,5 @@ export async function research(m: Mission, job: Job, hire: Hire) {
       purchasedData: data,
     };
   }
-  return geminiResearch(m, job, hire);
+  return geminiResearch(m, job, hire, undefined, undefined, context);
 }

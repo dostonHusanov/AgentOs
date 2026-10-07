@@ -17,6 +17,7 @@ import { buyerSigner, facilitator } from "./wallet";
 import { explorerUrl } from "./explorer";
 import { event, save } from "@/lib/mission/store";
 import { units, settleBudget } from "@/lib/mission/policies";
+import { lockEscrow } from "@/lib/masumi/escrow";
 const globals = globalThis as typeof globalThis & {
   agentosSigningSecret?: string;
 };
@@ -102,6 +103,30 @@ async function performPaidRequest(
     "Idempotency-Key": j.id,
   };
   const body = JSON.stringify({ missionId: m.id, jobId: j.id, context });
+  if (j.price > m.policy.escrowThreshold) {
+    const payment = await lockEscrow(m, j, a, context);
+    const signature = Buffer.from(
+      JSON.stringify({
+        masumi: true,
+        paymentId: payment.id,
+        jobId: j.id,
+        blockchainIdentifier: payment.escrow!.blockchainIdentifier,
+      }),
+    ).toString("base64");
+    payment.proofDigest = createHash("sha256").update(signature).digest("hex");
+    save(m);
+    const response = await fetch(a.endpoint, {
+      method: "POST",
+      headers: { ...headers, "PAYMENT-SIGNATURE": signature },
+      body,
+      signal: AbortSignal.timeout(600000),
+    });
+    if (!response.ok)
+      throw new Error(
+        `Escrow-backed agent execution failed (${response.status})`,
+      );
+    return response.json();
+  }
   const request = () =>
     fetch(a.endpoint, {
       method: "POST",
@@ -228,6 +253,31 @@ export async function acceptPayment(
     createHash("sha256").update(signature).digest("hex") !== payment.proofDigest
   )
     throw new Error("Payment signature not bound to job");
+  if (payment.escrow) {
+    if (
+      m.paymentMode !== "cardano" ||
+      payment.status !== "confirmed" ||
+      !(
+        payment.escrow.state === "funds_locked" ||
+        (j.result !== undefined &&
+          [
+            "result_submission_pending",
+            "result_submitted",
+            "released",
+          ].includes(payment.escrow.state))
+      )
+    )
+      throw new Error("Masumi escrow lock is not confirmed or available");
+    const proof = JSON.parse(Buffer.from(signature, "base64").toString("utf8"));
+    if (
+      !proof.masumi ||
+      proof.paymentId !== payment.id ||
+      proof.jobId !== j.id ||
+      proof.blockchainIdentifier !== payment.escrow.blockchainIdentifier
+    )
+      throw new Error("Escrow proof mismatch");
+    return;
+  }
   if (payment.status === "confirmed" || payment.status === "simulated") return;
   if (signature.length > 120000) throw new Error("Payment payload too large");
   const payload = JSON.parse(

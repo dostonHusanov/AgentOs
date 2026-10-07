@@ -80,6 +80,27 @@ export interface Payment {
   buyerAddress?: string;
   sellerAddress?: string;
   proofDigest?: string;
+  escrow?: {
+    state:
+      | "quote_pending"
+      | "purchase_pending"
+      | "funds_locked"
+      | "result_submission_pending"
+      | "result_submitted"
+      | "refund_pending"
+      | "refunded"
+      | "released";
+    nonce: string;
+    inputHash: string;
+    agentIdentifier: string;
+    contractAddress: string;
+    blockchainIdentifier?: string;
+    resultHash?: string;
+    refundCredited?: boolean;
+    refundAuthorizationRequested?: boolean;
+    refundTxHash?: string;
+    quote?: unknown;
+  };
 }
 export interface MissionEvent {
   id: string;

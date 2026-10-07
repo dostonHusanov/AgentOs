@@ -1,0 +1,81 @@
+name: agentos-masumi
+x-database: &database
+  image: postgres:17
+  restart: unless-stopped
+  environment:
+    POSTGRES_USER: masumi
+    POSTGRES_DB: masumi
+    POSTGRES_PASSWORD: ${MASUMI_DB_PASSWORD:?Run npm run masumi:prepare first}
+  healthcheck:
+    test: [CMD-SHELL, pg_isready -U masumi -d masumi]
+    interval: 5s
+    timeout: 5s
+    retries: 30
+x-node: &node
+  image: agentos-masumi:local
+  build:
+    context: ../../.agentos/masumi-node/source
+    dockerfile: ../../../infra/masumi/Dockerfile
+  restart: unless-stopped
+x-env: &node-env
+  PORT: "3001"
+  ENCRYPTION_KEY: ${MASUMI_ENCRYPTION_KEY:?Run npm run masumi:prepare first}
+  BLOCKFROST_API_KEY_PREPROD: ${BLOCKFROST_PROJECT_ID:?Configure Blockfrost Preprod}
+  SEED_ONLY_IF_EMPTY: "true"
+  SEED_V1_LEGACY: "false"
+  BLOCK_CONFIRMATIONS_THRESHOLD: "2"
+  BATCH_PAYMENT_INTERVAL: "20"
+  CHECK_TX_INTERVAL: "20"
+  CHECK_SUBMIT_RESULT_INTERVAL: "20"
+  CHECK_SET_REFUND_INTERVAL: "20"
+  CHECK_AUTHORIZE_REFUND_INTERVAL: "20"
+  CHECK_COLLECT_REFUND_INTERVAL: "20"
+  CHECK_COLLECTION_INTERVAL: "30"
+  REGISTER_AGENT_INTERVAL: "20"
+services:
+  seller-db:
+    <<: *database
+    volumes: [seller-data:/var/lib/postgresql/data]
+  research-db:
+    <<: *database
+    volumes: [research-data:/var/lib/postgresql/data]
+  backup-db:
+    <<: *database
+    volumes: [backup-data:/var/lib/postgresql/data]
+  seller-node:
+    <<: *node
+    ports: [127.0.0.1:3002:3001]
+    depends_on:
+      seller-db: { condition: service_healthy }
+    environment:
+      <<: *node-env
+      DATABASE_URL: postgresql://masumi:${MASUMI_DB_PASSWORD}@seller-db:5432/masumi
+      ADMIN_KEY: ${MASUMI_API_KEY:?Run npm run masumi:prepare first}
+      PURCHASE_WALLET_PREPROD_MNEMONIC: ${MANAGER_MNEMONIC:?Configure manager wallet}
+      SELLING_WALLET_PREPROD_MNEMONIC: ${RESEARCH_MNEMONIC:?Configure research wallet}
+  research-node:
+    <<: *node
+    ports: [127.0.0.1:3003:3001]
+    depends_on:
+      research-db: { condition: service_healthy }
+    environment:
+      <<: *node-env
+      DATABASE_URL: postgresql://masumi:${MASUMI_DB_PASSWORD}@research-db:5432/masumi
+      ADMIN_KEY: ${MASUMI_RESEARCH_API_KEY:?Run npm run masumi:prepare first}
+      PURCHASE_WALLET_PREPROD_MNEMONIC: ${RESEARCH_MNEMONIC:?Configure research wallet}
+      SELLING_WALLET_PREPROD_MNEMONIC: ${MANAGER_MNEMONIC:?Configure manager wallet}
+  backup-node:
+    <<: *node
+    ports: [127.0.0.1:3004:3001]
+    depends_on:
+      backup-db: { condition: service_healthy }
+    environment:
+      <<: *node-env
+      DATABASE_URL: postgresql://masumi:${MASUMI_DB_PASSWORD}@backup-db:5432/masumi
+      ADMIN_KEY: ${MASUMI_RESEARCH_BACKUP_API_KEY:?Run npm run masumi:prepare first}
+      PURCHASE_WALLET_PREPROD_MNEMONIC: ${RESEARCH_BACKUP_MNEMONIC:?Configure backup wallet}
+      SELLING_WALLET_PREPROD_MNEMONIC: ${MANAGER_MNEMONIC:?Configure manager wallet}
+volumes:
+  seller-data:
+  research-data:
+  backup-data:

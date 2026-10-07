@@ -1,6 +1,7 @@
 import { z } from "zod";
 import type { AgentDefinition } from "@/types/agent";
 import { config } from "@/lib/config";
+import { discoverNativeAgents } from "@/lib/masumi/registry";
 export function localAgents(): AgentDefinition[] {
   return [
     {
@@ -89,6 +90,12 @@ const metadata = z.object({
 export async function discoverAgents(
   capability?: string,
 ): Promise<AgentDefinition[]> {
+  if (process.env.MASUMI_NODE_URL) {
+    const agents = await discoverNativeAgents(localAgents());
+    return agents.filter(
+      (a) => !capability || a.capabilities.includes(capability),
+    );
+  }
   if (process.env.MASUMI_REGISTRY_URL) {
     const response = await fetch(process.env.MASUMI_REGISTRY_URL, {
       headers: { Authorization: `Bearer ${process.env.MASUMI_API_KEY ?? ""}` },

@@ -29,6 +29,18 @@ async function main() {
     const { buyerSigner } = await import("../lib/cardano/wallet");
     for (const id of ["manager", "research", "research-backup"])
       buyerSigner(id);
+    const { addressCredentials } = await import("@x402/cardano");
+    for (const name of ["DATA_WALLET_ADDRESS", "REPORT_WALLET_ADDRESS"]) {
+      const address = process.env[name]!;
+      try {
+        if (!address.startsWith("addr_test1")) throw new Error();
+        addressCredentials(address);
+      } catch {
+        throw new Error(
+          `${name} must contain a valid testnet receive address starting addr_test1`,
+        );
+      }
+    }
     setLocalValues({
       AI_MODE: "gemini",
       PAYMENT_MODE: "cardano",

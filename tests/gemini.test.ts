@@ -154,8 +154,13 @@ test("Gemini research executes discover and hire tools while preserving model si
       {
         models: {
           generateContent: async (params) => {
-            if (index === 0)
+            if (index === 0) {
               assert.deepEqual(params.config?.tools, [{ googleSearch: {} }]);
+              assert.deepEqual(
+                JSON.parse(String(params.contents)).dependencyResults,
+                ["Kuala Lumpur"],
+              );
+            }
             if (index === 2) {
               const history = params.contents as Content[];
               assert.ok(history.includes(discovery));
@@ -186,6 +191,7 @@ test("Gemini research executes discover and hire tools while preserving model si
           sources: [{ title: "Evidence", url: "https://example.com/evidence" }],
         });
       },
+      ["Kuala Lumpur"],
     );
     assert.deepEqual(hires, ["structured_city_data"]);
     assert.deepEqual(result.purchasedData, purchased);

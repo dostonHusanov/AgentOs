@@ -1,6 +1,7 @@
 import { ArrowUpRight, ArrowRight, Receipt } from "lucide-react";
 import type { Payment, PublicMission } from "@/types/mission";
 import { agentName } from "./AgentGraph";
+import { explorerUrl } from "@/lib/cardano/explorer";
 export function TransactionFeed({
   payments,
   mission,
@@ -26,9 +27,13 @@ export function TransactionFeed({
               <span className={p.mode === "simulation" ? "amber" : "cyan"}>
                 {p.mode === "simulation"
                   ? "SIMULATED PAYMENT"
-                  : p.status === "confirmed"
-                    ? "REAL PAYMENT"
-                    : "PAYMENT UNCONFIRMED"}
+                  : p.escrow?.state === "refunded"
+                    ? "REAL ESCROW REFUND"
+                    : p.escrow && p.status === "confirmed"
+                      ? "REAL ESCROW LOCK"
+                      : p.status === "confirmed"
+                        ? "REAL PAYMENT"
+                        : "PAYMENT UNCONFIRMED"}
               </span>
               <strong>
                 {p.amount.toFixed(2)} <small>{p.asset}</small>
@@ -39,10 +44,23 @@ export function TransactionFeed({
               {agentName(p.sellerAgentId, mission)}
             </p>
             <div className="receipt-bottom">
-              <span>{p.status.toUpperCase()}</span>
-              {p.explorerUrl ? (
-                <a href={p.explorerUrl} target="_blank" rel="noreferrer">
-                  {p.txHash?.slice(0, 12)}… <ArrowUpRight size={12} />
+              <span>
+                {(p.escrow?.state ?? p.status)
+                  .replaceAll("_", " ")
+                  .toUpperCase()}
+              </span>
+              {p.escrow?.refundTxHash || p.explorerUrl ? (
+                <a
+                  href={
+                    p.escrow?.refundTxHash
+                      ? explorerUrl(p.escrow.refundTxHash)
+                      : p.explorerUrl
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {(p.escrow?.refundTxHash ?? p.txHash)?.slice(0, 12)}…{" "}
+                  <ArrowUpRight size={12} />
                 </a>
               ) : (
                 <span>No on-chain transaction</span>

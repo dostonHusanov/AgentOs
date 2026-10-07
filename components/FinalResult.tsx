@@ -1,5 +1,6 @@
 import type { PublicMission } from "@/types/mission";
 import { Check, ArrowUpRight } from "lucide-react";
+import { openReportPrint } from "@/lib/report/print";
 export function FinalResult({ mission: m }: { mission: PublicMission }) {
   if (!m.result) return null;
   return (
@@ -54,6 +55,9 @@ export function FinalResult({ mission: m }: { mission: PublicMission }) {
           {e}
         </p>
       ))}
+      <button className="secondary-button" onClick={() => openReportPrint(m)}>
+        Save report as PDF <ArrowUpRight size={14} />
+      </button>{" "}
       <button
         className="secondary-button"
         onClick={() => {
@@ -68,7 +72,7 @@ export function FinalResult({ mission: m }: { mission: PublicMission }) {
           URL.revokeObjectURL(url);
         }}
       >
-        Export mission & receipts <ArrowUpRight size={14} />
+        Download mission & receipts (JSON) <ArrowUpRight size={14} />
       </button>
     </section>
   );

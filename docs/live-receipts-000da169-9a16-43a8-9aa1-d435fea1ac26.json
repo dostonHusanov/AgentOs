@@ -1,0 +1,217 @@
+{
+  "id": "000da169-9a16-43a8-9aa1-d435fea1ac26",
+  "goal": "Research the best city in Southeast Asia for a remote software developer to live for one month. Compare cost of living, internet quality, safety, and coworking options. Give me a final recommendation.",
+  "status": "failed",
+  "budget": {
+    "initial": 5,
+    "spent": 1,
+    "reserved": 0,
+    "remaining": 4,
+    "asset": "tUSDM"
+  },
+  "policy": {
+    "maxSinglePurchase": 2,
+    "minimumReputation": 80,
+    "escrowThreshold": 1
+  },
+  "jobs": [
+    {
+      "id": "2da74681-c318-4fd7-9669-2128e66696f4",
+      "missionId": "000da169-9a16-43a8-9aa1-d435fea1ac26",
+      "buyerAgentId": "manager",
+      "sellerAgentId": "research",
+      "capability": "web_research",
+      "objective": "Gather data on the cost of living in various Southeast Asian cities relevant to a remote software developer for one month.",
+      "status": "failed",
+      "price": 1,
+      "reason": "Capability match · reputation 95/100 · 1 tUSDM · score 88.2",
+      "sellerName": "ResearchPro",
+      "reputation": 95,
+      "registrySource": "local",
+      "depth": 1,
+      "createdAt": "2026-10-07T04:27:44.140Z",
+      "error": "Cardano settlement unconfirmed: settlement_pending. Reconcile receipt before retry."
+    }
+  ],
+  "payments": [
+    {
+      "id": "d251aad4-cf66-4129-89b3-3b767ce750c3",
+      "missionId": "000da169-9a16-43a8-9aa1-d435fea1ac26",
+      "jobId": "2da74681-c318-4fd7-9669-2128e66696f4",
+      "buyerAgentId": "manager",
+      "sellerAgentId": "research",
+      "amount": 1,
+      "asset": "tUSDM",
+      "network": "preprod",
+      "status": "confirmed",
+      "mode": "cardano",
+      "createdAt": "2026-10-07T04:27:44.882Z",
+      "txHash": "e9bcc0b1db63db7fb04b80baf00581e954fadd8380032aebd09fdc4bb340fd99",
+      "explorerUrl": "https://preprod.cardanoscan.io/transaction/e9bcc0b1db63db7fb04b80baf00581e954fadd8380032aebd09fdc4bb340fd99",
+      "buyerAddress": "addr_test1qpar2sptyq53967wma4rwk892w36cva72au3w9wxzfsw9gshquv8dvp4a00v9z3p53xm2ly662edld25jejm6dl6l8ss5qt5v7",
+      "sellerAddress": "addr_test1qr7w82wahq0x47flasht06jx9emz86xu8sm6jfu40h9pcmv4x9ygzkhklq822duqvjz8cz048gmffg7vq64mnh4dgursclnr8n"
+    }
+  ],
+  "events": [
+    {
+      "id": "10366290-4245-4a80-9abc-88a7e35c4f63",
+      "type": "mission_planning",
+      "message": "Mission planning",
+      "createdAt": "2026-10-07T04:27:41.573Z"
+    },
+    {
+      "id": "f45224df-7526-494f-8770-2c266ba53abe",
+      "type": "plan_created",
+      "message": "Research the best city in Southeast Asia for a remote software developer to live for one month, comparing cost of living, internet quality, safety, and coworking options, and provide a final recommendation.",
+      "createdAt": "2026-10-07T04:27:44.137Z"
+    },
+    {
+      "id": "da52406d-191b-44cb-97f1-1ef1f6301c9a",
+      "type": "mission_discovering",
+      "message": "Mission discovering",
+      "createdAt": "2026-10-07T04:27:44.137Z"
+    },
+    {
+      "id": "a71c756a-7421-4cc0-91df-8083908051a5",
+      "type": "capability_required",
+      "message": "Manager needs web_research",
+      "createdAt": "2026-10-07T04:27:44.138Z"
+    },
+    {
+      "id": "0456b33b-1263-46a1-b1dc-7a5c44acaa64",
+      "type": "agent_discovered",
+      "message": "3 web_research providers discovered (local)",
+      "createdAt": "2026-10-07T04:27:44.138Z"
+    },
+    {
+      "id": "c687d29c-ab57-4eea-a0e5-ddc00343d63c",
+      "type": "mission_selecting",
+      "message": "Mission selecting",
+      "createdAt": "2026-10-07T04:27:44.138Z"
+    },
+    {
+      "id": "6c947a4d-10d2-4103-b79e-890e3227c981",
+      "type": "agent_evaluated",
+      "message": "ResearchPro: Capability match · reputation 95/100 · 1 tUSDM · score 88.2",
+      "createdAt": "2026-10-07T04:27:44.139Z"
+    },
+    {
+      "id": "b31fac80-a0ac-4fbb-8b37-86fcee0846f5",
+      "type": "agent_evaluated",
+      "message": "Scout Research: Capability match · reputation 88/100 · 0.85 tUSDM · score 86.2",
+      "createdAt": "2026-10-07T04:27:44.139Z"
+    },
+    {
+      "id": "4f571ce3-d7ee-4651-a8d8-21bc1ff5638c",
+      "type": "agent_evaluated",
+      "message": "DeepScope: Capability match · reputation 98/100 · 2.4 tUSDM · score 85.2 · rejected: Single purchase limit exceeded",
+      "createdAt": "2026-10-07T04:27:44.140Z"
+    },
+    {
+      "id": "3394c52d-fc4d-4533-b907-83dd5bea41d3",
+      "type": "agent_selected",
+      "message": "ResearchPro selected: Capability match · reputation 95/100 · 1 tUSDM · score 88.2",
+      "jobId": "2da74681-c318-4fd7-9669-2128e66696f4",
+      "createdAt": "2026-10-07T04:27:44.140Z"
+    },
+    {
+      "id": "92ed69c0-b68c-404d-aceb-19859977a08d",
+      "type": "mission_purchasing",
+      "message": "Mission purchasing",
+      "createdAt": "2026-10-07T04:27:44.141Z"
+    },
+    {
+      "id": "9a9f177a-ddcb-41ff-b6a9-74fd31ae32d9",
+      "type": "payment_requested",
+      "message": "manager → ResearchPro: 1 tUSDM",
+      "jobId": "2da74681-c318-4fd7-9669-2128e66696f4",
+      "createdAt": "2026-10-07T04:27:44.142Z"
+    },
+    {
+      "id": "62435b61-bfea-45a8-b663-62cd9c258d7a",
+      "type": "payment_signed",
+      "message": "Signed transaction prepared; awaiting submission and confirmation",
+      "jobId": "2da74681-c318-4fd7-9669-2128e66696f4",
+      "createdAt": "2026-10-07T04:27:45.711Z"
+    },
+    {
+      "id": "04f1902a-589a-472b-9b35-d2b1a10d49bb",
+      "type": "payment_submitted",
+      "message": "Cardano settlement: e9bcc0b1db63db7fb04b80baf00581e954fadd8380032aebd09fdc4bb340fd99",
+      "jobId": "2da74681-c318-4fd7-9669-2128e66696f4",
+      "createdAt": "2026-10-07T04:28:30.125Z"
+    },
+    {
+      "id": "88c4a312-9b7a-4052-9a84-c2c92931d276",
+      "type": "agent_failed",
+      "message": "ResearchPro: Cardano settlement unconfirmed: settlement_pending. Reconcile receipt before retry.",
+      "jobId": "2da74681-c318-4fd7-9669-2128e66696f4",
+      "createdAt": "2026-10-07T04:29:14.545Z"
+    },
+    {
+      "id": "4d3b3af6-423e-45b7-9909-834a27a15282",
+      "type": "mission_failed",
+      "message": "Payment pending or uncertain. Reservation retained; reconciliation required before retry.",
+      "createdAt": "2026-10-07T04:29:14.547Z"
+    },
+    {
+      "id": "341a94d4-e920-4ed6-a0ec-e0d39c1a36bd",
+      "type": "payment_submitted",
+      "message": "Cardano settlement: e9bcc0b1db63db7fb04b80baf00581e954fadd8380032aebd09fdc4bb340fd99",
+      "jobId": "2da74681-c318-4fd7-9669-2128e66696f4",
+      "createdAt": "2026-10-07T04:29:46.112Z"
+    },
+    {
+      "id": "3379b626-11f0-47bb-a735-149e4eb54358",
+      "type": "payment_confirmed",
+      "message": "REAL PAYMENT · manager → ResearchPro · 1 tUSDM",
+      "jobId": "2da74681-c318-4fd7-9669-2128e66696f4",
+      "createdAt": "2026-10-07T04:29:46.985Z"
+    }
+  ],
+  "createdAt": "2026-10-07T04:27:40.571Z",
+  "failNextProvider": false,
+  "paymentMode": "cardano",
+  "aiMode": "gemini",
+  "plan": {
+    "summary": "Research the best city in Southeast Asia for a remote software developer to live for one month, comparing cost of living, internet quality, safety, and coworking options, and provide a final recommendation.",
+    "tasks": [
+      {
+        "id": "research_cost_of_living",
+        "capability": "web_research",
+        "objective": "Gather data on the cost of living in various Southeast Asian cities relevant to a remote software developer for one month.",
+        "dependsOn": []
+      },
+      {
+        "id": "research_internet_quality",
+        "capability": "web_research",
+        "objective": "Investigate internet quality and availability in various Southeast Asian cities, focusing on speeds and reliability suitable for a remote software developer.",
+        "dependsOn": []
+      },
+      {
+        "id": "research_safety",
+        "capability": "web_research",
+        "objective": "Collect information on safety and security in various Southeast Asian cities for a temporary resident.",
+        "dependsOn": []
+      },
+      {
+        "id": "research_coworking_options",
+        "capability": "web_research",
+        "objective": "Identify and research coworking space availability, pricing, and amenities in various Southeast Asian cities.",
+        "dependsOn": []
+      },
+      {
+        "id": "synthesize_and_recommend",
+        "capability": "report_generation",
+        "objective": "Synthesize all collected data on cost of living, internet quality, safety, and coworking options to provide a final recommendation for the best Southeast Asian city for a remote software developer.",
+        "dependsOn": [
+          "research_cost_of_living",
+          "research_internet_quality",
+          "research_safety",
+          "research_coworking_options"
+        ]
+      }
+    ]
+  },
+  "error": "Payment pending or uncertain. Reservation retained; reconciliation required before retry."
+}

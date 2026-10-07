@@ -11,6 +11,7 @@ import { transition } from "./state-machine";
 import { paidRequest } from "@/lib/cardano/x402";
 import { reportSchema } from "@/lib/ai/schemas";
 import type { AgentDefinition } from "@/types/agent";
+import { submitEscrowResult, requestEscrowRefund } from "@/lib/masumi/escrow";
 export async function hire(
   m: Mission,
   capability: string,
@@ -105,6 +106,7 @@ export async function hire(
       if (!parent) transition(m, "verifying");
       event(m, "result_received", `${a.name} returned a deliverable`, job.id);
       job.result = await verifyDeliverable(m, job, result, context);
+      await submitEscrowResult(m, job, job.result);
       job.status = "completed";
       event(
         m,
@@ -119,6 +121,24 @@ export async function hire(
       job.error = lastError;
       excluded.add(a.id);
       const payment = m.payments.find((p) => p.jobId === job.id);
+      if (payment?.escrow) {
+        if (payment.escrow.state === "funds_locked") {
+          try {
+            await requestEscrowRefund(m, payment);
+          } catch {
+            event(
+              m,
+              "escrow_refund_pending",
+              "Refund needs reconciliation; no replacement will be hired",
+              job.id,
+            );
+          }
+        }
+        save(m);
+        throw new Error(
+          "Escrow delivery failed or settlement is uncertain. Reconcile the lock/refund before retrying; no replacement payment was made.",
+        );
+      }
       if (
         !payment ||
         payment.status === "reserved" ||
