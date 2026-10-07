@@ -220,6 +220,7 @@ test("MCP stdio handshake, tools, safe asynchronous API adapter and durable cred
   const base = `http://127.0.0.1:${(http.address() as { port: number }).port}`;
   mkdirSync(join(root, "dist"));
   cpSync(resolve("dist/mcp"), join(root, "dist/mcp"), { recursive: true });
+  cpSync(resolve("dist/lib"), join(root, "dist/lib"), { recursive: true });
   symlinkSync(resolve("node_modules"), join(root, "node_modules"), "dir");
   const connect = async () => {
     const transport = new StdioClientTransport({
@@ -348,7 +349,7 @@ test("MCP stdio handshake, tools, safe asynchronous API adapter and durable cred
         arguments: { missionId: id },
       }),
     );
-    assert.equal(failed.result, null);
+    assert.match(failed.result.title, /Partial report/);
     state = "completed";
     const completeWait = data(
       await client.callTool({

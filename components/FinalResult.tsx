@@ -1,3 +1,4 @@
+import { terminalReport } from "@/lib/report/terminal";
 import type { PublicMission } from "@/types/mission";
 import { Check, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
@@ -40,14 +41,18 @@ export function FinalResult({
       setPdfBusy(false);
     }
   }
-  if (!m.result) return null;
+  const report = terminalReport(m);
+  if (!report) return null;
   return (
     <section className="panel final-result">
       <div className="result-label">
-        <Check size={17} /> MISSION COMPLETE
+        <Check size={17} />{" "}
+        {m.status === "failed"
+          ? "PARTIAL REPORT - MISSION FAILED"
+          : "MISSION COMPLETE"}
       </div>
-      <h2>{m.result.title}</h2>
-      <p className="recommendation">{m.result.recommendation}</p>
+      <h2>{report.title}</h2>
+      <p className="recommendation">{report.recommendation}</p>
       <div className="result-metrics">
         <span>
           <strong>
@@ -75,7 +80,7 @@ export function FinalResult({
         </span>
       </div>
       <div className="comparison-list">
-        {m.result.comparison.map((c, i) => (
+        {report.comparison.map((c, i) => (
           <div key={i}>
             <strong>{c.option}</strong>
             <p>{c.assessment}</p>
@@ -83,12 +88,12 @@ export function FinalResult({
         ))}
       </div>
       <h3>Evidence & limitations</h3>
-      {m.result.evidence.map((e, i) => (
+      {report.evidence.map((e, i) => (
         <p key={i} className="evidence">
           {e}
         </p>
       ))}
-      {m.result.limitations.map((e, i) => (
+      {report.limitations.map((e, i) => (
         <p key={i} className="limitation">
           {e}
         </p>

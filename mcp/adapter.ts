@@ -1,3 +1,4 @@
+import { terminalReport } from "../lib/report/terminal";
 import type { PublicMission } from "../types/mission";
 import { MissionVault } from "./vault";
 import { z } from "zod";
@@ -305,7 +306,8 @@ export class AgentOSAdapter {
     return this.resultView(await this.mission(id));
   }
   private resultView(m: PublicMission) {
-    if (m.status !== "completed" || !m.result)
+    const report = terminalReport(m);
+    if (!report)
       return {
         missionId: m.id,
         status: m.status,
@@ -320,14 +322,14 @@ export class AgentOSAdapter {
       status: m.status,
       pdf: this.pdfDescriptor(m.id),
       result: {
-        title: m.result.title,
-        recommendation: m.result.recommendation,
-        comparison: m.result.comparison.map((c) => ({
+        title: report.title,
+        recommendation: report.recommendation,
+        comparison: report.comparison.map((c) => ({
           option: c.option,
           assessment: c.assessment,
         })),
-        evidence: [...m.result.evidence],
-        limitations: [...m.result.limitations],
+        evidence: [...report.evidence],
+        limitations: [...report.limitations],
       },
       sources: m.jobs
         .filter(

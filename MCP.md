@@ -232,3 +232,6 @@ The default wait keeps the MCP call pending instead of returning every 25 second
 The official macOS ARM64 tunnel client is installed locally under `.agentos/tunnel/bin` (ignored by Git). Its release archive was verified against the official SHA256SUMS. Configure `OPENAI_TUNNEL_ID` and `CONTROL_PLANE_API_KEY` only in `.env.local`. The key must have access to the tunnel; the OpenRouter key cannot authenticate the OpenAI control plane.
 
 Run `node scripts/chatgpt-tunnel.mjs doctor` to validate the profile and `node scripts/chatgpt-tunnel.mjs run` to start the connection. The launcher reads only the needed values from `.env.local` and does not copy wallet phrases to the tunnel process. Local status endpoints are `http://127.0.0.1:8788/healthz` and `/readyz`; the operator UI is `/ui`. Keep the connection running when adding or using the custom MCP plugin in ChatGPT. Restart after closing the process or rebooting the Mac. No machine startup service is installed.
+
+
+Failed terminal missions now return a partial report and PDF automatically. The mission remains failed; retained findings are marked by individual verification status and rejected output is explicitly unverified. Missing coverage, failure reasons, budget and receipts are included. Exporting does not purchase new work or retry the mission.

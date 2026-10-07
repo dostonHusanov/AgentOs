@@ -2,6 +2,8 @@ import PDFDocument from "pdfkit";
 import { join } from "node:path";
 import type { PublicMission } from "../../types/mission";
 
+import { terminalReport } from "./terminal";
+
 const ink = "#16312F";
 const muted = "#526662";
 const accent = "#087A69";
@@ -18,9 +20,11 @@ export function createReportPdf(
   m: PublicMission,
   root = process.cwd(),
 ): Promise<Buffer> {
-  if (m.status !== "completed" || !m.result)
-    throw new Error("Completed report required");
-  const report = m.result;
+  const report = terminalReport(m);
+  if (!report)
+    throw new Error(
+      "Completed report required; terminal mission report unavailable",
+    );
   const doc = new PDFDocument({
     size: "A4",
     margins: { top: 58, bottom: 62, left: 52, right: 52 },
@@ -73,7 +77,7 @@ export function createReportPdf(
     .fontSize(9)
     .fillColor(muted)
     .text(
-      `Mission ${m.id}\nCompleted ${m.completedAt ?? m.createdAt}\n${m.paymentMode === "cardano" ? "Cardano Preprod" : "Simulated payments"} | ${m.budget.spent.toFixed(2)} tUSDM spent | ${m.budget.remaining.toFixed(2)} remaining`,
+      `Mission ${m.id}\nStatus: ${m.status} | Created ${m.createdAt}\n${m.paymentMode === "cardano" ? "Cardano Preprod" : "Simulated payments"} | ${m.budget.spent.toFixed(2)} tUSDM spent | ${m.budget.remaining.toFixed(2)} remaining`,
       { width, lineGap: 3 },
     );
   heading("Recommendation");
@@ -324,7 +328,9 @@ export function createReportPdf(
   }
   heading("Verification scope");
   body(
-    "This report passed the existing AgentOS schema, content and configured AI checks. These checks do not independently establish factual accuracy. A confirmed escrow lock or result submission is distinct from provider withdrawal and release.",
+    m.status === "failed"
+      ? "Overall mission verification failed. This partial report preserves available work and receipts; it does not approve rejected findings. Escrow locks are distinct from provider withdrawal and release."
+      : "This report passed the existing AgentOS schema, content and configured AI checks. These checks do not independently establish factual accuracy. A confirmed escrow lock or result submission is distinct from provider withdrawal and release.",
   );
   const pages = doc.bufferedPageRange();
   for (let i = pages.start; i < pages.start + pages.count; i++) {
