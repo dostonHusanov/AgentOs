@@ -1,0 +1,14 @@
+node_modules
+.next
+dist
+.git
+.env*
+.agentos
+.codex
+.agents
+.aws
+output
+tmp
+*.tsbuildinfo
+*.log
+.DS_Store

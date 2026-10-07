@@ -1,0 +1,23 @@
+# Optional live stack. Compose >= 2.24 is required.
+include:
+  - path: infra/masumi/compose.yml
+services:
+  app:
+    env_file:
+      - .env.local
+    environment:
+      AI_MODE: ${AI_MODE:?Set AI_MODE in .env.local}
+      PAYMENT_MODE: cardano
+      CARDANO_NETWORK: preprod
+      APP_URL: http://127.0.0.1:3000
+      MASUMI_NODE_URL: http://seller-node:3001/api/v1
+      MASUMI_MANAGER_NODE_URL: http://seller-node:3001/api/v1
+      MASUMI_RESEARCH_NODE_URL: http://research-node:3001/api/v1
+      MASUMI_RESEARCH_BACKUP_NODE_URL: http://backup-node:3001/api/v1
+    depends_on:
+      seller-node:
+        condition: service_started
+      research-node:
+        condition: service_started
+      backup-node:
+        condition: service_started

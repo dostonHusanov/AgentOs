@@ -1,0 +1,18 @@
+name: agentos
+services:
+  app:
+    image: agentos-app:local
+    build: .
+    restart: unless-stopped
+    init: true
+    ports:
+      - "${AGENTOS_BIND_ADDRESS:-127.0.0.1}:${AGENTOS_PORT:-3010}:3000"
+    environment:
+      AI_MODE: fixture
+      PAYMENT_MODE: simulation
+      CARDANO_NETWORK: preprod
+      APP_URL: http://127.0.0.1:3000
+    volumes:
+      - mission-data:/app/.agentos
+volumes:
+  mission-data:

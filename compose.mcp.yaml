@@ -1,0 +1,25 @@
+services:
+  app:
+    ports:
+      - "127.0.0.1:3333:3333"
+  mcp:
+    image: agentos-app:local
+    restart: unless-stopped
+    init: true
+    network_mode: service:app
+    environment:
+      AGENTOS_BASE_URL: http://127.0.0.1:3000
+      AGENTOS_MCP_MAX_BUDGET: "5"
+      MCP_ACCESS_KEY: ${MCP_ACCESS_KEY:?Set MCP_ACCESS_KEY in .env.mcp}
+      MCP_PUBLIC_ORIGIN: ${MCP_PUBLIC_ORIGIN:?Set MCP_PUBLIC_ORIGIN in .env.mcp}
+      MCP_HTTP_PORT: "3333"
+    command: [node, /app/dist/mcp/http-server.js]
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:3333/healthz').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+    volumes:
+      - mission-data:/app/.agentos
+    depends_on:
+      app:
+        condition: service_healthy
