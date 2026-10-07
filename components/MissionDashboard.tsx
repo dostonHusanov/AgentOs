@@ -15,12 +15,52 @@ import { BudgetPanel } from "./BudgetPanel";
 import { TransactionFeed } from "./TransactionFeed";
 import { MissionTimeline } from "./MissionTimeline";
 import { FinalResult } from "./FinalResult";
-export function MissionDashboard({ id }: { id: string }) {
+export function MissionDashboard({
+  id,
+  mcpReadOnly = false,
+}: {
+  id: string;
+  mcpReadOnly?: boolean;
+}) {
   const [mission, setMission] = useState<PublicMission>(),
     [error, setError] = useState(""),
     [busy, setBusy] = useState(false),
     [now, setNow] = useState(Date.now());
   useEffect(() => {
+    if (mcpReadOnly) {
+      let stopped = false;
+      let poll: ReturnType<typeof setTimeout>;
+      const controller = new AbortController();
+      const refresh = async () => {
+        try {
+          const r = await fetch(`/api/mcp/missions/${id}`, {
+            cache: "no-store",
+            signal: controller.signal,
+          });
+          const next = await r.json();
+          if (!r.ok) throw new Error(next.error);
+          if (!stopped) {
+            setMission(next);
+            setError("");
+          }
+          if (!stopped && !["completed", "failed"].includes(next.status))
+            poll = setTimeout(refresh, 3000);
+        } catch (e) {
+          if (!stopped) {
+            setError(e instanceof Error ? e.message : "Mission lookup failed");
+            poll = setTimeout(refresh, 5000);
+          }
+        }
+      };
+      void refresh();
+      const tick = setInterval(() => setNow(Date.now()), 1000);
+      return () => {
+        stopped = true;
+        controller.abort();
+        clearTimeout(poll);
+        clearInterval(tick);
+      };
+    }
     const token = sessionStorage.getItem(`mission:${id}`);
     if (!token) {
       setError(
@@ -56,7 +96,7 @@ export function MissionDashboard({ id }: { id: string }) {
       source?.close();
       clearInterval(tick);
     };
-  }, [id]);
+  }, [id, mcpReadOnly]);
   async function action(kind: "start" | "failure") {
     setBusy(true);
     setError("");
@@ -150,7 +190,7 @@ export function MissionDashboard({ id }: { id: string }) {
                   ))}
                 </div>
               )}
-              {mission.status === "created" && (
+              {!mcpReadOnly && mission.status === "created" && (
                 <button
                   disabled={busy}
                   className="launch-button"
@@ -159,16 +199,17 @@ export function MissionDashboard({ id }: { id: string }) {
                   Start mission <Play size={15} />
                 </button>
               )}
-              {!["completed", "failed"].includes(mission.status) && (
-                <button
-                  disabled={busy}
-                  className="failure-button"
-                  onClick={() => action("failure")}
-                >
-                  <AlertTriangle size={13} /> Simulate Provider Failure
-                  <small>DEMO FAILURE SIMULATION</small>
-                </button>
-              )}
+              {!mcpReadOnly &&
+                !["completed", "failed"].includes(mission.status) && (
+                  <button
+                    disabled={busy}
+                    className="failure-button"
+                    onClick={() => action("failure")}
+                  >
+                    <AlertTriangle size={13} /> Simulate Provider Failure
+                    <small>DEMO FAILURE SIMULATION</small>
+                  </button>
+                )}
               {mission.error && (
                 <div className="error-box">{mission.error}</div>
               )}
@@ -194,7 +235,7 @@ export function MissionDashboard({ id }: { id: string }) {
           </div>
           <div className="economy-column">
             <AgentGraph mission={mission} />
-            <FinalResult mission={mission} />
+            <FinalResult mission={mission} mcpReadOnly={mcpReadOnly} />
             <MissionTimeline events={mission.events} />
           </div>
           <div className="activity-column">

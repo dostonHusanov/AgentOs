@@ -1,7 +1,45 @@
 import type { PublicMission } from "@/types/mission";
 import { Check, ArrowUpRight } from "lucide-react";
-import { openReportPrint } from "@/lib/report/print";
-export function FinalResult({ mission: m }: { mission: PublicMission }) {
+import { useState } from "react";
+export function FinalResult({
+  mission: m,
+  mcpReadOnly = false,
+}: {
+  mission: PublicMission;
+  mcpReadOnly?: boolean;
+}) {
+  const [pdfBusy, setPdfBusy] = useState(false);
+  const [pdfError, setPdfError] = useState("");
+  async function downloadPdf() {
+    setPdfBusy(true);
+    setPdfError("");
+    try {
+      const token = sessionStorage.getItem(`mission:${m.id}`);
+      const response = await fetch(
+        mcpReadOnly
+          ? `/api/mcp/missions/${m.id}/report`
+          : `/api/missions/${m.id}/report`,
+        {
+          headers:
+            !mcpReadOnly && token ? { Authorization: `Bearer ${token}` } : {},
+          cache: "no-store",
+        },
+      );
+      if (!response.ok) throw new Error();
+      const url = URL.createObjectURL(await response.blob());
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `agentos-${m.id}.pdf`;
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 10000);
+    } catch {
+      setPdfError(
+        "Could not download the PDF. Keep the server running and try again.",
+      );
+    } finally {
+      setPdfBusy(false);
+    }
+  }
   if (!m.result) return null;
   return (
     <section className="panel final-result">
@@ -55,8 +93,14 @@ export function FinalResult({ mission: m }: { mission: PublicMission }) {
           {e}
         </p>
       ))}
-      <button className="secondary-button" onClick={() => openReportPrint(m)}>
-        Save report as PDF <ArrowUpRight size={14} />
+      {pdfError && <p role="alert">{pdfError}</p>}
+      <button
+        className="secondary-button"
+        disabled={pdfBusy}
+        onClick={() => void downloadPdf()}
+      >
+        {pdfBusy ? "Preparing PDF…" : "Download report (PDF)"}{" "}
+        <ArrowUpRight size={14} />
       </button>{" "}
       <button
         className="secondary-button"

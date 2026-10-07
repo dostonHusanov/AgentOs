@@ -4,3 +4,6 @@ node_modules/
 !.env.example
 .agentos/
 *.tsbuildinfo
+dist/
+output/pdf/
+tmp/pdfs/

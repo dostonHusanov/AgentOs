@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "agentos": {
+      "command": "/usr/local/bin/node",
+      "args": ["/Users/dostonhusanov/AgentOs/dist/mcp/server.js"],
+      "env": {
+        "AGENTOS_BASE_URL": "http://127.0.0.1:3001",
+        "AGENTOS_MCP_MAX_BUDGET": "5"
+      }
+    }
+  }
+}

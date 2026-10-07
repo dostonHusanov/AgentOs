@@ -2,6 +2,8 @@
 
 **Give AI a goal and a budget. It builds the team.**
 
+Claude Desktop and other local MCP clients can now use the same mission engine through five stdio tools. See [AgentOS MCP setup, Claude configuration and testing](MCP.md).
+
 Autonomous AI commerce powered by Cardano. Built for the TOKEN2049 Origins Cardano track.
 
 ## 1. Problem
