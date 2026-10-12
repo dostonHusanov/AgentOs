@@ -16,21 +16,46 @@ const root = resolve(__dirname, "../..");
 const origin = localBaseUrl(
   process.env.AGENTOS_BASE_URL ?? "http://127.0.0.1:3000",
 );
-const publicOrigin = process.env.MCP_PUBLIC_ORIGIN;
-if (publicOrigin && new URL(publicOrigin).protocol !== "https:")
-  throw new Error("MCP_PUBLIC_ORIGIN must use HTTPS.");
+function requiredPublicOrigin(value: string | undefined) {
+  try {
+    if (!value) throw new Error();
+    const url = new URL(value);
+    if (
+      url.protocol !== "https:" ||
+      url.username ||
+      url.password ||
+      url.pathname !== "/" ||
+      url.search ||
+      url.hash
+    )
+      throw new Error();
+    return url.origin;
+  } catch {
+    throw new Error("MCP_PUBLIC_ORIGIN must be a clean HTTPS origin.");
+  }
+}
+const publicOrigin = requiredPublicOrigin(process.env.MCP_PUBLIC_ORIGIN);
+const historyUrl = `${publicOrigin}/mcp/${key}/history`;
+const remoteDashboard = {
+  dashboardUrl: historyUrl,
+  dashboardLabel: "Live payment history",
+  transactionHistoryUrl: historyUrl,
+};
 class RemoteAdapter extends AgentOSAdapter {
   override async create(input: Parameters<AgentOSAdapter["create"]>[0]) {
     return {
       ...(await super.create(input)),
-      transactionHistoryUrl: `${publicOrigin}/mcp/${key}/history`,
+      ...remoteDashboard,
     };
   }
   override async wait(...args: Parameters<AgentOSAdapter["wait"]>) {
     return {
       ...(await super.wait(...args)),
-      transactionHistoryUrl: `${publicOrigin}/mcp/${key}/history`,
+      ...remoteDashboard,
     };
+  }
+  override async status(...args: Parameters<AgentOSAdapter["status"]>) {
+    return { ...(await super.status(...args)), ...remoteDashboard };
   }
   override pdfDescriptor(id: string) {
     return {
@@ -45,15 +70,38 @@ const adapter = new RemoteAdapter(
   Number(process.env.AGENTOS_MCP_MAX_BUDGET ?? "5"),
 );
 const http = createServer(async (req, res) => {
-  const path = new URL(req.url ?? "/", "http://localhost").pathname;
+  let path: string;
+  try {
+    path = new URL(req.url ?? "/", "http://localhost").pathname;
+  } catch {
+    res.writeHead(400);
+    res.end("Invalid request path");
+    return;
+  }
   if (path === "/healthz") {
     res.writeHead(200);
     res.end("ready");
     return;
   }
+  if (path === "/readyz") {
+    let ready = false;
+    try {
+      const response = await fetch(`${origin}/api/health`, {
+        redirect: "error",
+        signal: AbortSignal.timeout(4000),
+      });
+      const health = response.ok ? await response.json() : null;
+      ready = ["READY", "DEVELOPMENT READY"].includes(health?.status);
+    } catch {
+      // Only readiness is public; upstream diagnostics may contain private data.
+    }
+    res.writeHead(ready ? 200 : 503, { "Cache-Control": "no-store" });
+    res.end(ready ? "ready" : "Backend unavailable");
+    return;
+  }
   const supplied = path.split("/")[2] ?? "";
   const valid =
-    supplied.length === key.length &&
+    /^[a-f0-9]{64}$/.test(supplied) &&
     timingSafeEqual(Buffer.from(supplied), Buffer.from(key));
   if (
     !valid ||

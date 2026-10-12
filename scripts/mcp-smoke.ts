@@ -36,7 +36,7 @@ async function main() {
     cpSync(join(root, item), join(sandbox, item), { recursive: true });
   symlinkSync(join(root, "node_modules"), join(sandbox, "node_modules"), "dir");
   mkdirSync(join(sandbox, "dist"));
-  cpSync(join(root, "dist/mcp"), join(sandbox, "dist/mcp"), {
+  cpSync(join(root, "dist"), join(sandbox, "dist"), {
     recursive: true,
   });
   const web = spawn(

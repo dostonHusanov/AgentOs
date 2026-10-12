@@ -16,7 +16,13 @@ services:
       MCP_BIND_ADDRESS: 0.0.0.0
     command: [node, /app/dist/mcp/http-server.js]
     healthcheck:
-      test: [CMD, node, -e, "fetch('http://127.0.0.1:3333/healthz').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      test:
+        [
+          CMD,
+          node,
+          -e,
+          "fetch('http://127.0.0.1:3333/readyz').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
       interval: 30s
       timeout: 5s
     volumes:

@@ -246,6 +246,12 @@ test("MCP stdio handshake, tools, safe asynchronous API adapter and durable cred
       "agentos_get_result",
       "agentos_wait_for_mission",
     ]);
+    const overlongWait = (await client.callTool({
+      name: "agentos_wait_for_mission",
+      arguments: { missionId: id, waitSeconds: 900 },
+    })) as CallToolResult;
+    assert.equal(overlongWait.isError, true);
+    assert.equal(reads, 0, "Overlong waits must be rejected before backend access");
     const create = listed.tools.find(
       (t) => t.name === "agentos_create_mission",
     )!;
